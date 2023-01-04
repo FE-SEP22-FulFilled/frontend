@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/frontend/static/js/main.cda24ded.js",
+    "index.html": "/frontend/index.html",
+    "main.cda24ded.js.map": "/frontend/static/js/main.cda24ded.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.cda24ded.js"
+  ]
+}
