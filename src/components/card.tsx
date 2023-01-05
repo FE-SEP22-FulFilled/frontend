@@ -5,11 +5,7 @@ import heart from '../icons/Vector (Stroke).svg';
 export const Card: React.FC = () => {
   return (
     <section className="card">
-      <img
-        src={img}
-        alt="iPhone Xs"
-        className="card__img"
-      />
+      <img src={img} alt="iPhone Xs" className="card__img" />
 
       <h2 className="card__name">Apple iPhone Xs 64GB Silver (iMT9G2FS/A)</h2>
 
@@ -46,11 +42,7 @@ export const Card: React.FC = () => {
 
         <div className="card__buy--heart">
           <a href="/" className="card__buy--heart-icon">
-            <img
-              src={heart}
-              alt="heart_icon"
-              className="card__icon"
-            />
+            <img src={heart} alt="heart_icon" className="card__icon" />
           </a>
         </div>
       </div>
