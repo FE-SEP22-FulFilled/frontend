@@ -2,10 +2,7 @@ import React from 'react';
 import './App.scss';
 
 import {
-  Link,
-  Navigate,
-  Route,
-  Routes,
+  Link, Navigate, Route, Routes,
 } from 'react-router-dom';
 import { NotFoundPage } from './components/NotFoundPage';
 import { AccessoriesPage } from './components/AccessoriesPage';
@@ -21,12 +18,12 @@ function App() {
       {/* !-- Header  --! */}
 
       <div className="test_nav">
-        <Link to="phones">  phones  </Link>
-        <Link to="/">  home  </Link>
-        <Link to="tablets">  tablets  </Link>
-        <Link to="accessories">  accessories  </Link>
-        <Link to="favoutites">  favoutites  </Link>
-        <Link to="cart">  cart  </Link>
+        <Link to="phones"> phones </Link>
+        <Link to="/"> home </Link>
+        <Link to="tablets"> tablets </Link>
+        <Link to="accessories"> accessories </Link>
+        <Link to="favoutites"> favoutites </Link>
+        <Link to="cart"> cart </Link>
       </div>
       <Routes>
         <Route path="phones">
