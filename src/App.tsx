@@ -1,11 +1,8 @@
 import React from 'react';
+import { Card } from './components/card';
 
 function App() {
-  return (
-    <div className="App">
-      <h1>let's go</h1>
-    </div>
-  );
+  return <Card />;
 }
 
 export default App;
