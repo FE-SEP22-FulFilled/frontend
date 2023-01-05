@@ -1,8 +1,12 @@
+import '../styles/main.scss';
+import img from '../img/phones/apple-iphone-11-pro-max/silver/00.jpg';
+import heart from '../icons/Vector (Stroke).svg';
+
 export const Card: React.FC = () => {
   return (
     <section className="card">
       <img
-        src="../img/phones/apple-iphone-11-pro-max/silver/00.jpg"
+        src={img}
         alt="iPhone Xs"
         className="card__img"
       />
@@ -14,31 +18,41 @@ export const Card: React.FC = () => {
         <p className="card__price--old">$899</p>
       </div>
 
-      <div className="card__separator">-------</div>
+      <div className="card__separator" />
 
       <div className="card__params">
-        <p className="card__params--text">Screen</p>
-        <p className="card__params--screen">5.8” OLED</p>
-        <p className="card__params--text">Capacity</p>
-        <p className="card__params--capacity">64 GB</p>
-        <p className="card__params--text">RAM</p>
-        <p className="card__params--ram">4 GB</p>
+        <div className="card__params--container">
+          <p className="card__params--text">Screen</p>
+          <p className="card__params--num">5.8” OLED</p>
+        </div>
+        <div className="card__params--container">
+          <p className="card__params--text">Capacity</p>
+          <p className="card__params--num">64 GB</p>
+        </div>
+        <div className="card__params--container">
+          <p className="card__params--text">RAM</p>
+          <p className="card__params--num">4 GB</p>
+        </div>
       </div>
 
       <div className="card__buy">
-        <a href="/" className="card__buy--add">
-          {' '}
-          Add to cart
-          {' '}
-        </a>
+        <div className="card__buy--add">
+          <a href="/" className="card__buy--add-link">
+            {' '}
+            Add to cart
+            {' '}
+          </a>
+        </div>
 
-        <a href="/" className="card__buy--like">
-          <img
-            src="../icons/Vector (Stroke).svg"
-            alt="heart_icon"
-            className="card__icon"
-          />
-        </a>
+        <div className="card__buy--heart">
+          <a href="/" className="card__buy--heart-icon">
+            <img
+              src={heart}
+              alt="heart_icon"
+              className="card__icon"
+            />
+          </a>
+        </div>
       </div>
     </section>
   );
