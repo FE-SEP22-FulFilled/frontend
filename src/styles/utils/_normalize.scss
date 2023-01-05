@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Mont';
+  src: url(../../fonts/Mont-Regular.otf);
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Mont';
+  src: url(../../fonts/Mont-Bold.otf);
+  font-style: normal;
+  font-weight: bold;
+}
+
+* {
+  margin: 0;
+  font-family: Mont, Helvetica, sans-serif;
+}

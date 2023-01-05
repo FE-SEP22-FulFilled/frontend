@@ -3,57 +3,114 @@
   justify-content: center;
   flex-direction: column;
   box-sizing: border-box;
+  background-color: #161827;
 
-  width: 500px;
-  border: 1px solid #f3f3f3;
-  border-radius: 5px;
+  width: 272px;
+  // height: 500px;
 
-  padding: 0 16px 16px;
+  padding: 32px;
 
   &__img {
     display: block;
-    height: 134px;
-    width: 160px;
-    margin: 32px 3px 40px;
+    // height: 208px;
+    // width: 196px;
+    margin-bottom: 24px;
   }
 
   &__name {
-    font-size: 12px;
-    font-weight: 500;
-    color: #060b35;
-  
-    line-height: 18px;
-    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #f1f2f9;
+
+    line-height: 21px;
+    margin-bottom: 8px;
   }
 
   &__price {
     display: flex;
-    justify-content: space-between;
-  
+    color: #f1f2f9;
+    font-size: 22px;
+    font-weight: 800;
+
+    &--old {
+      color: #75767f;
+      text-decoration: line-through;
+      margin-left: 8px;
+    }
+
     line-height: 18px;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
+  }
+
+  &__separator {
+    width: 100%;
+    border-bottom: 1px #3b3e4a solid;
+    margin-bottom: 8px;
+  }
+
+  &__params {
+    display: flex;
+    flex-direction: column;
+
+    &--container {
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+
+      padding: 0;
+      line-height: 100%;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    &--text {
+      color: #75767f;
+    }
+
+    &--num {
+      color: #f1f2f9;
+    }
+
+    margin-bottom: 8px;
   }
 
   &__buy {
     height: 40px;
-    width: 100%;
-  
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-  
-    background-color: #00acdc;
-    border-radius: 5px;
-  
-    font-size: 14px;
-    font-weight: 400;
-    color: #fff;
 
-    &:hover {
-      color: #00acdc;
-      border: 1px #00acdc solid;
-      background-color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+
+    &--add {
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+
+      background-color: #905bff;
+      width: 100%;
+
+      &-link {
+        line-height: 21px;
+        text-decoration: none;
+        color: #f1f2f9;
+      }
+    }
+
+    &--heart {
+      height: 40px;
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+
+      text-decoration: none;
+      background-color: #323542;
+      margin-left: 8px;
     }
   }
 }
