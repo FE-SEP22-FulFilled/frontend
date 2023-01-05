@@ -1,0 +1,176 @@
+@font-face {
+  font-family: Mont;
+  src: url('../../fonts/Mont-Bold.otf');
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+
+  height: 48px;
+
+  box-shadow: 0px 1px #323542;
+  background-color: #0f1121;
+  border-bottom: 1px solid #323542;
+
+  @media (min-width: 1200px) {
+    height: 63px;
+  }
+}
+
+.nav {
+  display: flex;
+  // justify-content: center;
+
+  &__logo {
+    padding-left: 16px;
+    padding-right: 16px;
+
+    &__image {
+      height: 20px;
+      width: 64px;
+
+      @media (min-width: 1200px) {
+        height: 26px;
+        width: 80px;
+      }
+    }
+
+    &--arm {
+      height: 12px;
+      width: 9px;
+      position: relative;
+      right: 32px;
+      bottom: 10px;
+
+      @media (min-width: 1200px) {
+        height: 15px;
+        width: 11px;
+        right: 40px;
+        bottom: 13px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      padding-left: 24px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+
+    @media (max-width: 630px) {
+      display: none;
+    }
+  }
+
+  &__item {
+    display: flex;
+    padding-left: 32px;
+
+    line-height: 11px;
+    font-size: 12px;
+    font-weight: 800;
+    font-family: Mont, sans-serif;
+
+    @media (min-width: 1200px) {
+      padding-left: 64px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+    color: #75767F;
+
+    &:hover {
+      color: #f1f2f9;
+    }
+  }
+}
+
+.is-active {
+  color: #f1f2f9;
+  position: relative;
+}
+
+.is-active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 33px;
+  height: 3px;
+  width: 100%;
+
+  background-color: #f1f2f9;
+
+  @media (min-width: 1200px) {
+    top: 44px;
+  }
+}
+
+.icon {
+  display: flex;
+
+  &__action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+
+    border-left: 1px solid #323542;
+
+    &--shop-bag {
+      @media (max-width: 639px) {
+        display: none;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 19px;
+        height: 1px;
+        width: 13px;
+      
+        background-color: #f1f2f9;
+  
+        @media (min-width: 1200px) {
+          top: 26px;
+          width: 12px;
+        }
+      }
+    }
+
+    &--favorites {
+      @media (max-width: 639px) {
+        display: none;
+      }
+    }
+
+    &--burger-menu {
+      @media (min-width: 640px) {
+        display: none;
+      }
+      
+    }
+
+    @media (min-width: 1200px) {
+      width: 64px;
+      height: 64px;
+    }
+  }
+}
+
