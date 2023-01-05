@@ -1,5 +1,3 @@
-import '../styles/main.scss';
-
 export const Card: React.FC = () => {
   return (
     <section className="card">
@@ -28,7 +26,11 @@ export const Card: React.FC = () => {
       </div>
 
       <div className="card__buy">
-        <a href="/" className="card__buy--add"> Add to cart </a>
+        <a href="/" className="card__buy--add">
+          {' '}
+          Add to cart
+          {' '}
+        </a>
 
         <a href="/" className="card__buy--like">
           <img
