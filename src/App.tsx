@@ -11,6 +11,7 @@ import { FavoutiresPage } from './components/FavoutiresPage';
 import { HomePage } from './components/HomePage';
 import { PhonesPage } from './components/PhonesPage';
 import { TabletsPage } from './components/TabletsPage';
+// import { Card } from './components/Card';
 
 function App() {
   return (
