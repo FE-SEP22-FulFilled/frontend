@@ -1,27 +1,22 @@
 {
   "files": {
-    "main.css": "/frontend/static/css/main.71bc203c.css",
-    "main.js": "/frontend/static/js/main.0932e6df.js",
+    "main.css": "/frontend/static/css/main.387fd992.css",
+    "main.js": "/frontend/static/js/main.96e0546d.js",
+    "static/media/FullLogo.svg": "/frontend/static/media/FullLogo.2e475ba54b1cdaec4255dcbbda704b7a.svg",
     "static/media/logoImage.svg": "/frontend/static/media/logoImage.9e000d656c053459baa83499361ceddd.svg",
     "static/media/Mont-Regular.otf": "/frontend/static/media/Mont-Regular.1d26d89f7339866d3133.otf",
-    "static/media/Mont-SemiBold.otf": "/frontend/static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
     "static/media/Mont-Bold.otf": "/frontend/static/media/Mont-Bold.03c8c2f6127c1da0fc39.otf",
-    "static/media/00.jpg": "/frontend/static/media/00.35bbd1ecd91f7371f45e.jpg",
     "static/media/Logo.svg": "/frontend/static/media/Logo.f6a07db58a806aadc065ca96e00f5dae.svg",
     "static/media/firstIcon.svg": "/frontend/static/media/firstIcon.c941c4e177d6356f81fcee90081abf03.svg",
-    "static/media/Vector (Stroke).svg": "/frontend/static/media/Vector (Stroke).a48831a1ed897e1e3553ac68690493cf.svg",
     "static/media/secondIcon.svg": "/frontend/static/media/secondIcon.2251ae1f336a32796eeddfee46c1b477.svg",
     "index.html": "/frontend/index.html",
     "static/media/burgerIcon.svg": "/frontend/static/media/burgerIcon.571b3bb49f127bd00746aadd1561e16f.svg",
-    "static/media/arrow_next.svg": "/frontend/static/media/arrow_next.c7f5d994dc7f4ce02f46ca19be457fed.svg",
-    "static/media/downdrop_arrow.svg": "/frontend/static/media/downdrop_arrow.d34d23c6ec6b2fc56d8e.svg",
-    "static/media/arrow_prev.svg": "/frontend/static/media/arrow_prev.2cfdb8e7490ef908e01b9c1ace8e8d2f.svg",
-    "static/media/downdrop_focus.svg": "/frontend/static/media/downdrop_focus.9344bb0be5d109fe52f6.svg",
-    "main.71bc203c.css.map": "/frontend/static/css/main.71bc203c.css.map",
-    "main.0932e6df.js.map": "/frontend/static/js/main.0932e6df.js.map"
+    "static/media/backButton.svg": "/frontend/static/media/backButton.e4fff257d28bda2ded41c2f11c49c83f.svg",
+    "main.387fd992.css.map": "/frontend/static/css/main.387fd992.css.map",
+    "main.96e0546d.js.map": "/frontend/static/js/main.96e0546d.js.map"
   },
   "entrypoints": [
-    "static/css/main.71bc203c.css",
-    "static/js/main.0932e6df.js"
+    "static/css/main.387fd992.css",
+    "static/js/main.96e0546d.js"
   ]
 }
