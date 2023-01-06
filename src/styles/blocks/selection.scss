@@ -4,14 +4,14 @@
 
   cursor: default;
 
+  @media (max-width: 639px){
+    justify-content: center;
+  }
+
   &__items {
     width: max-content;
     margin-top: 24px;
 
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 21px;
     color: $secondary;
 
     &:nth-child(2) {
@@ -23,7 +23,7 @@
     margin-bottom: 10px;
 
     font-style: normal;
-    font-weight: normal;
+    font-weight: 700;
     font-size: 12px;
     line-height: 15px;
   }
@@ -43,6 +43,7 @@
 
     font-family: 'Mont';
     font-style: normal;
+    font-weight: 700;
     font-size: 14px;
     line-height: 21px;
     text-align: left;
@@ -53,6 +54,12 @@
 
     &--open {
       background-image: url('../../icons/downdrop_focus.svg');
+    }
+
+    
+    @media (max-width: 639px){
+      width: 136px;
+      height: 40px;
     }
   }
 
@@ -65,6 +72,10 @@
     box-sizing: border-box;
     border: 1px solid $elements;
     list-style: none;
+
+    @media (max-width: 639px){
+      width: 136px;
+    }
   }
 
   &__item {
@@ -82,7 +93,7 @@
 
     text-align: left;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 700;
     font-size: 14px;
     line-height: 21px;
 
@@ -92,5 +103,9 @@
     }
 
     cursor: pointer;
+
+    @media (max-width: 639px){
+      width: 134px;
+    }
   }
 }
