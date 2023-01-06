@@ -4,7 +4,7 @@ import { Card } from '../card';
 import { Pagination } from '../Pagination/Pagination';
 import { SelectForm } from '../SelectFrom/SelectForm';
 
-const cards = Array(100).fill(1);
+const cards = Array(71).fill(1);
 const itemsPerPageOptions = ['16', '24', '40', '64', 'Show all'];
 const sortByOptions = [
   'Newest',
@@ -46,7 +46,7 @@ export const Catalog: React.FC = () => {
   const visibleItems = itemsOnPage(currentPage, perPage);
 
   return (
-    <main className="container">
+    <main className="container-catalog">
       <div className="catalog">
         <h1 className="catalog__amount-items-header">Mobile Phones</h1>
         <p className="catalog__amount-items-text">{`${total} models`}</p>
