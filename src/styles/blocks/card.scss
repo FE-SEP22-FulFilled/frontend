@@ -9,7 +9,6 @@
 
   width: 272px;
   height: 500px;
-
   padding: 32px;
 
   &__img {
@@ -17,6 +16,8 @@
     object-fit: scale-down;
     height: 100%;
     width: 100%;
+    // height: 208px;
+    // width: 196px;
     margin-bottom: 24px;
   }
 
@@ -37,6 +38,7 @@
   &__price {
     display: flex;
     color: $white;
+
     font-size: 22px;
     font-weight: 800;
 
@@ -53,6 +55,7 @@
   &__separator {
     width: 100%;
     border-bottom: 1px $elements solid;
+
     margin-bottom: 8px;
   }
 

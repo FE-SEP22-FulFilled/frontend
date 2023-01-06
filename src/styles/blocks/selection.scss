@@ -1,0 +1,96 @@
+.selection {
+  display: flex;
+  margin-top: 40px;
+
+  cursor: default;
+
+  &__items {
+    width: max-content;
+    margin-top: 24px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+    color: $secondary;
+
+    &:nth-child(2) {
+      margin-left: 16px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 10px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  &__button {
+    width: 176px;
+    height: 40px;
+    margin-bottom: 4px;
+    padding-left: 12px;
+
+    border: none;
+    background-color: $gray-surface2;
+    background-image: url('../../icons/downdrop_arrow.svg');
+    background-size: 10px;
+    background-position: calc(100% - 17px) center;
+    background-repeat: no-repeat;
+
+    font-family: 'Mont';
+    font-style: normal;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: left;
+
+    color: $white;
+
+    cursor: pointer;
+
+    &--open {
+      background-image: url('../../icons/downdrop_focus.svg');
+    }
+  }
+
+  &__list {
+    position: absolute;
+
+    width: 176px;
+    padding: 0;
+
+    box-sizing: border-box;
+    border: 1px solid $elements;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+    display: block;
+
+    width: 174px;
+    height: 32px;
+    padding-left: 12px;
+
+    border-style: none;
+
+    color: #75767f;
+    background-color: $dark-background;
+
+    text-align: left;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+
+    &:hover {
+      color: $white;
+      background: $gray-surface2;
+    }
+
+    cursor: pointer;
+  }
+}
