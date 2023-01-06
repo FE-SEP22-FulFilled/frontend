@@ -11,7 +11,7 @@ import { FavoutiresPage } from './components/FavoutiresPage';
 import { HomePage } from './components/HomePage';
 import { PhonesPage } from './components/PhonesPage';
 import { TabletsPage } from './components/TabletsPage';
-
+import { Header } from './components/Header/Header';
 
 function App() {
   return (
@@ -49,7 +49,7 @@ function App() {
           <Route path="home" element={<Navigate to="/" replace />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-        
+
         {/* !-- Footer  --! */}
       </div>
     </div>
