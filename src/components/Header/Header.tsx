@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
@@ -14,16 +15,8 @@ export const Header: React.FC = () => {
       <nav className="nav">
         <div className="nav__logo">
           <NavLink to="home">
-            <img
-              className="nav__logo__image"
-              src={Logo}
-              alt="logo"
-            />
-            <img
-              className="nav__logo--arm"
-              src={logoArm}
-              alt="logo"
-            />
+            <img className="nav__logo__image" src={Logo} alt="logo" />
+            <img className="nav__logo--arm" src={logoArm} alt="logo" />
           </NavLink>
         </div>
 
@@ -80,17 +73,13 @@ export const Header: React.FC = () => {
 
       <div className="icon">
         <div className="icon__action icon__action--favorites">
-          <NavLink
-            to="favourites"
-          >
+          <NavLink to="favourites">
             <img src={favoritesIcon} alt="favorites" />
           </NavLink>
         </div>
 
         <div className="icon__action icon__action--shop-bag">
-          <NavLink
-            to="cart"
-          >
+          <NavLink to="cart">
             <img src={shopBagIcon} alt="shopping bag" />
           </NavLink>
         </div>
