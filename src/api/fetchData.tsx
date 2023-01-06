@@ -3,7 +3,8 @@ import { Phone } from '../types/Phone';
 // import { Accessory } from '../types/Accessory';
 
 // eslint-disable-next-line max-len
-const BASE_URL = 'https:////soft-halva-33cecb.netlify.app/.netlify/functions/server';
+const BASE_URL
+  = 'https:////soft-halva-33cecb.netlify.app/.netlify/functions/server';
 
 function wait(delay: number) {
   return new Promise((resolve) => {

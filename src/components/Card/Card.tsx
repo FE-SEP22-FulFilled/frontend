@@ -1,13 +1,15 @@
-import '../styles/main.scss';
-import img from '../img/phones/apple-iphone-11-pro-max/silver/00.jpg';
-import heart from '../icons/Vector (Stroke).svg';
+import '../../styles/main.scss';
+import img from '../../img/phones/apple-iphone-11-pro-max/silver/00.jpg';
+import heart from '../../icons/Vector (Stroke).svg';
 
 export const Card: React.FC = () => {
   return (
     <section className="card">
       <img src={img} alt="iPhone Xs" className="card__img" />
 
-      <h2 className="card__name">Apple iPhone Xs 64GB Silver (iMT9G2FS/A)</h2>
+      <a href="/" className="card__name">
+        Apple iPhone Xs 64GB Silver (iMT9G2FS/A)
+      </a>
 
       <div className="card__price">
         <p className="card__price--new">$799</p>
@@ -32,19 +34,15 @@ export const Card: React.FC = () => {
       </div>
 
       <div className="card__buy">
-        <div className="card__buy--add">
-          <a href="/" className="card__buy--add-link">
-            {' '}
-            Add to cart
-            {' '}
-          </a>
-        </div>
+        <a href="/" className="card__buy--add">
+          {' '}
+          Add to cart
+          {' '}
+        </a>
 
-        <div className="card__buy--heart">
-          <a href="/" className="card__buy--heart-icon">
-            <img src={heart} alt="heart_icon" className="card__icon" />
-          </a>
-        </div>
+        <a href="/" className="card__buy--heart">
+          <img src={heart} alt="heart_icon" className="card__icon" />
+        </a>
       </div>
     </section>
   );
