@@ -1,39 +1,47 @@
+@import '../utils/variables';
+
 .card {
   display: flex;
   justify-content: center;
   flex-direction: column;
   box-sizing: border-box;
-  background-color: #161827;
+  background-color: $gray-surface1;
 
   width: 272px;
-  // height: 500px;
+  height: 500px;
 
   padding: 32px;
 
   &__img {
     display: block;
-    // height: 208px;
-    // width: 196px;
+    object-fit: scale-down;
+    height: 100%;
+    width: 100%;
     margin-bottom: 24px;
   }
 
   &__name {
     font-size: 14px;
     font-weight: 600;
-    color: #f1f2f9;
+    color: $white;
 
     line-height: 21px;
     margin-bottom: 8px;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &__price {
     display: flex;
-    color: #f1f2f9;
+    color: $white;
     font-size: 22px;
     font-weight: 800;
 
     &--old {
-      color: #75767f;
+      color: $secondary;
       text-decoration: line-through;
       margin-left: 8px;
     }
@@ -44,7 +52,7 @@
 
   &__separator {
     width: 100%;
-    border-bottom: 1px #3b3e4a solid;
+    border-bottom: 1px $elements solid;
     margin-bottom: 8px;
   }
 
@@ -65,13 +73,14 @@
     }
 
     &--text {
-      color: #75767f;
+      color: $secondary;
     }
 
     &--num {
-      color: #f1f2f9;
+      color: $white;
     }
 
+    padding: 8px 0;
     margin-bottom: 8px;
   }
 
@@ -89,13 +98,17 @@
       align-items: center;
       box-sizing: border-box;
 
-      background-color: #905bff;
+      background-color: $accent;
       width: 100%;
 
-      &-link {
-        line-height: 21px;
-        text-decoration: none;
-        color: #f1f2f9;
+      line-height: 21px;
+      text-decoration: none;
+      color: $white;
+
+      transition: all 0.5s;
+
+      &:hover {
+        background-color: $accent-hover;
       }
     }
 
@@ -109,8 +122,14 @@
       box-sizing: border-box;
 
       text-decoration: none;
-      background-color: #323542;
+      background-color: $gray-surface2;
       margin-left: 8px;
+
+      transition: all 0.5s;
+
+      &:hover {
+        background-color: $gray-hover;
+      }
     }
   }
 }
