@@ -48,8 +48,14 @@ export const Catalog: React.FC = () => {
   return (
     <main className="container-catalog">
       <div className="catalog">
-        <h1 className="catalog__amount-items-header">Mobile Phones</h1>
-        <p className="catalog__amount-items-text">{`${total} models`}</p>
+        <div className="catalog__text">
+          <h1 className="catalog__amount-items-header">
+            Mobile Phones
+          </h1>
+
+          <p className="catalog__amount-items-text">{`${total} models`}</p>
+        </div>
+
         <div className="selection">
           <SelectForm
             text="Sort by"

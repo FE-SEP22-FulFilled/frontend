@@ -1,4 +1,13 @@
 .catalog {
+  &__text {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+    @media (max-width: 639px) {
+      grid-template-columns: repeat(1, 288px);
+      justify-content: center;
+    }
+  }
   &__amount-items-header {
     margin-top: 40px;
 

@@ -1,6 +1,8 @@
 .cards-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 272px);
+  justify-content: space-around;
+  justify-items: center;
   column-gap: 16px;
   row-gap: 40px;
 

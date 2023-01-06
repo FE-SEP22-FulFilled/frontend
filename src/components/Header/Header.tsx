@@ -18,6 +18,7 @@ export const Header: React.FC = () => {
             <img className="nav__logo__image" src={Logo} alt="logo" />
             <img className="nav__logo--arm" src={logoArm} alt="logo" />
           </NavLink>
+
         </div>
 
         <ul className="nav__list">
@@ -62,12 +63,14 @@ export const Header: React.FC = () => {
       <div className="icon">
         <div className="icon__action icon__action--favorites">
           <NavLink to="favourites">
+
             <img src={favoritesIcon} alt="favorites" />
           </NavLink>
         </div>
 
         <div className="icon__action icon__action--shop-bag">
           <NavLink to="cart">
+
             <img src={shopBagIcon} alt="shopping bag" />
           </NavLink>
         </div>
