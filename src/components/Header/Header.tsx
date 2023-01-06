@@ -1,4 +1,6 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import classNames from 'classnames';
 import './Header.scss';
 import Logo from '../../img/Logo.svg';
 import favoritesIcon from '../../img/firstIcon.svg';
@@ -11,7 +13,7 @@ export const Header: React.FC = () => {
     <header className="header">
       <nav className="nav">
         <div className="nav__logo">
-          <a href="#home">
+          <NavLink to="home">
             <img
               className="nav__logo__image"
               src={Logo}
@@ -22,56 +24,84 @@ export const Header: React.FC = () => {
               src={logoArm}
               alt="logo"
             />
-          </a>
+          </NavLink>
         </div>
 
         <ul className="nav__list">
           <li className="nav__item">
-            <a className="nav__link is-active" href="#apple">HOME</a>
+            <NavLink
+              to="/"
+              className={({ isActive }) => classNames(
+                'nav__link',
+                { 'is-active': isActive },
+              )}
+            >
+              HOME
+            </NavLink>
           </li>
 
           <li className="nav__item">
-            <a className="nav__link" href="#phones">PHONES</a>
+            <NavLink
+              to="phones"
+              className={({ isActive }) => classNames(
+                'nav__link',
+                { 'is-active': isActive },
+              )}
+            >
+              PHONES
+            </NavLink>
           </li>
 
           <li className="nav__item">
-            <a className="nav__link" href="#tablets">TABLETS</a>
+            <NavLink
+              to="tablets"
+              className={({ isActive }) => classNames(
+                'nav__link',
+                { 'is-active': isActive },
+              )}
+            >
+              TABLETS
+            </NavLink>
           </li>
 
           <li className="nav__item">
-            <a
-              className="nav__link"
-              href="#accessories"
+            <NavLink
+              to="accessories"
+              className={({ isActive }) => classNames(
+                'nav__link',
+                { 'is-active': isActive },
+              )}
             >
               ACCESSORIES
-            </a>
+            </NavLink>
           </li>
         </ul>
       </nav>
 
       <div className="icon">
         <div className="icon__action icon__action--favorites">
-          <a
-            href="#favorites"
+          <NavLink
+            to="favourites"
           >
             <img src={favoritesIcon} alt="favorites" />
-          </a>
+          </NavLink>
         </div>
 
         <div className="icon__action icon__action--shop-bag">
-          <a
-            href="#shopBag"
+          <NavLink
+            to="cart"
           >
             <img src={shopBagIcon} alt="shopping bag" />
-          </a>
+          </NavLink>
         </div>
 
         <div className="icon__action icon__action--burger-menu">
-          <a
-            href="#shopBag"
+          <NavLink
+            to="/"
+            // need to be changed after adding burger menu
           >
             <img src={burgerIcon} alt="shopping bag" />
-          </a>
+          </NavLink>
         </div>
       </div>
     </header>
