@@ -49,9 +49,7 @@ export const Catalog: React.FC = () => {
     <main className="container-catalog">
       <div className="catalog">
         <div className="catalog__text">
-          <h1 className="catalog__text--header">
-            Mobile Phones
-          </h1>
+          <h1 className="catalog__text--header">Mobile Phones</h1>
 
           <p className="catalog__text--amount">{`${total} models`}</p>
         </div>
