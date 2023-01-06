@@ -1,0 +1,44 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 40px;
+
+  list-style: none;
+
+  &__item {
+    margin-left: 8px;
+
+    text-align: center;
+
+    background-color: $gray-surface1;
+
+    cursor: pointer;
+
+    &:hover:not(.pagination__item--active) {
+      background-color: $elements;
+    }
+
+    &--active {
+      background-color: $accent;
+    }
+
+    &--disabled {
+      background-color: $elements;
+
+      cursor: default;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+
+    color: $white;
+    background-color: transparent;
+
+    line-height: 32px;
+    text-decoration: none;
+  }
+}
