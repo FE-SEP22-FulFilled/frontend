@@ -14,11 +14,11 @@
     justify-content: space-between;
   }
 
-  @media (max-width: 929px){
+  @media (max-width: 929px) {
     grid-template-columns: repeat(2, 272px);
   }
 
-  @media (max-width: 639px){
+  @media (max-width: 639px) {
     grid-template-columns: repeat(1, 272px);
     justify-content: space-around;
   }

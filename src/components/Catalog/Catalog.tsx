@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 
-import { Card } from '../card';
+import { Card } from '../Card';
 import { Pagination } from '../Pagination/Pagination';
 import { SelectForm } from '../SelectFrom/SelectForm';
 

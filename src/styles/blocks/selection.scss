@@ -4,7 +4,7 @@
 
   cursor: default;
 
-  @media (max-width: 639px){
+  @media (max-width: 639px) {
     justify-content: center;
   }
 
@@ -56,8 +56,7 @@
       background-image: url('../../icons/downdrop_focus.svg');
     }
 
-    
-    @media (max-width: 639px){
+    @media (max-width: 639px) {
       width: 136px;
       height: 40px;
     }
@@ -73,7 +72,7 @@
     border: 1px solid $elements;
     list-style: none;
 
-    @media (max-width: 639px){
+    @media (max-width: 639px) {
       width: 136px;
     }
   }
@@ -104,7 +103,7 @@
 
     cursor: pointer;
 
-    @media (max-width: 639px){
+    @media (max-width: 639px) {
       width: 134px;
     }
   }

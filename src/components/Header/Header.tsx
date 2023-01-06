@@ -24,10 +24,7 @@ export const Header: React.FC = () => {
           <li className="nav__item">
             <NavLink
               to="/"
-              className={({ isActive }) => classNames(
-                'nav__link',
-                { 'is-active': isActive },
-              )}
+              className={({ isActive }) => classNames('nav__link', { 'is-active': isActive })}
             >
               HOME
             </NavLink>
@@ -36,10 +33,7 @@ export const Header: React.FC = () => {
           <li className="nav__item">
             <NavLink
               to="phones"
-              className={({ isActive }) => classNames(
-                'nav__link',
-                { 'is-active': isActive },
-              )}
+              className={({ isActive }) => classNames('nav__link', { 'is-active': isActive })}
             >
               PHONES
             </NavLink>
@@ -48,10 +42,7 @@ export const Header: React.FC = () => {
           <li className="nav__item">
             <NavLink
               to="tablets"
-              className={({ isActive }) => classNames(
-                'nav__link',
-                { 'is-active': isActive },
-              )}
+              className={({ isActive }) => classNames('nav__link', { 'is-active': isActive })}
             >
               TABLETS
             </NavLink>
@@ -60,10 +51,7 @@ export const Header: React.FC = () => {
           <li className="nav__item">
             <NavLink
               to="accessories"
-              className={({ isActive }) => classNames(
-                'nav__link',
-                { 'is-active': isActive },
-              )}
+              className={({ isActive }) => classNames('nav__link', { 'is-active': isActive })}
             >
               ACCESSORIES
             </NavLink>
