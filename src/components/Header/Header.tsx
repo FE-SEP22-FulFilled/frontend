@@ -12,37 +12,32 @@ export const Header: React.FC = () => {
       <nav className="nav">
         <div className="nav__logo">
           <a href="#home">
-            <img
-              className="nav__logo__image"
-              src={Logo}
-              alt="logo"
-            />
-            <img
-              className="nav__logo--arm"
-              src={logoArm}
-              alt="logo"
-            />
+            <img className="nav__logo__image" src={Logo} alt="logo" />
+            <img className="nav__logo--arm" src={logoArm} alt="logo" />
           </a>
         </div>
 
         <ul className="nav__list">
           <li className="nav__item">
-            <a className="nav__link is-active" href="#apple">HOME</a>
+            <a className="nav__link is-active" href="#apple">
+              HOME
+            </a>
           </li>
 
           <li className="nav__item">
-            <a className="nav__link" href="#phones">PHONES</a>
+            <a className="nav__link" href="#phones">
+              PHONES
+            </a>
           </li>
 
           <li className="nav__item">
-            <a className="nav__link" href="#tablets">TABLETS</a>
+            <a className="nav__link" href="#tablets">
+              TABLETS
+            </a>
           </li>
 
           <li className="nav__item">
-            <a
-              className="nav__link"
-              href="#accessories"
-            >
+            <a className="nav__link" href="#accessories">
               ACCESSORIES
             </a>
           </li>
@@ -51,25 +46,19 @@ export const Header: React.FC = () => {
 
       <div className="icon">
         <div className="icon__action icon__action--favorites">
-          <a
-            href="#favorites"
-          >
+          <a href="#favorites">
             <img src={favoritesIcon} alt="favorites" />
           </a>
         </div>
 
         <div className="icon__action icon__action--shop-bag">
-          <a
-            href="#shopBag"
-          >
+          <a href="#shopBag">
             <img src={shopBagIcon} alt="shopping bag" />
           </a>
         </div>
 
         <div className="icon__action icon__action--burger-menu">
-          <a
-            href="#shopBag"
-          >
+          <a href="#shopBag">
             <img src={burgerIcon} alt="shopping bag" />
           </a>
         </div>
