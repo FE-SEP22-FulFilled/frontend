@@ -1,22 +1,33 @@
 import React from 'react';
 import './App.scss';
 
-import { Navigate, Route, Routes } from 'react-router-dom';
+import {
+  Navigate, Route, Routes,
+} from 'react-router-dom';
 import { NotFoundPage } from './components/NotFoundPage';
 import { AccessoriesPage } from './components/AccessoriesPage';
 import { CartPage } from './components/CartPage';
+import { FavouritesPage } from './components/FavouritesPage';
 import { HomePage } from './components/HomePage';
 import { PhonesPage } from './components/PhonesPage';
 import { TabletsPage } from './components/TabletsPage';
 import { Header } from './components/Header/Header';
-import { FavouritesPage } from './components/FavouritesPage';
 import { Footer } from './components/Footer/Footer';
 
-function App() {
+export const App = () => {
   return (
     <div className="App">
       <div className="container">
         <Header />
+
+        {/* <div className="test_nav">
+          <Link to="phones"> phones </Link>
+          <Link to="/"> home </Link>
+          <Link to="tablets"> tablets </Link>
+          <Link to="accessories"> accessories </Link>
+          <Link to="favoutites"> favoutites </Link>
+          <Link to="cart"> cart </Link>
+        </div> */}
         <Routes>
           <Route path="phones">
             <Route index element={<PhonesPage />} />
@@ -33,7 +44,7 @@ function App() {
             {/* <Route path="id/slug" element={<AccessoriesPage />} /> */}
           </Route>
 
-          <Route path="favourites" element={<FavouritesPage />} />
+          <Route path="favoutites" element={<FavouritesPage />} />
           <Route path="cart" element={<CartPage />} />
           <Route path="/" element={<HomePage />} />
           <Route path="home" element={<Navigate to="/" replace />} />
@@ -44,6 +55,4 @@ function App() {
       </div>
     </div>
   );
-}
-
-export default App;
+};
