@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/frontend/static/css/main.01e767e5.css",
-    "main.js": "/frontend/static/js/main.08cee6fb.js",
+    "main.css": "/frontend/static/css/main.0416be70.css",
+    "main.js": "/frontend/static/js/main.5600b591.js",
     "static/media/FullLogo.svg": "/frontend/static/media/FullLogo.2e475ba54b1cdaec4255dcbbda704b7a.svg",
     "static/media/logoImage.svg": "/frontend/static/media/logoImage.9e000d656c053459baa83499361ceddd.svg",
     "static/media/Mont-Regular.otf": "/frontend/static/media/Mont-Regular.1d26d89f7339866d3133.otf",
@@ -19,11 +19,12 @@
     "static/media/arrow_prev.svg": "/frontend/static/media/arrow_prev.2cfdb8e7490ef908e01b9c1ace8e8d2f.svg",
     "static/media/backButton.svg": "/frontend/static/media/backButton.e4fff257d28bda2ded41c2f11c49c83f.svg",
     "static/media/downdrop_focus.svg": "/frontend/static/media/downdrop_focus.9344bb0be5d109fe52f6.svg",
-    "main.01e767e5.css.map": "/frontend/static/css/main.01e767e5.css.map",
-    "main.08cee6fb.js.map": "/frontend/static/js/main.08cee6fb.js.map"
+    "static/media/cart_back_button.svg": "/frontend/static/media/cart_back_button.4dc386686e1f77999a38199f4fd33924.svg",
+    "main.0416be70.css.map": "/frontend/static/css/main.0416be70.css.map",
+    "main.5600b591.js.map": "/frontend/static/js/main.5600b591.js.map"
   },
   "entrypoints": [
-    "static/css/main.01e767e5.css",
-    "static/js/main.08cee6fb.js"
+    "static/css/main.0416be70.css",
+    "static/js/main.5600b591.js"
   ]
 }
