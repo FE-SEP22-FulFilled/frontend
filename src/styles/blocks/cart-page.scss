@@ -1,0 +1,111 @@
+@import '../utils/mixins';
+@import '../utils/variables';
+
+@font-face {
+  font-family: Mont;
+  font-weight: 800;
+  src: url('../../fonts/Mont-Bold.otf');
+}
+
+@font-face {
+  font-family: Mont;
+  font-weight: 700;
+  src: url('../../fonts/Mont-Regular.otf');
+}
+
+.cart__page {
+  margin: 0 16px;
+
+  &__back-content {
+    display: flex;
+    align-items: center;
+    width: 31px;
+    height: 15px;
+
+    margin-bottom: 24px;
+
+    @include onTablet {
+      margin-bottom: 16px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 16px;
+    }
+
+    text-decoration: none;
+
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: $white;
+    
+  }
+  &__link {
+    margin-right: 8px;
+  }
+
+  &__header {
+    font-weight: 800;
+    margin-bottom: 32px;
+  }
+
+  &__checkout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 24px;
+    margin-bottom: 60px;
+
+    text-align: center;
+
+    color: $white;
+
+    border: 1px solid $elements;
+
+    &-price {
+      font-weight: 800;
+      font-size: 32px;
+      line-height: 41px;
+      letter-spacing: -0.01em;
+
+      color: $white;
+    }
+
+    &-total {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+
+      color: $secondary;
+
+      margin-bottom: 16px;
+    }
+
+    &-pipe {
+      width: 100%;
+      border: 1px solid $elements;
+      margin-bottom: 16px;
+    }
+
+    &-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      box-sizing: border-box;
+      width: 100%;
+      height: 48px;
+      padding: 14px 86px;
+
+      font-weight: 700;
+      font-size: 14px;
+
+      color: white;
+      background-color: $accent;
+
+      border: none;
+    }
+  }
+}
