@@ -33,9 +33,7 @@ export const CartItem: React.FC = () => {
           <img src={minus} alt="-" />
         </button>
 
-        <p className="cartItem__counter--number">
-          {counter}
-        </p>
+        <p className="cartItem__counter--number">{counter}</p>
 
         <button
           type="button"
@@ -46,9 +44,7 @@ export const CartItem: React.FC = () => {
         </button>
       </div>
 
-      <p className="cartItem__price">
-        $1099
-      </p>
+      <p className="cartItem__price">$1099</p>
     </section>
   );
 };
