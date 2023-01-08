@@ -17,7 +17,7 @@ const sortByOptions = [
 ];
 
 interface Props {
-  productName: string,
+  productName: string;
 }
 
 export const Catalog: React.FC<Props> = ({ productName }) => {
@@ -44,21 +44,22 @@ export const Catalog: React.FC<Props> = ({ productName }) => {
     redirect(`/products?page=1&limit=${perPage}`);
   }, [currentPage > Math.ceil(total / Number(perPage))]);
 
-  const itemsOnPage = useCallback((currPage: number, itemsPerPage: string) => {
-    const itemStart = Number(itemsPerPage) * (currPage - 1);
-    const itemEnd = itemStart + Number(itemsPerPage) + 1;
+  const itemsOnPage = useCallback(
+    (currPage: number, itemsPerPage: string) => {
+      const itemStart = Number(itemsPerPage) * (currPage - 1);
+      const itemEnd = itemStart + Number(itemsPerPage) + 1;
 
-    return cards.filter((item, i) => i > itemStart && i < itemEnd);
-  }, [cards]);
+      return cards.filter((item, i) => i > itemStart && i < itemEnd);
+    },
+    [cards],
+  );
 
   const visibleItems = itemsOnPage(currentPage, perPage);
 
   return (
     <div className="catalog">
       <div className="catalog__text">
-        <h1 className="catalog__text--header">
-          {productName}
-        </h1>
+        <h1 className="catalog__text--header">{productName}</h1>
 
         <p className="catalog__text--amount">{`${total} models`}</p>
       </div>
@@ -85,11 +86,7 @@ export const Catalog: React.FC<Props> = ({ productName }) => {
 
       <div className="cards-list">
         {visibleItems.map((card) => (
-          <Card
-            key={card.id}
-            card={card}
-
-          />
+          <Card key={card.id} card={card} />
         ))}
       </div>
 
