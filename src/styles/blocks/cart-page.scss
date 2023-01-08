@@ -106,6 +106,13 @@
       background-color: $accent;
 
       border: none;
+
+      transition: all 0.5s;
+
+      &:hover {
+        background-color: $accent-hover;
+        cursor: pointer;
+      }
     }
   }
 }
