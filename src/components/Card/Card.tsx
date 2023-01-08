@@ -41,18 +41,13 @@ export const Card: React.FC<Props> = ({ card }) => {
         <div className="card__params--container">
           <p className="card__params--text">Capacity</p>
           <p className="card__params--num">
-            {`${capacity.slice(
-              0,
-              2,
-            )} ${capacity.slice(2)}`}
+            {`${capacity.slice(0, 2)} ${capacity.slice(2)}`}
           </p>
         </div>
         <div className="card__params--container">
           <p className="card__params--text">RAM</p>
           <p className="card__params--num">
-            {`${ram.slice(0, 1)} ${ram.slice(
-              1,
-            )}`}
+            {`${ram.slice(0, 1)} ${ram.slice(1)}`}
           </p>
         </div>
       </div>
