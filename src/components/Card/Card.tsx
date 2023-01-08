@@ -4,12 +4,10 @@ import heart from '../../icons/Vector (Stroke).svg';
 import { Phone } from '../../types/Phone';
 
 interface Props {
-  card: Phone,
+  card: Phone;
 }
 
-export const Card: React.FC<Props> = ({
-  card,
-}) => {
+export const Card: React.FC<Props> = ({ card }) => {
   const {
     name,
     fullPrice,
@@ -22,11 +20,7 @@ export const Card: React.FC<Props> = ({
 
   return (
     <section className="card">
-      <img
-        src={img}
-        alt={name}
-        className="card__img"
-      />
+      <img src={img} alt={name} className="card__img" />
 
       <a href="/" className="card__name">
         {`${name} (iMT9G2FS/A)`}
@@ -46,11 +40,20 @@ export const Card: React.FC<Props> = ({
         </div>
         <div className="card__params--container">
           <p className="card__params--text">Capacity</p>
-          <p className="card__params--num">{`${capacity.slice(0, 2)} ${capacity.slice(2)}`}</p>
+          <p className="card__params--num">
+            {`${capacity.slice(
+              0,
+              2,
+            )} ${capacity.slice(2)}`}
+          </p>
         </div>
         <div className="card__params--container">
           <p className="card__params--text">RAM</p>
-          <p className="card__params--num">{`${ram.slice(0, 1)} ${ram.slice(1)}`}</p>
+          <p className="card__params--num">
+            {`${ram.slice(0, 1)} ${ram.slice(
+              1,
+            )}`}
+          </p>
         </div>
       </div>
 

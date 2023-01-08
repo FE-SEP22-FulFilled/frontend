@@ -5,7 +5,7 @@ import homeImg from '../../icons/go_home.svg';
 import arrow from '../../icons/breadcrumbs_arrow.svg';
 
 interface Props {
-  location: string,
+  location: string;
 }
 
 export const Breadcrumbs: React.FC<Props> = React.memo(({ location }) => {
@@ -19,18 +19,11 @@ export const Breadcrumbs: React.FC<Props> = React.memo(({ location }) => {
 
   return (
     <div className="breadcrumbs">
-      <Link
-        to="/home"
-        className="breadcrumbs__home"
-      >
+      <Link to="/home" className="breadcrumbs__home">
         <img src={homeImg} alt="Go Home" />
       </Link>
 
-      <img
-        src={arrow}
-        alt="arrow"
-        className="breadcrumbs__arrow"
-      />
+      <img src={arrow} alt="arrow" className="breadcrumbs__arrow" />
 
       <Link
         to={`/${location}`}
