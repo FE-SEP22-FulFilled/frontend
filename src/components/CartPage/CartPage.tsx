@@ -8,11 +8,7 @@ export const CartPage: React.FC = () => {
   return (
     <div className="cart__page">
       <Link to="/" className="cart__page__back-content">
-        <img
-          src={BackImg}
-          alt="backImg"
-          className="cart__page__link"
-        />
+        <img src={BackImg} alt="backImg" className="cart__page__link" />
         <span>Back</span>
       </Link>
 
@@ -22,16 +18,9 @@ export const CartPage: React.FC = () => {
 
       <div className="cart__page__checkout">
         <span className="cart__page__checkout-price">$2657</span>
-        <span
-          className="cart__page__checkout-total"
-        >
-          Total for 3 items
-        </span>
+        <span className="cart__page__checkout-total">Total for 3 items</span>
         <div className="cart__page__checkout-pipe" />
-        <button
-          type="button"
-          className="cart__page__checkout-button"
-        >
+        <button type="button" className="cart__page__checkout-button">
           Checkout
         </button>
       </div>

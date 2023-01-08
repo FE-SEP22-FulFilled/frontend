@@ -1,6 +1,8 @@
 import classNames from 'classnames';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
+import { getNumbers } from '../../utils/utilsCatalog';
 import { Arrow } from '../Arrow/Arrow';
 
 interface Props {
@@ -8,23 +10,16 @@ interface Props {
   perPage: string;
   currentPage: number;
   onPageChange: (page: number) => void;
-  getNumbers: (from: number, to: number) => number[];
 }
 
 export const Pagination: React.FC<Props> = React.memo(
   ({
-    total, perPage, currentPage, onPageChange, getNumbers,
+    total, perPage, currentPage, onPageChange,
   }) => {
-    let amountOfPages;
-
-    if (perPage === 'Show all') {
-      amountOfPages = 1;
-    } else {
-      amountOfPages = Math.ceil(total / Number(perPage));
-    }
-
+    const amountOfPages = Math.ceil(total / Number(perPage));
     const isFirstPage = currentPage - 1 === 0;
     const isLastPage = currentPage === amountOfPages;
+
     const visiblePages = getNumbers(1, amountOfPages);
 
     return (
@@ -36,7 +31,7 @@ export const Pagination: React.FC<Props> = React.memo(
           currentPage={currentPage}
         />
 
-        {visiblePages.map((page) => {
+        {visiblePages.map((page: number) => {
           const isCurrentPage = currentPage === page;
 
           return (
@@ -46,13 +41,13 @@ export const Pagination: React.FC<Props> = React.memo(
               })}
               key={page}
             >
-              <a
+              <Link
                 className={classNames('pagination__link')}
-                href={`#${page}`}
+                to={`?page=${page}`}
                 onClick={() => !isCurrentPage && onPageChange(page)}
               >
                 {page}
-              </a>
+              </Link>
             </li>
           );
         })}

@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import arrowPrev from '../../icons/arrow_prev.svg';
 import arrowNext from '../../icons/arrow_next.svg';
@@ -25,11 +26,15 @@ export const Arrow: React.FC<Props> = ({
         'pagination__item--disabled': isNeedToDisable,
       })}
     >
-      <a
+      <Link
         className={classNames('pagination__link', {
           'pagination__item--disabled': isNeedToDisable,
         })}
-        href={`#${destination}`}
+        to={
+          destination === 'next'
+            ? `?page=${currentPage + 1}`
+            : `?page=${currentPage - 1}`
+        }
         aria-disabled={isNeedToDisable}
         onClick={() => !isNeedToDisable
           && onPageChange(
@@ -37,7 +42,7 @@ export const Arrow: React.FC<Props> = ({
           )}
       >
         <img src={isDirection ? arrowPrev : arrowNext} alt={destination} />
-      </a>
+      </Link>
     </li>
   );
 };

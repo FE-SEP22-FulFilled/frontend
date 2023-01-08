@@ -1,20 +1,36 @@
 import classNames from 'classnames';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface Props {
   text: string;
   perPage: string;
   setPerPage: (page: string) => void;
-  itemsPerPageOptions: string[];
+  perPageOptions: string[];
+  total: number;
+  currentPage: number;
 }
 
 export const SelectForm: React.FC<Props> = ({
   text,
   perPage,
   setPerPage,
-  itemsPerPageOptions,
+  perPageOptions,
+  total,
+  currentPage,
 }) => {
   const [openList, setOpenList] = useState(false);
+  const [isAllOnShow, setIsAllOnShow] = useState(false);
+
+  const handleOnShowClick = () => {
+    setIsAllOnShow(true);
+    setPerPage(total.toString());
+  };
+
+  const handlePerPageClick = (choosedOption: string) => {
+    setIsAllOnShow(false);
+    setPerPage(choosedOption);
+  };
 
   return (
     <div className="selection__items">
@@ -29,22 +45,30 @@ export const SelectForm: React.FC<Props> = ({
             })}
             onClick={() => setOpenList(!openList)}
           >
-            {perPage}
+            {isAllOnShow ? 'Show All' : perPage}
           </button>
         </div>
 
         {openList && (
           <div className="selection__list">
-            {itemsPerPageOptions.map((option) => (
-              <button
-                type="button"
+            {perPageOptions.map((option) => (
+              <Link
+                to={`?page=${currentPage}&limit=${option}`}
                 key={option}
                 className="selection__item"
-                onClick={() => setPerPage(option)}
+                onClick={() => handlePerPageClick(option)}
               >
                 {option}
-              </button>
+              </Link>
             ))}
+
+            <Link
+              to={`?page=${1}&limit=${total}`}
+              className="selection__item"
+              onClick={handleOnShowClick}
+            >
+              Show All
+            </Link>
           </div>
         )}
       </div>

@@ -13,6 +13,8 @@
 
     background-color: $gray-surface1;
 
+    transition: all 0.5s;
+
     cursor: pointer;
 
     &:hover:not(.pagination__item--active) {
