@@ -1,4 +1,4 @@
-import { Phone } from '../types/Phone';
+import { DataFromApi } from '../types/DataFromApi';
 // import { Tablet } from '../types/Tablet';
 // import { Accessory } from '../types/Accessory';
 
@@ -24,10 +24,15 @@ function get<T>(url: string): Promise<T> {
         throw new Error('Data can not be loaded from server');
       }
 
-      return response.json();
+      const data = response.json();
+
+      // // eslint-disable-next-line no-console
+      // console.log(data);
+
+      return data;
     });
 }
 
-export const getPhones = () => get<Phone[]>('/products');
+export const getPhones = () => get<DataFromApi>('/products');
 // export const getTablets = () => get<Tablet[]>('/tablets');
 // export const getAccesories = () => get<Accessory[]>('/accesories');

@@ -1,11 +1,12 @@
 import React from 'react';
+import { Breadcrumbs } from '../Breadcrumbs/Breadcrumbs';
 import { Catalog } from '../Catalog/Catalog';
 
 export const TabletsPage: React.FC = () => {
   return (
-    <div className="main">
-      <h1 className="catalog__amount-items-header">Tablets Page</h1>
-      <Catalog />
-    </div>
+    <main className="container-catalog">
+      <Breadcrumbs location="tablets" />
+      <Catalog productName="Tablets" />
+    </main>
   );
 };
