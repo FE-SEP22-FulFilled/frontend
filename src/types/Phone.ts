@@ -7,7 +7,7 @@ export interface Phone {
   fullPrice: number;
   price: number;
   screen: string;
-  capacity: number;
+  capacity: string;
   color: string;
   ram: string;
   year: number;

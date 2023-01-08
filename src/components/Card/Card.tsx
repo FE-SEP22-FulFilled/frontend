@@ -1,19 +1,40 @@
 import '../../styles/main.scss';
 import img from '../../img/phones/apple-iphone-11-pro-max/silver/00.jpg';
 import heart from '../../icons/Vector (Stroke).svg';
+import { Phone } from '../../types/Phone';
 
-export const Card: React.FC = () => {
+interface Props {
+  card: Phone,
+}
+
+export const Card: React.FC<Props> = ({
+  card,
+}) => {
+  const {
+    name,
+    fullPrice,
+    price,
+    screen,
+    capacity,
+    ram,
+    // image,
+  } = card;
+
   return (
     <section className="card">
-      <img src={img} alt="iPhone Xs" className="card__img" />
+      <img
+        src={img}
+        alt={name}
+        className="card__img"
+      />
 
       <a href="/" className="card__name">
-        Apple iPhone Xs 64GB Silver (iMT9G2FS/A)
+        {`${name} (iMT9G2FS/A)`}
       </a>
 
       <div className="card__price">
-        <p className="card__price--new">$799</p>
-        <p className="card__price--old">$899</p>
+        <p className="card__price--new">{`$${price}`}</p>
+        <p className="card__price--old">{`$${fullPrice}`}</p>
       </div>
 
       <div className="card__separator" />
@@ -21,15 +42,15 @@ export const Card: React.FC = () => {
       <div className="card__params">
         <div className="card__params--container">
           <p className="card__params--text">Screen</p>
-          <p className="card__params--num">5.8” OLED</p>
+          <p className="card__params--num">{screen}</p>
         </div>
         <div className="card__params--container">
           <p className="card__params--text">Capacity</p>
-          <p className="card__params--num">64 GB</p>
+          <p className="card__params--num">{`${capacity.slice(0, 2)} ${capacity.slice(2)}`}</p>
         </div>
         <div className="card__params--container">
           <p className="card__params--text">RAM</p>
-          <p className="card__params--num">4 GB</p>
+          <p className="card__params--num">{`${ram.slice(0, 1)} ${ram.slice(1)}`}</p>
         </div>
       </div>
 
