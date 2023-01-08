@@ -90,11 +90,14 @@
     color: #75767f;
     background-color: $dark-background;
 
+    text-decoration: none;
     text-align: left;
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
-    line-height: 21px;
+    line-height: 32px;
+
+    transition: all 0.5s;
 
     &:hover {
       color: $white;

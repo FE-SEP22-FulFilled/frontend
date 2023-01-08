@@ -1,11 +1,12 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import { Card } from '../Card';
 import { Pagination } from '../Pagination/Pagination';
 import { SelectForm } from '../SelectFrom/SelectForm';
+import { getNumbers } from '../../utils/utilsCatalog';
 
 const cards = Array(71).fill(1);
-const itemsPerPageOptions = ['16', '24', '40', '64', 'Show all'];
+const perPageOptions = ['8', '24', '40', '64'];
 const sortByOptions = [
   'Newest',
   'Oldest',
@@ -14,18 +15,8 @@ const sortByOptions = [
   'Popular',
 ];
 
-function getNumbers(from: number, to: number): number[] {
-  const numbers = [];
-
-  for (let n = from; n <= to; n += 1) {
-    numbers.push(n);
-  }
-
-  return numbers;
-}
-
 export const Catalog: React.FC = () => {
-  const [perPage, setPerPage] = useState(itemsPerPageOptions[0]);
+  const [perPage, setPerPage] = useState(perPageOptions[0]);
   const [sortBy] = useState(sortByOptions[0]);
   const [currentPage, setCurrentPage] = useState(1);
   const [total] = useState(cards.length);
@@ -33,10 +24,6 @@ export const Catalog: React.FC = () => {
   const initialItems = getNumbers(1, total);
 
   const itemsOnPage = useCallback((currPage: number, itemsPerPage: string) => {
-    if (itemsPerPage === 'Show all') {
-      return initialItems;
-    }
-
     const itemStart = Number(itemsPerPage) * (currPage - 1);
     const itemEnd = itemStart + Number(itemsPerPage) + 1;
 
@@ -44,6 +31,10 @@ export const Catalog: React.FC = () => {
   }, []);
 
   const visibleItems = itemsOnPage(currentPage, perPage);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [currentPage > Math.ceil(total / Number(perPage))]);
 
   return (
     <main className="container-catalog">
@@ -59,14 +50,18 @@ export const Catalog: React.FC = () => {
             text="Sort by"
             perPage={sortBy}
             setPerPage={setPerPage}
-            itemsPerPageOptions={sortByOptions}
+            perPageOptions={sortByOptions}
+            total={total}
+            currentPage={currentPage}
           />
 
           <SelectForm
             text="Items on page"
             perPage={perPage}
             setPerPage={setPerPage}
-            itemsPerPageOptions={itemsPerPageOptions}
+            perPageOptions={perPageOptions}
+            total={total}
+            currentPage={currentPage}
           />
         </div>
 
@@ -82,7 +77,6 @@ export const Catalog: React.FC = () => {
             perPage={perPage}
             currentPage={currentPage}
             onPageChange={useCallback(setCurrentPage, [currentPage, perPage])}
-            getNumbers={getNumbers}
           />
         </div>
       </div>
