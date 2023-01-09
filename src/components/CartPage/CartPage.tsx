@@ -15,13 +15,15 @@ export const CartPage: React.FC = () => {
 
       <h1 className="cart__page__header">Cart</h1>
 
-      <div className="
+      <div
+        className="
         cart__page--content
         grid
         grid-tablet
         grid-mobile"
       >
-        <div className="
+        <div
+          className="
           cart__page--content--items
           grid__item--desktop-1-17
           grid__item--tablet-1-13
@@ -40,7 +42,8 @@ export const CartPage: React.FC = () => {
           </div>
         </div>
 
-        <div className="
+        <div
+          className="
           cart__page__checkout
           grid__item--desktop-17-25
           grid__item--tablet-1-13
