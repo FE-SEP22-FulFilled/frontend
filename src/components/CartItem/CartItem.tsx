@@ -9,7 +9,7 @@ import plus from '../../icons/plus.svg';
 import { Phone } from '../../types/Phone';
 
 type Props = {
-  phone: Phone,
+  phone: Phone;
 };
 
 export const CartItem: React.FC<Props> = ({ phone }) => {
@@ -36,7 +36,11 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
           <img src={cross} alt="x" />
         </button>
 
-        <img src={require(`../../${phone.image}`)} alt={phone.name} className="cartItem__img" />
+        <img
+          src={require(`../../${phone.image}`)}
+          alt={phone.name}
+          className="cartItem__img"
+        />
 
         <a href="/" className="cartItem__title--text">
           {`${phone.name}`}

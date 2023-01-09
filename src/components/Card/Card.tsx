@@ -14,8 +14,9 @@ export const Card: React.FC<Props> = ({ card }) => {
   const {
     id, name, fullPrice, price, screen, capacity, ram, image,
   } = card;
-  const cartFromLocaleStorage
-    = JSON.parse(localStorage.getItem('cart') || '[]');
+  const cartFromLocaleStorage = JSON.parse(
+    localStorage.getItem('cart') || '[]',
+  );
 
   const [cart, setCart] = useState(cartFromLocaleStorage);
   const [isAdded, setIsAdded] = useState(false);
@@ -81,8 +82,9 @@ export const Card: React.FC<Props> = ({ card }) => {
       <div className="card__buy">
         <button
           type="button"
-          className={classNames('card__buy--add',
-            { 'card__buy--add-active': isAdded })}
+          className={classNames('card__buy--add', {
+            'card__buy--add-active': isAdded,
+          })}
           onClick={handleAddToCart}
           disabled={isAdded}
         >

@@ -6,8 +6,9 @@ import { CartItem } from '../CartItem';
 import { Phone } from '../../types/Phone';
 
 export const CartPage: React.FC = () => {
-  const cartFromLocaleStorage
-    = JSON.parse(localStorage.getItem('cart') || '[]');
+  const cartFromLocaleStorage = JSON.parse(
+    localStorage.getItem('cart') || '[]',
+  );
 
   return (
     <div className="cart__page">
@@ -28,10 +29,7 @@ export const CartPage: React.FC = () => {
         >
           <div>
             {cartFromLocaleStorage.map((phone: Phone) => (
-              <CartItem
-                phone={phone}
-                key={phone.id}
-              />
+              <CartItem phone={phone} key={phone.id} />
             ))}
           </div>
         </div>

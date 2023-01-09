@@ -25,7 +25,11 @@ export const BurgerMenu: React.FC<Props> = ({ handleCloseBurger }) => {
             <img className="burger__logo--arm" src={logoArm} alt="logo" />
           </NavLink>
         </div>
-        <button type="button" className="burger__button" onClick={() => handleCloseBurger(false)}>
+        <button
+          type="button"
+          className="burger__button"
+          onClick={() => handleCloseBurger(false)}
+        >
           <div>
             <img src={Close} alt="cross" />
           </div>

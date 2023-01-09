@@ -19,11 +19,7 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      {isActiveBurger && (
-        <BurgerMenu
-          handleCloseBurger={setIsActiveBurger}
-        />
-      )}
+      {isActiveBurger && <BurgerMenu handleCloseBurger={setIsActiveBurger} />}
 
       <header className="header">
         <nav className="nav">
