@@ -1,3 +1,6 @@
+@import '../utils/mixins';
+@import '../utils/variables';
+
 .cartItem {
   display: flex;
   justify-content: space-between;

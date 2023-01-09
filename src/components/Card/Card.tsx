@@ -1,7 +1,5 @@
 import '../../styles/main.scss';
 import { Link } from 'react-router-dom';
-
-import img from '../../img/phones/apple-iphone-11-pro-max/silver/00.jpg';
 import heart from '../../icons/Vector (Stroke).svg';
 import { Phone } from '../../types/Phone';
 import { getPhoneById } from '../../api/fetchData';
@@ -12,14 +10,7 @@ interface Props {
 
 export const Card: React.FC<Props> = ({ card }) => {
   const {
-    id,
-    name,
-    fullPrice,
-    price,
-    screen,
-    capacity,
-    ram,
-    // image,
+    id, name, fullPrice, price, screen, capacity, ram, image,
   } = card;
 
   const logItem = (idItem: string) => {
@@ -29,7 +20,8 @@ export const Card: React.FC<Props> = ({ card }) => {
 
   return (
     <section className="card">
-      <img src={img} alt={name} className="card__img" />
+      {/* eslint-disable-next-line global-require, import/no-dynamic-require */}
+      <img src={require(`../../${image}`)} alt={name} className="card__img" />
 
       <Link
         to={`/phones/${id}`}
