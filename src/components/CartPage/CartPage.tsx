@@ -1,11 +1,14 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
 import React from 'react';
 import '../../styles/blocks/cart-page.scss';
 import { Link } from 'react-router-dom';
 import BackImg from '../../icons/cart_back_button.svg';
 import { CartItem } from '../CartItem';
+import { Phone } from '../../types/Phone';
 
 export const CartPage: React.FC = () => {
+  const cartFromLocaleStorage
+    = JSON.parse(localStorage.getItem('cart') || '[]');
+
   return (
     <div className="cart__page">
       <Link to="/" className="cart__page__back-content">
@@ -23,9 +26,14 @@ export const CartPage: React.FC = () => {
             grid__item-t--1--7
           "
         >
-          <CartItem />
-          <CartItem />
-          <CartItem />
+          <div>
+            {cartFromLocaleStorage.map((phone: Phone) => (
+              <CartItem
+                phone={phone}
+                key={phone.id}
+              />
+            ))}
+          </div>
         </div>
 
         <div
@@ -35,7 +43,7 @@ export const CartPage: React.FC = () => {
             grid__item-t--9--12
           "
         >
-          <span className="cart__page__checkout-price">$2657</span>
+          <span className="cart__page__checkout-price">$2651</span>
           <span className="cart__page__checkout-total">Total for 3 items</span>
           <div className="cart__page__checkout-pipe" />
           <button type="button" className="cart__page__checkout-button">

@@ -1,13 +1,30 @@
-import { useState } from 'react';
+/* eslint-disable global-require */
+/* eslint-disable import/no-dynamic-require */
+import { useEffect, useState } from 'react';
 
 import '../../styles/main.scss';
-import img from '../../img/phones/apple-iphone-11-pro-max/silver/00.jpg';
 import cross from '../../icons/cross.svg';
 import minus from '../../icons/minus.svg';
 import plus from '../../icons/plus.svg';
+import { Phone } from '../../types/Phone';
 
-export const CartItem: React.FC = () => {
-  const [counter, setCounter] = useState(0);
+type Props = {
+  phone: Phone,
+};
+
+export const CartItem: React.FC<Props> = ({ phone }) => {
+  const [counter, setCounter] = useState(1);
+  const [isDisabled, setIsDisabled] = useState(false);
+
+  useEffect(() => {
+    if (counter === 1) {
+      setIsDisabled(true);
+    }
+
+    if (counter > 1) {
+      setIsDisabled(false);
+    }
+  }, [counter]);
 
   return (
     <section className="cartItem">
@@ -19,10 +36,10 @@ export const CartItem: React.FC = () => {
           <img src={cross} alt="x" />
         </button>
 
-        <img src={img} alt="product_small" className="cartItem__img" />
+        <img src={require(`../../${phone.image}`)} alt={phone.name} className="cartItem__img" />
 
         <a href="/" className="cartItem__title--text">
-          Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)
+          {`${phone.name}`}
         </a>
       </div>
 
@@ -34,6 +51,7 @@ export const CartItem: React.FC = () => {
               cartItem__counter--button
               cartItem__counter--button--minus"
             onClick={() => setCounter(counter - 1)}
+            disabled={isDisabled}
           >
             <img src={minus} alt="-" />
           </button>
@@ -45,13 +63,15 @@ export const CartItem: React.FC = () => {
             className="
               cartItem__counter--button
               cartItem__counter--button--plus"
-            onClick={() => setCounter(counter + 1)}
+            onClick={() => {
+              setCounter(counter + 1);
+            }}
           >
             <img src={plus} alt="+" />
           </button>
         </div>
 
-        <p className="cartItem__price">$1099</p>
+        <p className="cartItem__price">{`${phone.price * counter}$`}</p>
       </div>
     </section>
   );

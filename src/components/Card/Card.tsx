@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+import classNames from 'classnames';
 import '../../styles/main.scss';
 import { Link } from 'react-router-dom';
 import heart from '../../icons/Vector (Stroke).svg';
@@ -12,10 +14,27 @@ export const Card: React.FC<Props> = ({ card }) => {
   const {
     id, name, fullPrice, price, screen, capacity, ram, image,
   } = card;
+  const cartFromLocaleStorage
+    = JSON.parse(localStorage.getItem('cart') || '[]');
+
+  const [cart, setCart] = useState(cartFromLocaleStorage);
+  const [isAdded, setIsAdded] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
 
   const logItem = (idItem: string) => {
     // eslint-disable-next-line no-console
     getPhoneById(idItem).then((res) => console.log(res));
+  };
+
+  const handleAddToCart = () => {
+    setIsAdded(true);
+
+    setCart(() => {
+      return [...cartFromLocaleStorage, card];
+    });
   };
 
   return (
@@ -60,11 +79,17 @@ export const Card: React.FC<Props> = ({ card }) => {
       </div>
 
       <div className="card__buy">
-        <a href="/" className="card__buy--add">
+        <button
+          type="button"
+          className={classNames('card__buy--add',
+            { 'card__buy--add-active': isAdded })}
+          onClick={handleAddToCart}
+          disabled={isAdded}
+        >
           {' '}
-          Add to cart
+          {isAdded ? 'Added' : 'Add to cart'}
           {' '}
-        </a>
+        </button>
 
         <a href="/" className="card__buy--heart">
           <img src={heart} alt="heart_icon" className="card__icon" />
