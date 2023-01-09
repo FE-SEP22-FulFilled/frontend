@@ -1,4 +1,4 @@
-import { DataFromApi } from '../types/DataFromApi';
+import { Phone } from '../types/Phone';
 // import { Tablet } from '../types/Tablet';
 // import { Accessory } from '../types/Accessory';
 
@@ -13,26 +13,29 @@ function wait(delay: number) {
 }
 
 function get<T>(url: string): Promise<T> {
-  // eslint-disable-next-line prefer-template
   const fullURL = BASE_URL + url;
 
   return wait(300)
     .then(() => fetch(fullURL))
     .then((response) => {
       if (!response.ok) {
-        // eslint-disable-next-line max-len
         throw new Error('Data can not be loaded from server');
       }
 
       const data = response.json();
 
-      // // eslint-disable-next-line no-console
-      // console.log(data);
+      if (!Array.isArray(data)) {
+        const phones = data.then(res => res.results);
+
+        return phones;
+      }
 
       return data;
     });
 }
 
-export const getPhones = () => get<DataFromApi>('/products');
+export const getPhones = () => get<Phone[]>('/products');
+export const getPhoneById = (id: string) => get<Phone>(`/products/${id}`);
+
 // export const getTablets = () => get<Tablet[]>('/tablets');
 // export const getAccesories = () => get<Accessory[]>('/accesories');
