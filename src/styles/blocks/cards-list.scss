@@ -18,6 +18,7 @@
 
   @media (max-width: 929px) {
     grid-template-columns: repeat(2, 272px);
+    justify-content: space-evenly;
   }
 
   @media (max-width: 639px) {
