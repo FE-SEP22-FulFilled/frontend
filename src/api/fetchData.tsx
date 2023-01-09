@@ -24,9 +24,9 @@ function get<T>(url: string): Promise<T> {
 
       const data = response.json();
 
-      if (!Array.isArray(data)) {
-        const phones = data.then((res) => res.results);
+      const phones = data.then((res) => res.results);
 
+      if (phones !== undefined) {
         return phones;
       }
 
@@ -34,8 +34,24 @@ function get<T>(url: string): Promise<T> {
     });
 }
 
+function getOne<T>(url: string): Promise<T> {
+  const fullURL = BASE_URL + url;
+
+  return wait(300)
+    .then(() => fetch(fullURL))
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Data can not be loaded from server');
+      }
+
+      const data = response.json();
+
+      return data;
+    });
+}
+
 export const getPhones = () => get<Phone[]>('/products');
-export const getPhoneById = (id: string) => get<Phone>(`/products/${id}`);
+export const getPhoneById = (id: string) => getOne<Phone>(`/products/${id}`);
 
 // export const getTablets = () => get<Tablet[]>('/tablets');
 // export const getAccesories = () => get<Accessory[]>('/accesories');

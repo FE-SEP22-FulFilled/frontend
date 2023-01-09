@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 interface Props {
@@ -21,6 +21,25 @@ export const SelectForm: React.FC<Props> = ({
 }) => {
   const [openList, setOpenList] = useState(false);
   const [isAllOnShow, setIsAllOnShow] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  const checkIfClickedOutside = (e: MouseEvent) => {
+    if (e.target instanceof HTMLElement
+      && openList
+      && ref.current
+      && !ref.current.contains(e.target)
+    ) {
+      setOpenList(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', checkIfClickedOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', checkIfClickedOutside);
+    };
+  }, [openList]);
 
   const handleOnShowClick = () => {
     setIsAllOnShow(true);
@@ -33,21 +52,21 @@ export const SelectForm: React.FC<Props> = ({
   };
 
   return (
-    <div className="selection__items">
+    <div className="selection__items" ref={ref}>
       <p className="selection__text">{text}</p>
 
       <div>
-        <div>
-          <button
-            type="button"
-            className={classNames('selection__button', {
-              'selection__button--open': openList,
-            })}
-            onClick={() => setOpenList(!openList)}
-          >
-            {isAllOnShow ? 'Show All' : perPage}
-          </button>
-        </div>
+        <button
+          type="button"
+          className={classNames('selection__button', {
+            'selection__button--open': openList,
+          })}
+          onClick={() => {
+            setOpenList(!openList);
+          }}
+        >
+          {isAllOnShow ? 'Show All' : perPage}
+        </button>
 
         {openList && (
           <div className="selection__list">

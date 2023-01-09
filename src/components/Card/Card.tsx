@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import img from '../../img/phones/apple-iphone-11-pro-max/silver/00.jpg';
 import heart from '../../icons/Vector (Stroke).svg';
 import { Phone } from '../../types/Phone';
+import { getPhoneById } from '../../api/fetchData';
 
 interface Props {
   card: Phone;
@@ -21,11 +22,16 @@ export const Card: React.FC<Props> = ({ card }) => {
     // image,
   } = card;
 
+  const logItem = (idItem: string) => {
+    // eslint-disable-next-line no-console
+    getPhoneById(idItem).then(res => console.log(res));
+  };
+
   return (
     <section className="card">
       <img src={img} alt={name} className="card__img" />
 
-      <Link to={`/products/${id}`} className="card__name">
+      <Link to={`/phones/${id}`} className="card__name" onClick={() => logItem(id)}>
         {`${name} (iMT9G2FS/A)`}
       </Link>
 
