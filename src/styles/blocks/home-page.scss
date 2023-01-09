@@ -109,6 +109,25 @@
       }
     }
 
+    &__container {
+      display: flex;
+      flex-direction: column;
+
+      @include onTablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 16px;
+      }
+
+      @include onDesktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 16px;
+      }
+    }
+
     &__item {
       &-img {
         width: 100%;
@@ -159,7 +178,6 @@
         line-height: 26px;
         text-decoration: none;
 
-
         margin-bottom: 4px;
       }
 
@@ -170,22 +188,6 @@
         font-size: 14px;
         line-height: 21px;
         text-decoration: none;
-      }
-    }
-
-    &__container {
-      @include onTablet {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        gap: 16px;
-      }
-
-      @include onDesktop {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        gap: 16px;
       }
     }
   }

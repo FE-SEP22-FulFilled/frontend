@@ -15,39 +15,25 @@ export const CartPage: React.FC = () => {
 
       <h1 className="cart__page__header">Cart</h1>
 
-      <div
-        className="
-        cart__page--content
-        grid
-        grid-tablet
-        grid-mobile"
-      >
+      <div className="grid grid--desktop grid--tablet">
         <div
           className="
-          cart__page--content--items
-          grid__item--desktop-1-17
-          grid__item--tablet-1-13
-          grid__item--mobile-1-5"
+            grid__item
+            grid__item-d--1--14
+            grid__item-t--1--7
+          "
         >
-          <div className="cart__page--content--items-item">
-            <CartItem />
-          </div>
-
-          <div className="cart__page--content--items-item">
-            <CartItem />
-          </div>
-
-          <div className="cart__page--content--items-item">
-            <CartItem />
-          </div>
+          <CartItem />
+          <CartItem />
+          <CartItem />
         </div>
 
         <div
           className="
-          cart__page__checkout
-          grid__item--desktop-17-25
-          grid__item--tablet-1-13
-          grid__item--mobile-1-5"
+            cart__page__checkout
+            grid__item grid__item-d--16--24
+            grid__item-t--9--12
+          "
         >
           <span className="cart__page__checkout-price">$2657</span>
           <span className="cart__page__checkout-total">Total for 3 items</span>
