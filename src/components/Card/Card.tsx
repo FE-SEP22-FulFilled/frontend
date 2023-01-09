@@ -1,4 +1,6 @@
 import '../../styles/main.scss';
+import { Link } from 'react-router-dom';
+
 import img from '../../img/phones/apple-iphone-11-pro-max/silver/00.jpg';
 import heart from '../../icons/Vector (Stroke).svg';
 import { Phone } from '../../types/Phone';
@@ -9,6 +11,7 @@ interface Props {
 
 export const Card: React.FC<Props> = ({ card }) => {
   const {
+    id,
     name,
     fullPrice,
     price,
@@ -22,9 +25,9 @@ export const Card: React.FC<Props> = ({ card }) => {
     <section className="card">
       <img src={img} alt={name} className="card__img" />
 
-      <a href="/" className="card__name">
+      <Link to={`/products/${id}`} className="card__name">
         {`${name} (iMT9G2FS/A)`}
-      </a>
+      </Link>
 
       <div className="card__price">
         <p className="card__price--new">{`$${price}`}</p>

@@ -28,15 +28,8 @@ export const Catalog: React.FC<Props> = ({ productName }) => {
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
-    switch (productName) {
-      case 'Mobile Phones':
-        getPhones().then((res) => setCards(res.results));
-        setTotal(cards.length);
-        break;
-
-      default:
-        redirect('/home');
-    }
+    getPhones().then(setCards);
+    setTotal(cards.length);
   }, [cards]);
 
   useEffect(() => {
