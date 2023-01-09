@@ -137,24 +137,8 @@
       @media (max-width: 639px) {
         display: none;
       }
-
-      &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 19px;
-        height: 1px;
-        width: 13px;
-
-        background-color: #f1f2f9;
-
-        @media (min-width: 1200px) {
-          top: 26px;
-          width: 12px;
-        }
-      }
     }
-
+    
     &--favorites {
       @media (max-width: 639px) {
         display: none;

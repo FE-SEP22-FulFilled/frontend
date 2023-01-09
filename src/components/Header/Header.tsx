@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import './Header.scss';
 import Logo from '../../img/Logo.svg';
 import favoritesIcon from '../../img/firstIcon.svg';
-import shopBagIcon from '../../img/secondIcon.svg';
+import shopBagIcon from '../../img/shopping_bag.svg';
 import logoArm from '../../img/logoImage.svg';
 import burgerIcon from '../../img/burgerIcon.svg';
 

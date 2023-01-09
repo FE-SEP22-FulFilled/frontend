@@ -11,21 +11,14 @@ import { PhonesPage } from './components/PhonesPage';
 import { TabletsPage } from './components/TabletsPage';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
+import { BurgerMenu } from './components/BurgerMenu';
 
 export const App = () => {
   return (
     <div className="App">
       <div className="container">
+        <BurgerMenu />
         <Header />
-
-        {/* <div className="test_nav">
-          <Link to="phones"> phones </Link>
-          <Link to="/"> home </Link>
-          <Link to="tablets"> tablets </Link>
-          <Link to="accessories"> accessories </Link>
-          <Link to="favoutites"> favoutites </Link>
-          <Link to="cart"> cart </Link>
-        </div> */}
         <Routes>
           <Route path="phones">
             <Route index element={<PhonesPage />} />
