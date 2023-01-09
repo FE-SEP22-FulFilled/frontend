@@ -11,13 +11,11 @@ import { PhonesPage } from './components/PhonesPage';
 import { TabletsPage } from './components/TabletsPage';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
-import { BurgerMenu } from './components/BurgerMenu';
 
 export const App = () => {
   return (
     <div className="App">
       <div className="container">
-        <BurgerMenu />
         <Header />
         <Routes>
           <Route path="phones">

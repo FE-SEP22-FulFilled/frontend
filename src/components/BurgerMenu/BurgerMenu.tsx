@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable max-len */
 import classNames from 'classnames';
 import React from 'react';
@@ -9,7 +11,11 @@ import shopBagIcon from '../../img/shopping_bag.svg';
 import logoArm from '../../img/logoImage.svg';
 import Close from '../../img/Close.svg';
 
-export const BurgerMenu: React.FC = () => {
+interface Props {
+  handleCloseBurger: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const BurgerMenu: React.FC<Props> = ({ handleCloseBurger }) => {
   return (
     <nav className="burger">
       <div className="burger__container">
@@ -19,12 +25,11 @@ export const BurgerMenu: React.FC = () => {
             <img className="burger__logo--arm" src={logoArm} alt="logo" />
           </NavLink>
         </div>
-
-        <div className="burger__button">
+        <button type="button" className="burger__button" onClick={() => handleCloseBurger(false)}>
           <div>
             <img src={Close} alt="cross" />
           </div>
-        </div>
+        </button>
       </div>
 
       <div className="burger__list">
@@ -61,7 +66,9 @@ export const BurgerMenu: React.FC = () => {
         <div className="icon">
           <div className="icon__action icon__action--favorites">
             <NavLink
-              className={({ isActive }) => classNames('icon__action icon__action--shop-bag', { 'is-active': isActive })}
+              className={({ isActive }) => classNames('icon__action icon__action--shop-bag', {
+                'is-active': isActive,
+              })}
               to="favourites"
             >
               <img src={favoritesIcon} alt="favorites" />
@@ -72,7 +79,9 @@ export const BurgerMenu: React.FC = () => {
         <div className="icon">
           <div className="icon__action icon__action--shop-bag">
             <NavLink
-              className={({ isActive }) => classNames('icon__action icon__action--shop-bag', { 'is-active': isActive })}
+              className={({ isActive }) => classNames('icon__action icon__action--shop-bag', {
+                'is-active': isActive,
+              })}
               to="cart"
             >
               <img src={shopBagIcon} alt="shopping_bag" />

@@ -1,13 +1,3 @@
-@font-face {
-  font-family: Mont;
-  src: url('../../fonts/Mont-Bold.otf');
-}
-
-* {
-  margin: 0;
-  box-sizing: border-box;
-}
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -138,7 +128,7 @@
         display: none;
       }
     }
-    
+
     &--favorites {
       @media (max-width: 639px) {
         display: none;
@@ -146,6 +136,8 @@
     }
 
     &--burger-menu {
+      background-color: #0f1121;
+
       @media (min-width: 640px) {
         display: none;
       }
