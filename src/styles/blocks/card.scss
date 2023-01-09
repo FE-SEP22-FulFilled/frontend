@@ -1,3 +1,4 @@
+@import '../utils/mixins';
 @import '../utils/variables';
 
 .card {
@@ -19,6 +20,7 @@
     // height: 208px;
     // width: 196px;
     margin-bottom: 24px;
+    background-color: $gray-surface1;
   }
 
   &__name {
