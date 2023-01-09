@@ -11,40 +11,48 @@ export const CartItem: React.FC = () => {
 
   return (
     <section className="cartItem">
-      <button
-        type="button"
-        className="cartItem__button cart__item--button--close"
-      >
-        <img src={cross} alt="x" />
-      </button>
-
-      <img src={img} alt="product_small" className="cartItem__img" />
-
-      <a href="/" className="cartItem__title">
-        Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)
-      </a>
-
-      <div className="cartItem__counter">
+      <div className="cartItem__title">
         <button
           type="button"
-          className="cartItem__counter--button cartItem__counter--button--minus"
-          onClick={() => setCounter(counter - 1)}
+          className="cartItem__button cart__item--button--close"
         >
-          <img src={minus} alt="-" />
+          <img src={cross} alt="x" />
         </button>
 
-        <p className="cartItem__counter--number">{counter}</p>
+        <img src={img} alt="product_small" className="cartItem__img" />
 
-        <button
-          type="button"
-          className="cartItem__counter--button cartItem__counter--button--plus"
-          onClick={() => setCounter(counter + 1)}
-        >
-          <img src={plus} alt="+" />
-        </button>
+        <a href="/" className="cartItem__title--text">
+          Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)
+        </a>
       </div>
 
-      <p className="cartItem__price">$1099</p>
+      <div className="cartItem__numbers">
+        <div className="cartItem__counter">
+          <button
+            type="button"
+            className="
+              cartItem__counter--button
+              cartItem__counter--button--minus"
+            onClick={() => setCounter(counter - 1)}
+          >
+            <img src={minus} alt="-" />
+          </button>
+
+          <p className="cartItem__counter--number">{counter}</p>
+
+          <button
+            type="button"
+            className="
+              cartItem__counter--button
+              cartItem__counter--button--plus"
+            onClick={() => setCounter(counter + 1)}
+          >
+            <img src={plus} alt="+" />
+          </button>
+        </div>
+
+        <p className="cartItem__price">$1099</p>
+      </div>
     </section>
   );
 };
