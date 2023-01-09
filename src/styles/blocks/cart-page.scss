@@ -41,41 +41,6 @@
     color: $white;
   }
 
-  // &--content {
-  //   display: grid;
-  //   column-gap: 16px;
-
-  //   @include onDesktop {
-  //     grid-template-columns: repeat(24, 32px);
-  //   }
-
-  //   @include onTablet {
-  //     grid-template-columns: repeat(12, 1fr);
-  //   }
-
-  //   @include onMobile {
-  //     grid-template-columns: repeat(4, 1fr);
-  //   }
-
-  //   &--items {
-  //     @include onDesktop {
-  //       grid-column: 1 / 17;
-  //     }
-
-  //     @include onTablet {
-  //       grid-column: 1 / 13;
-  //     }
-
-  //     @include onMobile {
-  //       grid-column: 1 / 5;
-  //     }
-
-  //     &-item {
-  //       margin-bottom: 16px;
-  //     }
-  //   }
-  // }
-
   &__link {
     margin-right: 8px;
   }
@@ -100,18 +65,9 @@
 
     border: 1px solid $elements;
 
-    // @include onMobile {
-    //   grid-column: 1 / 5;
-    // }
-
-    // @include onTablet {
-    //   grid-column: 1 / 13;
-    // }
-
-    // @include onDesktop {
-    //   grid-column: 17 / 25;
-    //   height: 200px;
-    // }
+    @include onDesktop {
+      height: 200px;
+    }
 
     &-price {
       font-weight: 800;
