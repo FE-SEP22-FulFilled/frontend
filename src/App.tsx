@@ -17,15 +17,6 @@ export const App = () => {
     <div className="App">
       <div className="container">
         <Header />
-
-        {/* <div className="test_nav">
-          <Link to="phones"> phones </Link>
-          <Link to="/"> home </Link>
-          <Link to="tablets"> tablets </Link>
-          <Link to="accessories"> accessories </Link>
-          <Link to="favoutites"> favoutites </Link>
-          <Link to="cart"> cart </Link>
-        </div> */}
         <Routes>
           <Route path="phones">
             <Route index element={<PhonesPage />} />

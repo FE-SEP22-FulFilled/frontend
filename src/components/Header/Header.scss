@@ -1,13 +1,3 @@
-@font-face {
-  font-family: Mont;
-  src: url('../../fonts/Mont-Bold.otf');
-}
-
-* {
-  margin: 0;
-  box-sizing: border-box;
-}
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -137,22 +127,6 @@
       @media (max-width: 639px) {
         display: none;
       }
-
-      &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 19px;
-        height: 1px;
-        width: 13px;
-
-        background-color: #f1f2f9;
-
-        @media (min-width: 1200px) {
-          top: 26px;
-          width: 12px;
-        }
-      }
     }
 
     &--favorites {
@@ -162,6 +136,8 @@
     }
 
     &--burger-menu {
+      background-color: #0f1121;
+
       @media (min-width: 640px) {
         display: none;
       }
