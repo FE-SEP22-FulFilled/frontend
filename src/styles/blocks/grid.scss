@@ -2,50 +2,46 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(24, 1fr);
   column-gap: 16px;
   margin: 0 auto;
+  grid-template-columns: repeat(24, 32px);
 
-  @include onTablet {
-    grid-template-columns: repeat(12, 1fr);
+  &-tablet {
+    @include onTablet {
+      grid-template-columns: repeat(12, 1fr);
+    }
   }
 
-  @include onMobile {
-    grid-template-columns: repeat(4, 1fr);
+  &-mobile {
+    @include onMobile {
+      grid-template-columns: repeat(4, minmax(60px, 1fr));
+    }
   }
 
   &__item {
-    &--desktop {
-      @for $start from 1 through 24 {
-        @for $end from $start through 24 {
-          @include onDesktop {
-            &-#{$start}-#{end} {
-              grid-column: #{$start} / #{$end + 1};
-            }
+    @for $start from 1 through 24 {
+      @for $end from $start+1 through 25 {
+        &--desktop-#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end};
+        }
+      }
+    }
+
+    @for $start from 1 through 12 {
+      @for $end from $start+1 through 13 {
+        @include onTablet {
+          &--tablet-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end};
           }
         }
       }
     }
 
-    &--tablet {
-      @for $start from 1 through 12 {
-        @for $end from $start through 12 {
-          @include onTablet {
-            &-#{$start}-#{$end} {
-              grid-column: #{$start} / #{$end + 1};
-            }
-          }
-        }
-      }
-    }
-
-    &--mobile {
-      @for $start from 1 through 4 {
-        @for $end from $start through 4 {
-          @include onMobile {
-            &-#{$start}-#{$end} {
-              grid-column: #{$start} / #{$end + 1};
-            }
+    @for $start from 1 through 4 {
+      @for $end from $start+1 through 5 {
+        @include onMobile {
+          &--tablet-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end};
           }
         }
       }
