@@ -15,6 +15,7 @@
 
 .cart__page {
   margin: 0 16px;
+  padding: auto;
 
   &__back-content {
     display: flex;
@@ -39,6 +40,17 @@
     line-height: 15px;
     color: $white;
   }
+
+  &--content {
+    display: grid;
+    grid-template-columns: repeat(24, 32px);
+    column-gap: 16px;
+
+    // &--items {
+    //   grid-column: 1 / 17;
+    // }
+  }
+
   &__link {
     margin-right: 8px;
   }
@@ -53,6 +65,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    // grid-column: 17 / 25;
 
     padding: 24px;
     margin-bottom: 60px;

@@ -15,15 +15,19 @@ export const CartPage: React.FC = () => {
 
       <h1 className="cart__page__header">Cart</h1>
 
-      <CartItem />
+      <div className="cart__page--content grid">
+        <div className="cart__page--content--items grid__item--desktop-1-16">
+          <CartItem />
+        </div>
 
-      <div className="cart__page__checkout">
-        <span className="cart__page__checkout-price">$2657</span>
-        <span className="cart__page__checkout-total">Total for 3 items</span>
-        <div className="cart__page__checkout-pipe" />
-        <button type="button" className="cart__page__checkout-button">
-          Checkout
-        </button>
+        <div className="cart__page__checkout">
+          <span className="cart__page__checkout-price">$2657</span>
+          <span className="cart__page__checkout-total">Total for 3 items</span>
+          <div className="cart__page__checkout-pipe" />
+          <button type="button" className="cart__page__checkout-button">
+            Checkout
+          </button>
+        </div>
       </div>
     </div>
   );
