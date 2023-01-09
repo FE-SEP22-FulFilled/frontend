@@ -25,7 +25,7 @@ function get<T>(url: string): Promise<T> {
       const data = response.json();
 
       if (!Array.isArray(data)) {
-        const phones = data.then(res => res.results);
+        const phones = data.then((res) => res.results);
 
         return phones;
       }
