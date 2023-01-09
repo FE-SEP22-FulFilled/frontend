@@ -24,7 +24,8 @@ export const SelectForm: React.FC<Props> = ({
   const ref = useRef<HTMLDivElement>(null);
 
   const checkIfClickedOutside = (e: MouseEvent) => {
-    if (e.target instanceof HTMLElement
+    if (
+      e.target instanceof HTMLElement
       && openList
       && ref.current
       && !ref.current.contains(e.target)

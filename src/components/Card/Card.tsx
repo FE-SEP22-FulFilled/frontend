@@ -24,14 +24,18 @@ export const Card: React.FC<Props> = ({ card }) => {
 
   const logItem = (idItem: string) => {
     // eslint-disable-next-line no-console
-    getPhoneById(idItem).then(res => console.log(res));
+    getPhoneById(idItem).then((res) => console.log(res));
   };
 
   return (
     <section className="card">
       <img src={img} alt={name} className="card__img" />
 
-      <Link to={`/phones/${id}`} className="card__name" onClick={() => logItem(id)}>
+      <Link
+        to={`/phones/${id}`}
+        className="card__name"
+        onClick={() => logItem(id)}
+      >
         {`${name} (iMT9G2FS/A)`}
       </Link>
 
