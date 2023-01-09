@@ -1,0 +1,214 @@
+@import '../utils/mixins';
+@import '../utils/variables';
+
+@font-face {
+  font-family: Mont;
+  font-weight: 800;
+  src: url('../../fonts/Mont-Bold.otf');
+}
+
+@font-face {
+  font-family: Mont;
+  font-weight: 700;
+  src: url('../../fonts/Mont-Regular.otf');
+}
+
+.home__page {
+  margin: 0 16px;
+  font-family: Mont;
+  font-style: normal;
+
+  &__header {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 41px;
+    letter-spacing: -0.01em;
+
+    color: $white;
+
+    margin-bottom: 24px;
+
+    @include onTablet {
+      margin-bottom: 32px;
+
+      font-size: 48px;
+      line-height: 56px;
+      /* or 117% */
+
+      letter-spacing: -0.01em;
+    }
+
+    @include onDesktop {
+      margin-bottom: 56px;
+
+      font-size: 48px;
+      line-height: 56px;
+      /* or 117% */
+
+      letter-spacing: -0.01em;
+    }
+  }
+
+  &__swiper {
+    margin: 0 0 66px 0;
+
+    @include onTablet {
+      margin: 0 0 74px 0;
+    }
+
+    @include onDesktop {
+      margin: 0 0 90px 0;
+    }
+  }
+
+  &__brandnew {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    font-size: 18px;
+    line-height: 140%;
+
+    color: $white;
+
+    margin-bottom: 24px;
+
+    @include onTablet {
+      font-size: 32px;
+      line-height: 41px;
+    }
+
+    @include onDesktop {
+      font-size: 32px;
+      line-height: 41px;
+    }
+  }
+
+  &__category {
+    margin-bottom: 56px;
+
+    &-title {
+      font-weight: 800;
+      font-size: 22px;
+      line-height: 140%;
+
+      margin-bottom: 24px;
+
+      @include onTablet {
+        font-size: 32px;
+        line-height: 41px;
+
+        letter-spacing: -0.01em;
+      }
+
+      @include onDesktop {
+        font-size: 32px;
+        line-height: 41px;
+
+        letter-spacing: -0.01em;
+      }
+    }
+
+    &__item {
+      &-img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+
+        margin-bottom: 24px;
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &-phones {
+          background-color: $categories-phones;
+        }
+
+        &-tablets {
+          background-color: $categories-tablets;
+        }
+
+        &-access {
+          background-color: $categories-access;
+        }
+
+        @include onTablet {
+          height: 187px;
+        }
+
+        @include onDesktop {
+          height: 420px;
+          width: 460px;
+        }
+      }
+
+      &-text {
+        display: flex;
+        flex-direction: column;
+        width: max-content;
+
+        margin-bottom: 32px;
+      }
+
+      &-text-white {
+        color: $white;
+
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 26px;
+        text-decoration: none;
+
+
+        margin-bottom: 4px;
+      }
+
+      &-text-gray {
+        color: $secondary;
+
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+        text-decoration: none;
+      }
+    }
+
+    &__container {
+      @include onTablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 16px;
+      }
+
+      @include onDesktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 16px;
+      }
+    }
+  }
+
+  &__hotprices {
+    color: $white;
+
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 140%;
+
+    margin-bottom: 64px;
+
+    @include onTablet {
+      font-weight: 800;
+      font-size: 32px;
+      line-height: 41px;
+    }
+
+    @include onDesktop {
+      font-weight: 800;
+      font-size: 32px;
+      line-height: 41px;
+    }
+  }
+}
