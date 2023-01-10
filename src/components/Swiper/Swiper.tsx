@@ -25,19 +25,16 @@ export default () => {
       <SwiperSlide>
         <img src={slider1} alt="slider img" />
         {/* <div className="swiper__img" /> */}
-
       </SwiperSlide>
 
       <SwiperSlide>
         <img src={slider1} alt="slider img" />
         {/* <div className="swiper__img" /> */}
-
       </SwiperSlide>
 
       <SwiperSlide>
         <img src={slider1} alt="slider img" />
         {/* <div className="swiper__img" /> */}
-
       </SwiperSlide>
     </Swiper>
   );

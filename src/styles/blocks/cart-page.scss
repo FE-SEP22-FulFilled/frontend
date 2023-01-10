@@ -16,8 +16,12 @@
 .cart__page {
   margin: 0 16px;
   padding: auto;
-  display: block;
+  // display: block;
   // justify-content: center;
+
+  // &--content {
+  //   justify-content: center;
+  // }
 
   &__back-content {
     display: flex;
@@ -57,6 +61,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    box-sizing: border-box;
 
     padding: 24px;
     margin-bottom: 60px;
