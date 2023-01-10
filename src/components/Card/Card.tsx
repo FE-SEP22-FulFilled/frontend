@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import classNames from 'classnames';
 import '../../styles/main.scss';
 import { Link } from 'react-router-dom';
 import heart from '../../icons/Vector (Stroke).svg';
 import { Phone } from '../../types/Phone';
 import { getPhoneById } from '../../api/fetchData';
+import { CartContext } from '../CartContext';
 
 interface Props {
   card: Phone;
@@ -14,16 +15,17 @@ export const Card: React.FC<Props> = ({ card }) => {
   const {
     id, name, fullPrice, price, screen, capacity, ram, image,
   } = card;
-  const cartFromLocaleStorage = JSON.parse(
-    localStorage.getItem('cart') || '[]',
-  );
 
-  const [cart, setCart] = useState(cartFromLocaleStorage);
+  const {
+    cartPhonesList,
+    setCartPhonesList,
+    cartQuantity,
+    setCartQuantity,
+    cartPrice,
+    setCartPrice,
+  } = useContext(CartContext);
+
   const [isAdded, setIsAdded] = useState(false);
-
-  useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
-  }, [cart]);
 
   const logItem = (idItem: string) => {
     // eslint-disable-next-line no-console
@@ -33,9 +35,9 @@ export const Card: React.FC<Props> = ({ card }) => {
   const handleAddToCart = () => {
     setIsAdded(true);
 
-    setCart(() => {
-      return [...cartFromLocaleStorage, card];
-    });
+    setCartPhonesList([...cartPhonesList, card]);
+    setCartQuantity(cartQuantity + 1);
+    setCartPrice(cartPrice + card.price);
   };
 
   return (

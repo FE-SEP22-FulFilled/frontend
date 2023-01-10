@@ -1,12 +1,13 @@
 /* eslint-disable global-require */
 /* eslint-disable import/no-dynamic-require */
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import '../../styles/main.scss';
 import cross from '../../icons/cross.svg';
 import minus from '../../icons/minus.svg';
 import plus from '../../icons/plus.svg';
 import { Phone } from '../../types/Phone';
+import { CartContext } from '../CartContext';
 
 type Props = {
   phone: Phone;
@@ -15,6 +16,14 @@ type Props = {
 export const CartItem: React.FC<Props> = ({ phone }) => {
   const [counter, setCounter] = useState(1);
   const [isDisabled, setIsDisabled] = useState(false);
+  const {
+    cartPhonesList,
+    setCartPhonesList,
+    cartQuantity,
+    setCartQuantity,
+    cartPrice,
+    setCartPrice,
+  } = useContext(CartContext);
 
   useEffect(() => {
     if (counter === 1) {
@@ -26,12 +35,33 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
     }
   }, [counter]);
 
+  const handleCartItemDelete = (deleteId: string) => {
+    setCartPhonesList(
+      cartPhonesList.filter(item => item.id !== deleteId),
+    );
+    setCartQuantity(cartQuantity - counter);
+    setCartPrice(cartPrice - phone.price * counter);
+  };
+
+  const handleMinusItem = () => {
+    setCounter(counter - 1);
+    setCartQuantity(cartQuantity - 1);
+    setCartPrice(cartPrice - phone.price);
+  };
+
+  const handlePlusItem = () => {
+    setCounter(counter + 1);
+    setCartQuantity(cartQuantity + 1);
+    setCartPrice(cartPrice + phone.price);
+  };
+
   return (
     <section className="cartItem">
       <div className="cartItem__title">
         <button
           type="button"
           className="cartItem__button cart__item--button--close"
+          onClick={() => handleCartItemDelete(phone.id)}
         >
           <img src={cross} alt="x" />
         </button>
@@ -54,7 +84,7 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
             className="
               cartItem__counter--button
               cartItem__counter--button--minus"
-            onClick={() => setCounter(counter - 1)}
+            onClick={handleMinusItem}
             disabled={isDisabled}
           >
             <img src={minus} alt="-" />
@@ -67,9 +97,7 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
             className="
               cartItem__counter--button
               cartItem__counter--button--plus"
-            onClick={() => {
-              setCounter(counter + 1);
-            }}
+            onClick={handlePlusItem}
           >
             <img src={plus} alt="+" />
           </button>
