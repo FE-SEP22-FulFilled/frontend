@@ -23,8 +23,8 @@ export const CartPage: React.FC = () => {
         <div
           className="
             grid__item
-            grid__item-d--1--14
-            grid__item-t--1--7
+            grid__item-d--1--15
+            grid__item-t--1--12
           "
         >
           <div>
@@ -37,8 +37,9 @@ export const CartPage: React.FC = () => {
         <div
           className="
             cart__page__checkout
-            grid__item grid__item-d--16--24
-            grid__item-t--9--12
+            grid__item
+            grid__item-d--16--24
+            grid__item-t--1--12
           "
         >
           <span className="cart__page__checkout-price">$2651</span>
