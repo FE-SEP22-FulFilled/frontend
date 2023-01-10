@@ -31,7 +31,7 @@ export default function App() {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        {slides.map(slide => (
+        {slides.map((slide) => (
           <SwiperSlide key={Math.random()}>
             <img
               className="swiper__image"

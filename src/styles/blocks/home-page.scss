@@ -14,7 +14,7 @@
 }
 
 .home__page {
-  margin: 0 16px;
+  margin: 0 32px;
   font-family: Mont;
   font-style: normal;
 
@@ -95,6 +95,9 @@
       margin-bottom: 24px;
 
       @include onTablet {
+        max-width: 590px;
+        margin: 0 auto 56px;
+
         font-size: 32px;
         line-height: 41px;
 
@@ -102,10 +105,18 @@
       }
 
       @include onDesktop {
+        max-width: 845px;
+        margin: 0 auto 56px;
+
         font-size: 32px;
         line-height: 41px;
 
         letter-spacing: -0.01em;
+      }
+
+      @media (min-width: 1199px) {
+        max-width: 1112px;
+        margin: 0 auto 56px;
       }
     }
 
@@ -116,14 +127,14 @@
       @include onTablet {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
         gap: 16px;
       }
 
       @include onDesktop {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
         gap: 16px;
       }
     }
@@ -170,7 +181,17 @@
           height: 187px;
         }
 
+        @media (min-width: 1199px) {
+          width: 187px;
+          height: 187px;
+        }
+
         @include onDesktop {
+          height: 270px;
+          width: 270;
+        }
+
+        @media (min-width: 1200px) {
           height: 360px;
           width: 360px;
         }
