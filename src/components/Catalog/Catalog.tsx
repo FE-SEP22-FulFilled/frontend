@@ -74,60 +74,54 @@ export const Catalog: React.FC<Props> = ({ productName }) => {
           <div className="catalog__text">
             <h1 className="catalog__text--header">{productName}</h1>
             {isDataOnServer && (
-              <p className="catalog__text--amount">
-                {`${total} models`}
-              </p>
+              <p className="catalog__text--amount">{`${total} models`}</p>
             )}
           </div>
 
-          {isDataOnServer
-            ? (
-              <>
-                <div className="selection">
-                  <SelectForm
-                    text="Sort by"
-                    perPage={sortBy}
-                    setPerPage={setPerPage}
-                    perPageOptions={sortByOptions}
-                    total={total}
-                    currentPage={currentPage}
-                  />
+          {isDataOnServer ? (
+            <>
+              <div className="selection">
+                <SelectForm
+                  text="Sort by"
+                  perPage={sortBy}
+                  setPerPage={setPerPage}
+                  perPageOptions={sortByOptions}
+                  total={total}
+                  currentPage={currentPage}
+                />
 
-                  <SelectForm
-                    text="Items on page"
-                    perPage={perPage}
-                    setPerPage={setPerPage}
-                    perPageOptions={perPageOptions}
-                    total={total}
-                    currentPage={currentPage}
-                  />
-                </div>
+                <SelectForm
+                  text="Items on page"
+                  perPage={perPage}
+                  setPerPage={setPerPage}
+                  perPageOptions={perPageOptions}
+                  total={total}
+                  currentPage={currentPage}
+                />
+              </div>
 
-                <div className="cards-list">
-                  {visibleItems?.map((card) => (
-                    <Card key={card.id} card={card} />
-                  ))}
-                </div>
+              <div className="cards-list">
+                {visibleItems?.map((card) => (
+                  <Card key={card.id} card={card} />
+                ))}
+              </div>
 
-                <div className="catalog__pagination">
-                  <Pagination
-                    total={total}
-                    perPage={perPage}
-                    currentPage={currentPage}
-                    onPageChange={setCurrentPage}
-                  />
-                </div>
-              </>
-            )
-            : (
-              <>
-                <div className="catalog__no-products">
-                  <p className="catalog__text--amount">
-                    No products yet
-                  </p>
-                </div>
-              </>
-            )}
+              <div className="catalog__pagination">
+                <Pagination
+                  total={total}
+                  perPage={perPage}
+                  currentPage={currentPage}
+                  onPageChange={setCurrentPage}
+                />
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="catalog__no-products">
+                <p className="catalog__text--amount">No products yet</p>
+              </div>
+            </>
+          )}
         </>
       )}
     </div>
