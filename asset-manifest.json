@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/frontend/static/css/main.7fa8d1d7.css",
-    "main.js": "/frontend/static/js/main.2e3ed9cc.js",
+    "main.css": "/frontend/static/css/main.c9c5b461.css",
+    "main.js": "/frontend/static/js/main.bd150fc6.js",
     "static/media/home-page-category-tablets.svg": "/frontend/static/media/home-page-category-tablets.4c8a45199b1fb3c7542d8103400bbb4b.svg",
     "static/media/category-tablets.png": "/frontend/static/media/category-tablets.51782e18205a1ca01ce8.png",
     "static/media/Banner.svg": "/frontend/static/media/Banner.71a7206effe634995de8.svg",
@@ -45,11 +45,11 @@
     "static/media/cart_back_button.svg": "/frontend/static/media/cart_back_button.4dc386686e1f77999a38199f4fd33924.svg",
     "static/media/minus.svg": "/frontend/static/media/minus.c6e118487bc364ed13cf9be2be3fef30.svg",
     "static/media/iconPart2.svg": "/frontend/static/media/iconPart2.dcef04ec33f2a264f53f.svg",
-    "main.7fa8d1d7.css.map": "/frontend/static/css/main.7fa8d1d7.css.map",
-    "main.2e3ed9cc.js.map": "/frontend/static/js/main.2e3ed9cc.js.map"
+    "main.c9c5b461.css.map": "/frontend/static/css/main.c9c5b461.css.map",
+    "main.bd150fc6.js.map": "/frontend/static/js/main.bd150fc6.js.map"
   },
   "entrypoints": [
-    "static/css/main.7fa8d1d7.css",
-    "static/js/main.2e3ed9cc.js"
+    "static/css/main.c9c5b461.css",
+    "static/js/main.bd150fc6.js"
   ]
 }
