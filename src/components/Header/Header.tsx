@@ -3,10 +3,9 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 import './Header.scss';
-import Logo from '../../img/Logo.svg';
+import Logo from '../../img/FullLogo.svg';
 import favoritesIcon from '../../img/firstIcon.svg';
 import shopBagIcon from '../../img/shopping_bag.svg';
-import logoArm from '../../img/logoImage.svg';
 import burgerIcon from '../../img/burgerIcon.svg';
 import { BurgerMenu } from '../BurgerMenu';
 
@@ -26,7 +25,6 @@ export const Header: React.FC = () => {
           <div className="nav__logo">
             <NavLink to="home">
               <img className="nav__logo__image" src={Logo} alt="logo" />
-              <img className="nav__logo--arm" src={logoArm} alt="logo" />
             </NavLink>
           </div>
 

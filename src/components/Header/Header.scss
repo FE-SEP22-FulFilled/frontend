@@ -34,21 +34,6 @@
       }
     }
 
-    &--arm {
-      height: 12px;
-      width: 9px;
-      position: relative;
-      right: 32px;
-      bottom: 10px;
-
-      @media (min-width: 1200px) {
-        height: 15px;
-        width: 11px;
-        right: 40px;
-        bottom: 13px;
-      }
-    }
-
     @media (min-width: 1200px) {
       padding-left: 24px;
     }
