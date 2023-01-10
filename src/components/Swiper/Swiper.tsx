@@ -1,41 +1,46 @@
-/* eslint-disable no-console */
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation } from 'swiper';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 import '../../styles/utils/swiper.scss';
+import slide1 from '../../img/Banner.svg';
 
 // import required modules
-import { Pagination } from 'swiper';
-import slider1 from '../../img/home-page-slider.svg';
 
-export default () => {
+export default function App() {
+  const slides = [slide1, slide1, slide1];
+
   return (
-    <Swiper
-      spaceBetween={30}
-      pagination={{
-        clickable: true,
-      }}
-      modules={[Pagination]}
-      className="mySwiper"
-    >
-      <SwiperSlide>
-        <img src={slider1} alt="slider img" />
-        {/* <div className="swiper__img" /> */}
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <img src={slider1} alt="slider img" />
-        {/* <div className="swiper__img" /> */}
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <img src={slider1} alt="slider img" />
-        {/* <div className="swiper__img" /> */}
-      </SwiperSlide>
-    </Swiper>
+    <>
+      <Swiper
+        spaceBetween={30}
+        centeredSlides
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+      >
+        {slides.map(slide => (
+          <SwiperSlide key={Math.random()}>
+            <img
+              className="swiper__image"
+              src={slide}
+              alt={`slide ${slides.indexOf(slide)}`}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </>
   );
-};
+}
