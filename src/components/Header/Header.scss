@@ -1,4 +1,6 @@
 .header {
+  position: relative;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -123,24 +125,8 @@
 
     border-left: 1px solid #323542;
 
-    &--shop-bag {
-      @media (max-width: 639px) {
-        display: none;
-      }
-    }
-
-    &--favorites {
-      @media (max-width: 639px) {
-        display: none;
-      }
-    }
-
-    &--burger-menu {
-      background-color: #0f1121;
-
-      @media (min-width: 640px) {
-        display: none;
-      }
+    @media (max-width: 639px) {
+      display: none;
     }
 
     @media (min-width: 1200px) {
