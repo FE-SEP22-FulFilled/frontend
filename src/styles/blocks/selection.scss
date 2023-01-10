@@ -11,6 +11,10 @@
     justify-content: center;
   }
 
+  @media (min-width: 1250px) {
+    padding-left: 8px;
+  }
+
   &__items {
     width: max-content;
     margin-top: 24px;
@@ -67,6 +71,7 @@
 
   &__list {
     position: absolute;
+    z-index: 1;
 
     width: 176px;
     padding: 0;
@@ -74,6 +79,8 @@
     box-sizing: border-box;
     border: 1px solid $elements;
     list-style: none;
+
+    transition: position 0.5s;
 
     @media (max-width: 639px) {
       width: 136px;
@@ -84,7 +91,7 @@
     position: relative;
     display: block;
 
-    width: 174px;
+    width: 162px;
     height: 32px;
     padding-left: 12px;
 
@@ -99,8 +106,6 @@
     font-weight: 700;
     font-size: 14px;
     line-height: 32px;
-
-    transition: all 0.5s;
 
     &:hover {
       color: $white;

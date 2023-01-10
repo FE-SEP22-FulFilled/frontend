@@ -88,6 +88,7 @@ export const BurgerMenu: React.FC = () => {
                       'is-active': isActive,
                     })}
                     to="favourites"
+                    onClick={() => setIsActiveBurger(false)}
                   >
                     <img src={favoritesIcon} alt="favorites" />
                   </NavLink>
@@ -101,6 +102,7 @@ export const BurgerMenu: React.FC = () => {
                       'is-active': isActive,
                     })}
                     to="cart"
+                    onClick={() => setIsActiveBurger(false)}
                   >
                     <img src={shopBagIcon} alt="shopping_bag" />
                   </NavLink>
