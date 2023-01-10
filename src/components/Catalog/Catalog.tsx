@@ -20,6 +20,7 @@ export const Catalog: React.FC<Props> = ({ productName }) => {
   const [sortBy] = useState(sortByOptions[0]);
   const [currentPage, setCurrentPage] = useState(1);
   const [total, setTotal] = useState(0);
+  const [isDataOnServer, setIsDataOnServer] = useState(true);
 
   const loadItems = async () => {
     try {
@@ -37,7 +38,14 @@ export const Catalog: React.FC<Props> = ({ productName }) => {
   };
 
   useEffect(() => {
-    loadItems();
+    if (productName === 'Mobile Phones') {
+      loadItems();
+    } else {
+      setTimeout(() => {
+        setLoader(false);
+      }, 1000);
+      setIsDataOnServer(false);
+    }
   }, [cards]);
 
   useEffect(() => {
@@ -65,43 +73,61 @@ export const Catalog: React.FC<Props> = ({ productName }) => {
         <>
           <div className="catalog__text">
             <h1 className="catalog__text--header">{productName}</h1>
-            <p className="catalog__text--amount">{`${total} models`}</p>
+            {isDataOnServer && (
+              <p className="catalog__text--amount">
+                {`${total} models`}
+              </p>
+            )}
           </div>
 
-          <div className="selection">
-            <SelectForm
-              text="Sort by"
-              perPage={sortBy}
-              setPerPage={setPerPage}
-              perPageOptions={sortByOptions}
-              total={total}
-              currentPage={currentPage}
-            />
+          {isDataOnServer
+            ? (
+              <>
+                <div className="selection">
+                  <SelectForm
+                    text="Sort by"
+                    perPage={sortBy}
+                    setPerPage={setPerPage}
+                    perPageOptions={sortByOptions}
+                    total={total}
+                    currentPage={currentPage}
+                  />
 
-            <SelectForm
-              text="Items on page"
-              perPage={perPage}
-              setPerPage={setPerPage}
-              perPageOptions={perPageOptions}
-              total={total}
-              currentPage={currentPage}
-            />
-          </div>
+                  <SelectForm
+                    text="Items on page"
+                    perPage={perPage}
+                    setPerPage={setPerPage}
+                    perPageOptions={perPageOptions}
+                    total={total}
+                    currentPage={currentPage}
+                  />
+                </div>
 
-          <div className="cards-list">
-            {visibleItems?.map((card) => (
-              <Card key={card.id} card={card} />
-            ))}
-          </div>
+                <div className="cards-list">
+                  {visibleItems?.map((card) => (
+                    <Card key={card.id} card={card} />
+                  ))}
+                </div>
 
-          <div className="catalog__pagination">
-            <Pagination
-              total={total}
-              perPage={perPage}
-              currentPage={currentPage}
-              onPageChange={setCurrentPage}
-            />
-          </div>
+                <div className="catalog__pagination">
+                  <Pagination
+                    total={total}
+                    perPage={perPage}
+                    currentPage={currentPage}
+                    onPageChange={setCurrentPage}
+                  />
+                </div>
+              </>
+            )
+            : (
+              <>
+                <div className="catalog__no-products">
+                  <p className="catalog__text--amount">
+                    No products yet
+                  </p>
+                </div>
+              </>
+            )}
         </>
       )}
     </div>

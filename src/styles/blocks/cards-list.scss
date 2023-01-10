@@ -1,7 +1,7 @@
 .cards-list {
   display: grid;
   grid-template-columns: repeat(4, 272px);
-  justify-content: space-around;
+  justify-content: space-between;
   justify-items: center;
   column-gap: 16px;
   row-gap: 40px;
@@ -9,6 +9,7 @@
   margin-top: 24px;
   width: 100%;
   height: max-content;
+
 
   @media (max-width: 1199px) {
     grid-template-columns: repeat(3, 272px);

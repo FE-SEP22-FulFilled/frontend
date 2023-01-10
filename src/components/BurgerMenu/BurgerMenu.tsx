@@ -3,7 +3,7 @@
 /* eslint-disable max-len */
 
 import classNames from 'classnames';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './BurgerMenu.scss';
 import Logo from '../../img/Logo.svg';
@@ -16,6 +16,14 @@ import { NavigationLink } from '../NavLink/NavigationLink';
 
 export const BurgerMenu: React.FC = () => {
   const [isActiveBurger, setIsActiveBurger] = useState(false);
+
+  useEffect(() => {
+    if (isActiveBurger) {
+      document.body.classList.add('burger--with-menu');
+    } else {
+      document.body.classList.remove('burger--with-menu');
+    }
+  }, [isActiveBurger]);
 
   return (
     <>
@@ -44,9 +52,7 @@ export const BurgerMenu: React.FC = () => {
                 className="burger__button"
                 onClick={() => setIsActiveBurger(false)}
               >
-                <div>
-                  <img src={Close} alt="cross" />
-                </div>
+                <img src={Close} alt="cross" />
               </button>
             </div>
 
