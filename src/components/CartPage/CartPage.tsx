@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../../styles/blocks/cart-page.scss';
 import { Link } from 'react-router-dom';
 import BackImg from '../../icons/cart_back_button.svg';
 import { CartItem } from '../CartItem';
 import { Phone } from '../../types/Phone';
+import { CartContext } from '../CartContext';
 
 export const CartPage: React.FC = () => {
-  const cartFromLocaleStorage = JSON.parse(
-    localStorage.getItem('cart') || '[]',
-  );
+  const { cartPhonesList, cartQuantity, cartPrice } = useContext(CartContext);
 
   return (
     <div className="cart__page">
@@ -28,7 +27,7 @@ export const CartPage: React.FC = () => {
           "
         >
           <div>
-            {cartFromLocaleStorage.map((phone: Phone) => (
+            {cartPhonesList.map((phone: Phone) => (
               <CartItem phone={phone} key={phone.id} />
             ))}
           </div>
@@ -42,8 +41,8 @@ export const CartPage: React.FC = () => {
             grid__item-t--1--12
           "
         >
-          <span className="cart__page__checkout-price">$2651</span>
-          <span className="cart__page__checkout-total">Total for 3 items</span>
+          <span className="cart__page__checkout-price">{`$${cartPrice}`}</span>
+          <span className="cart__page__checkout-total">{`Total for ${cartQuantity} items`}</span>
           <div className="cart__page__checkout-pipe" />
           <button type="button" className="cart__page__checkout-button">
             Checkout
