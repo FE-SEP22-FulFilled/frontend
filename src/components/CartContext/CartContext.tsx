@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Phone } from '../../types/Phone';
 
 interface ContextValues {
-  cartPhonesList: Phone[],
-  setCartPhonesList: React.Dispatch<React.SetStateAction<Phone[]>>,
-  cartQuantity: number,
-  setCartQuantity: React.Dispatch<React.SetStateAction<number>>,
-  cartPrice: number,
-  setCartPrice: React.Dispatch<React.SetStateAction<number>>,
+  cartPhonesList: Phone[];
+  setCartPhonesList: React.Dispatch<React.SetStateAction<Phone[]>>;
+  cartQuantity: number;
+  setCartQuantity: React.Dispatch<React.SetStateAction<number>>;
+  cartPrice: number;
+  setCartPrice: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export const CartContext = React.createContext<ContextValues>({
@@ -20,7 +20,7 @@ export const CartContext = React.createContext<ContextValues>({
 });
 
 type Props = {
-  children: React.ReactNode,
+  children: React.ReactNode;
 };
 
 export const CartProvider: React.FC<Props> = ({ children }) => {
@@ -28,13 +28,9 @@ export const CartProvider: React.FC<Props> = ({ children }) => {
     localStorage.getItem('cart') || '[]',
   );
 
-  const quantity = JSON.parse(
-    localStorage.getItem('quantity') || '0',
-  );
+  const quantity = JSON.parse(localStorage.getItem('quantity') || '0');
 
-  const price = JSON.parse(
-    localStorage.getItem('price') || '0',
-  );
+  const price = JSON.parse(localStorage.getItem('price') || '0');
 
   const [cartQuantity, setCartQuantity] = useState(quantity);
   const [cartPrice, setCartPrice] = useState(price);
@@ -62,8 +58,6 @@ export const CartProvider: React.FC<Props> = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={contextValue}>
-      {children}
-    </CartContext.Provider>
+    <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
   );
 };

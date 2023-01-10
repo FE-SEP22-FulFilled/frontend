@@ -7,11 +7,7 @@ import { Phone } from '../../types/Phone';
 import { CartContext } from '../CartContext';
 
 export const CartPage: React.FC = () => {
-  const {
-    cartPhonesList,
-    cartQuantity,
-    cartPrice,
-  } = useContext(CartContext);
+  const { cartPhonesList, cartQuantity, cartPrice } = useContext(CartContext);
 
   return (
     <div className="cart__page">

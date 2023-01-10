@@ -36,9 +36,7 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
   }, [counter]);
 
   const handleCartItemDelete = (deleteId: string) => {
-    setCartPhonesList(
-      cartPhonesList.filter(item => item.id !== deleteId),
-    );
+    setCartPhonesList(cartPhonesList.filter((item) => item.id !== deleteId));
     setCartQuantity(cartQuantity - counter);
     setCartPrice(cartPrice - phone.price * counter);
   };
