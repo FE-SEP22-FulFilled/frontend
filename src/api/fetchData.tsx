@@ -53,5 +53,7 @@ function getOne<T>(url: string): Promise<T> {
 export const getPhones = () => get<Phone[]>('/products');
 export const getPhoneById = (id: string) => getOne<Phone>(`/products/${id}`);
 
+export const getRecommended = (id: string) => getOne<Phone[]>(`/products/${id}/recomended`);
+
 // export const getTablets = () => get<Tablet[]>('/tablets');
 // export const getAccesories = () => get<Accessory[]>('/accesories');
