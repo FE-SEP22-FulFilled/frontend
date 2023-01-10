@@ -111,7 +111,7 @@ export const Catalog: React.FC<Props> = ({ productName }) => {
                   total={total}
                   perPage={perPage}
                   currentPage={currentPage}
-                  onPageChange={setCurrentPage}
+                  onSetPage={setCurrentPage}
                 />
               </div>
             </>
