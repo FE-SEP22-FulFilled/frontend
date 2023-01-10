@@ -19,9 +19,7 @@ export const NavigationLink: React.FC<Props> = ({
   return (
     <NavLink
       to={path}
-      className={
-        ({ isActive }) => classNames(styleClass, { 'is-active': isActive })
-      }
+      className={({ isActive }) => classNames(styleClass, { 'is-active': isActive })}
       onClick={() => onShowMenu !== undefined && onShowMenu(false)}
     >
       {text}
