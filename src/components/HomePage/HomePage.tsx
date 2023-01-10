@@ -26,14 +26,16 @@ export const HomePage: React.FC = () => {
 
         <div className="home__page__category__container">
           <div className="home__page__category__item">
-            <img
-              src={phonesImg}
-              alt="phones"
-              className="
+            <Link to="phones">
+              <img
+                src={phonesImg}
+                alt="phones"
+                className="
               home__page__category__item-img
               home__page__category__item-img-phones
           "
-            />
+              />
+            </Link>
 
             <div className="home__page__category__item-text">
               <Link
@@ -49,14 +51,16 @@ export const HomePage: React.FC = () => {
           </div>
 
           <div className="home__page__category__item">
-            <img
-              src={tabletsImg}
-              alt="phones"
-              className="
+            <Link to="tablets">
+              <img
+                src={tabletsImg}
+                alt="phones"
+                className="
               home__page__category__item-img
               home__page__category__item-img-tablets
           "
-            />
+              />
+            </Link>
 
             <div className="home__page__category__item-text">
               <Link
@@ -72,14 +76,16 @@ export const HomePage: React.FC = () => {
           </div>
 
           <div className="home__page__category__item">
-            <img
-              src={accessImg}
-              alt="phones"
-              className="
+            <Link to="accessories">
+              <img
+                src={accessImg}
+                alt="phones"
+                className="
               home__page__category__item-img
               home__page__category__item-img-access
           "
-            />
+              />
+            </Link>
 
             <div className="home__page__category__item-text">
               <Link

@@ -23,7 +23,7 @@
 }
 
 @mixin onMobile {
-  @media (min-width: 320px) and (max-width: 743) {
+  @media (min-width: 320px) {
     @content;
   }
 }
