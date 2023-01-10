@@ -2,25 +2,30 @@ import classNames from 'classnames';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { getNumbers } from '../../utils/utilsCatalog';
+import { getNumbers, goToTop } from '../../utils/utilsCatalog';
 import { Arrow } from '../Arrow/Arrow';
 
 interface Props {
   total: number;
   perPage: string;
   currentPage: number;
-  onPageChange: (page: number) => void;
+  onSetPage: (page: number) => void;
 }
 
 export const Pagination: React.FC<Props> = React.memo(
   ({
-    total, perPage, currentPage, onPageChange,
+    total, perPage, currentPage, onSetPage,
   }) => {
     const amountOfPages = Math.ceil(total / Number(perPage));
     const isFirstPage = currentPage - 1 === 0;
     const isLastPage = currentPage === amountOfPages;
 
     const visiblePages = getNumbers(1, amountOfPages);
+
+    const onPageChange = (page: number) => {
+      onSetPage(page);
+      goToTop();
+    };
 
     return (
       <ul className="pagination">

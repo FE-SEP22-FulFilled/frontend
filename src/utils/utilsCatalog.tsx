@@ -17,3 +17,7 @@ export const sortByOptions = [
   'High-priced',
   'Popular',
 ];
+
+export function goToTop() {
+  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+}

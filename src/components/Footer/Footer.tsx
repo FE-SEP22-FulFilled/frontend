@@ -3,10 +3,9 @@ import React from 'react';
 import './Footer.scss';
 import FullLogo from '../../img/FullLogo.svg';
 import BackButton from '../../img/backButton.svg';
+import { goToTop } from '../../utils/utilsCatalog';
 
 export const Footer: React.FC = () => {
-  const goToTop = () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-
   return (
     <div className="footer__container">
       <footer className="footer">

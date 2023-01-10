@@ -24,12 +24,24 @@
 
     cursor: pointer;
 
-    &:hover:not(.pagination__item--active) {
+    &:hover {
       background-color: $elements;
+    }
+
+    &:focus {
+      background-color: $accent;
+    }
+
+    &:active {
+      background-color: $accent;
     }
 
     &--active {
       background-color: $accent;
+
+      &:hover {
+        background-color: $accent;
+      }
     }
 
     &--disabled {
