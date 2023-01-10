@@ -50,6 +50,7 @@ export const SelectForm: React.FC<Props> = ({
   const handlePerPageClick = (choosedOption: string) => {
     setIsAllOnShow(false);
     setPerPage(choosedOption);
+    setOpenList(false);
   };
 
   return (
