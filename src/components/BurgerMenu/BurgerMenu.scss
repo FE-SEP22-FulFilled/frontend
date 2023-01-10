@@ -34,9 +34,22 @@
 
   background-color: $dark-background;
 
+  &--with-menu {
+    overflow: hidden;
+  }
+
   &__nav {
     position: absolute;
     z-index: 2;
+
+    &--on-open {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &:target {
+      transform: translateX(0);
+    }
 
     display: flex;
     flex-direction: column;
@@ -51,6 +64,8 @@
     display: flex;
     flex-direction: row;
     height: 48px;
+
+    border: 1px solid #3b3e4a;
 
     &--bottom {
       flex-shrink: 0;
@@ -80,7 +95,7 @@
     display: flex;
     align-items: center;
     padding-left: 16px;
-    border: 1px solid #3b3e4a;
+    border-right: 1px solid #3b3e4a;
     flex-grow: 8.5;
 
     &--image {
@@ -103,7 +118,7 @@
     align-items: center;
     flex-grow: 1.5;
 
-    border: 1px solid $elements;
+    border: none;
 
     background-color: $dark-background;
 

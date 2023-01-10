@@ -20,6 +20,12 @@
   font-family: Mont, Helvetica, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+
+  transition: scroll-behavior 1s;
+}
+
 body {
   background-color: $dark-background;
 }

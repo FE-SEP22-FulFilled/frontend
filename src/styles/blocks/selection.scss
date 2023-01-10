@@ -11,13 +11,8 @@
     justify-content: center;
   }
 
-  @media (min-width: 1250px) {
-    padding-left: 8px;
-  }
-
   &__items {
     width: max-content;
-    margin-top: 24px;
 
     color: $secondary;
 
