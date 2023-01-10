@@ -68,10 +68,7 @@ export const CartPage: React.FC = () => {
           </button>
         </div>
 
-        <CartCheckout
-          isHidden={isHidden}
-          onSetIsHidden={setIsHidden}
-        />
+        <CartCheckout isHidden={isHidden} onSetIsHidden={setIsHidden} />
       </div>
     </div>
   );

@@ -4,16 +4,13 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../CartContext';
 
 type Props = {
-  isHidden: boolean,
-  onSetIsHidden: React.Dispatch<React.SetStateAction<boolean>>,
+  isHidden: boolean;
+  onSetIsHidden: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const CartCheckout: React.FC<Props> = ({ isHidden, onSetIsHidden }) => {
-  const {
-    setCartPhonesList,
-    setCartPrice,
-    setCartQuantity,
-  } = useContext(CartContext);
+  const { setCartPhonesList, setCartPrice, setCartQuantity }
+    = useContext(CartContext);
 
   const handleCheckoutClick = () => {
     onSetIsHidden(false);
@@ -23,15 +20,14 @@ export const CartCheckout: React.FC<Props> = ({ isHidden, onSetIsHidden }) => {
   };
 
   return (
-    <div className={classNames('cartCheckout', {
-      'cartCheckout--hidden': !isHidden,
-    })}
+    <div
+      className={classNames('cartCheckout', {
+        'cartCheckout--hidden': !isHidden,
+      })}
     >
       <div className="cartCheckout__container">
         <div className="cartCheckout__text">
-          <p className="cartCheckout__text--title">
-            Thank you for your order!
-          </p>
+          <p className="cartCheckout__text--title">Thank you for your order!</p>
 
           <p className="cartCheckout__text--recall">
             Our operator will contact you soon.
