@@ -1,17 +1,53 @@
+@import '../../styles/utils/variables';
+@import '../../styles/utils/mixins';
+
+.burger-icon {
+  display: none;
+
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+
+  border: 1px solid #323542;
+  border-bottom: none;
+
+  cursor: pointer;
+
+  @media (max-width: 639px) {
+    display: flex;
+  }
+
+  &--action {
+    background-color: $dark-background;
+  }
+}
+
 .burger {
+  position: absolute;
+
   display: flex;
   flex-direction: column;
-  position: absolute;
-  background-color: #0f1121;
-  z-index: 1;
+
   width: 100%;
   height: 100%;
 
-  &--disabled {
-    display: none;
+  background-color: $dark-background;
+
+  &__nav {
+    position: absolute;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    height: 100vh;
+    width: 100%;
+
+    background-color: $dark-background;
   }
 
-  &__container {
+  &__header {
     display: flex;
     flex-direction: row;
     height: 48px;
@@ -20,6 +56,23 @@
       flex-shrink: 0;
       width: 100%;
       height: 64px;
+    }
+
+    &--icon {
+      display: flex;
+      flex-grow: 1;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #3b3e4a;
+
+      &__action {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 48px;
+        height: 48px;
+        border: none;
+      }
     }
   }
 
@@ -46,11 +99,15 @@
 
   &__button {
     display: flex;
-    background-color: #0f1121;
     justify-content: center;
     align-items: center;
-    border: 1px solid #3b3e4a;
     flex-grow: 1.5;
+
+    border: 1px solid $elements;
+
+    background-color: $dark-background;
+
+    cursor: pointer;
   }
 
   &__list {
@@ -87,26 +144,26 @@
   content: '';
   display: block;
   position: absolute;
-  top: 100%;
-  height: 3px;
+  top: 130%;
+  height: 2px;
   width: 100%;
 
   background-color: #f1f2f9;
 }
 
-.icon {
-  display: flex;
-  flex-grow: 1;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #3b3e4a;
+// .icon {
+//   display: flex;
+//   flex-grow: 1;
+//   justify-content: center;
+//   align-items: center;
+//   border: 1px solid #3b3e4a;
 
-  &__action {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 48px;
-    height: 48px;
-    border: none;
-  }
-}
+//   &__action {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 48px;
+//     height: 48px;
+//     border: none;
+//   }
+// }
