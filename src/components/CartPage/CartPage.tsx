@@ -1,13 +1,25 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import '../../styles/blocks/cart-page.scss';
+import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import BackImg from '../../icons/cart_back_button.svg';
 import { CartItem } from '../CartItem';
 import { Phone } from '../../types/Phone';
 import { CartContext } from '../CartContext';
+import { CartCheckout } from '../CartCheckout';
 
 export const CartPage: React.FC = () => {
   const { cartPhonesList, cartQuantity, cartPrice } = useContext(CartContext);
+  const [isDisabled, setIsDisabled] = useState(true);
+  const [isHidden, setIsHidden] = useState(true);
+
+  useEffect(() => {
+    if (cartPrice < 1) {
+      setIsDisabled(true);
+    } else {
+      setIsDisabled(false);
+    }
+  }, [cartPrice]);
 
   return (
     <div className="cart__page">
@@ -44,10 +56,22 @@ export const CartPage: React.FC = () => {
           <span className="cart__page__checkout-price">{`$${cartPrice}`}</span>
           <span className="cart__page__checkout-total">{`Total for ${cartQuantity} items`}</span>
           <div className="cart__page__checkout-pipe" />
-          <button type="button" className="cart__page__checkout-button">
+          <button
+            type="button"
+            className={classNames('cart__page__checkout-button', {
+              'cart__page__checkout-button-disabled': isDisabled,
+            })}
+            disabled={isDisabled}
+            onClick={() => setIsHidden(false)}
+          >
             Checkout
           </button>
         </div>
+
+        <CartCheckout
+          isHidden={isHidden}
+          onSetIsHidden={setIsHidden}
+        />
       </div>
     </div>
   );

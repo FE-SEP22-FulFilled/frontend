@@ -126,6 +126,14 @@
         background-color: $accent-hover;
         cursor: pointer;
       }
+
+      &-disabled {
+        background-color: $gray-surface2;
+
+        &:hover {
+          background-color: $gray-surface1;
+        }
+      }
     }
   }
 }
