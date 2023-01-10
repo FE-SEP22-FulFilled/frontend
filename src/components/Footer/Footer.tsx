@@ -1,9 +1,12 @@
+/* eslint-disable max-len */
 import React from 'react';
 import './Footer.scss';
 import FullLogo from '../../img/FullLogo.svg';
 import BackButton from '../../img/backButton.svg';
 
 export const Footer: React.FC = () => {
+  const goToTop = () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+
   return (
     <div className="footer__container">
       <footer className="footer">
@@ -36,9 +39,13 @@ export const Footer: React.FC = () => {
 
         <div className="footer__back-to-top">
           Back to top
-          <a href="#home" className="footer__back-to-top--link">
+          <button
+            type="button"
+            className="footer__back-to-top--link"
+            onClick={goToTop}
+          >
             <img src={BackButton} alt="button back to top" />
-          </a>
+          </button>
         </div>
       </footer>
     </div>

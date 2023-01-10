@@ -135,35 +135,7 @@
   }
 }
 
-.is-active {
+.burger .is-active {
   color: #f1f2f9;
   position: relative;
 }
-
-.is-active::after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 130%;
-  height: 2px;
-  width: 100%;
-
-  background-color: #f1f2f9;
-}
-
-// .icon {
-//   display: flex;
-//   flex-grow: 1;
-//   justify-content: center;
-//   align-items: center;
-//   border: 1px solid #3b3e4a;
-
-//   &__action {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     width: 48px;
-//     height: 48px;
-//     border: none;
-//   }
-// }

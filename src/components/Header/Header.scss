@@ -100,16 +100,24 @@
 
 .is-active::after {
   content: '';
-  display: block;
+
   position: absolute;
-  top: 33px;
-  height: 3px;
+  display: block;
+  top: 130%;
+
+  height: 2px;
   width: 100%;
 
   background-color: #f1f2f9;
+}
+
+.nav .is-active::after {
+  top: 35px;
+
+  height: 3px;
 
   @media (min-width: 1200px) {
-    top: 44px;
+    top: 45px;
   }
 }
 

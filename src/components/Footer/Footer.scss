@@ -26,7 +26,6 @@
   background-color: #0f1121;
 
   @media (min-width: 640px) {
-    height: 96px;
     flex-direction: row;
     justify-content: space-between;
 
@@ -102,6 +101,8 @@
 
       height: 32px;
       width: 32px;
+
+      cursor: pointer;
     }
   }
 }
