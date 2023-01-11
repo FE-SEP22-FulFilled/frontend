@@ -1,0 +1,36 @@
+@import '../utils/mixins';
+@import '../utils/variables';
+
+.favPage {
+  &__title {
+    margin-top: 40px;
+    margin-bottom: 8px;
+
+    font-style: normal;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -0.01em;
+    color: $white;
+
+    @media (max-width: 639px) {
+      margin-top: 24px;
+
+      font-size: 32px;
+      line-height: 41px;
+    }
+  }
+
+  &__counter {
+    margin-bottom: 40px;
+
+    color: $secondary;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+
+    @media (max-width: 639px) {
+      margin-bottom: 32px;
+    }
+  }
+}

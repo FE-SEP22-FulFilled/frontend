@@ -100,6 +100,7 @@
   &__buy {
     height: 40px;
     display: flex;
+    box-sizing: border-box;
 
     font-size: 14px;
     font-weight: 700;
@@ -146,6 +147,8 @@
       box-sizing: border-box;
 
       text-decoration: none;
+      border: 0;
+      cursor: pointer;
       background-color: $gray-surface2;
       margin-left: 8px;
 
@@ -153,6 +156,12 @@
 
       &:hover {
         background-color: $gray-hover;
+      }
+
+      &-red {
+        background-color: $gray-surface1;
+        padding: 19px;
+        border: 1px $elements solid;
       }
     }
   }

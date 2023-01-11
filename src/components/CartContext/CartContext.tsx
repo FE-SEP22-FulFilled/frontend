@@ -8,6 +8,9 @@ interface ContextValues {
   setCartQuantity: React.Dispatch<React.SetStateAction<number>>;
   cartPrice: number;
   setCartPrice: React.Dispatch<React.SetStateAction<number>>;
+
+  favPhonesList: Phone[];
+  setFavPhonesList: React.Dispatch<React.SetStateAction<Phone[]>>;
 }
 
 export const CartContext = React.createContext<ContextValues>({
@@ -17,6 +20,9 @@ export const CartContext = React.createContext<ContextValues>({
   setCartQuantity: () => {},
   cartPrice: 0,
   setCartPrice: () => {},
+
+  favPhonesList: [],
+  setFavPhonesList: () => {},
 });
 
 type Props = {
@@ -28,6 +34,8 @@ export const CartProvider: React.FC<Props> = ({ children }) => {
     localStorage.getItem('cart') || '[]',
   );
 
+  const favFromLocaleStorage = JSON.parse(localStorage.getItem('fav') || '[]');
+
   const quantity = JSON.parse(localStorage.getItem('quantity') || '0');
 
   const price = JSON.parse(localStorage.getItem('price') || '0');
@@ -35,10 +43,15 @@ export const CartProvider: React.FC<Props> = ({ children }) => {
   const [cartQuantity, setCartQuantity] = useState(quantity);
   const [cartPrice, setCartPrice] = useState(price);
   const [cartPhonesList, setCartPhonesList] = useState(cartFromLocaleStorage);
+  const [favPhonesList, setFavPhonesList] = useState(favFromLocaleStorage);
 
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cartPhonesList));
   }, [cartPhonesList]);
+
+  useEffect(() => {
+    localStorage.setItem('fav', JSON.stringify(favPhonesList));
+  }, [favPhonesList]);
 
   useEffect(() => {
     localStorage.setItem('quantity', JSON.stringify(cartQuantity));
@@ -55,6 +68,9 @@ export const CartProvider: React.FC<Props> = ({ children }) => {
     setCartQuantity,
     cartPrice,
     setCartPrice,
+
+    favPhonesList,
+    setFavPhonesList,
   };
 
   return (
