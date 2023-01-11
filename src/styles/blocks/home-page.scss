@@ -210,6 +210,12 @@
         text-decoration: none;
 
         margin-bottom: 4px;
+
+        transition: all 0.5s;
+
+        &:hover {
+          color: $secondary;
+        }
       }
 
       &-text-gray {

@@ -1,3 +1,5 @@
+@import '../../styles/utils/variables';
+
 @font-face {
   font-family: Mont;
   font-weight: 800;
@@ -75,8 +77,14 @@
     }
 
     &-link {
-      color: #f1f2f9;
+      color: #75767f;
       text-decoration: none;
+
+      transition: all 0.5s;
+
+      &:hover {
+        color: #f1f2f9;
+      }
     }
   }
 
@@ -94,7 +102,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #323542;
+      background-color: $gray-surface1;
       border: none;
       margin-left: 16px;
 
@@ -102,6 +110,12 @@
       width: 32px;
 
       cursor: pointer;
+
+      transition: all 0.5s;
+
+      &:hover {
+        background-color: $elements;
+      }
     }
   }
 }

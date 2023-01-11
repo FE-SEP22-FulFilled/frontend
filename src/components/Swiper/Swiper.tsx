@@ -8,11 +8,12 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import '../../styles/utils/swiper.scss';
-import slide1 from '../../img/Banner.svg';
-// import slide2 from '../../img/banner-phones.png';
+import slide1 from '../../img/Banner1.svg';
+import slide2 from '../../img/Banner2.jpg';
+import slide3 from '../../img/Banner3.jpg';
 
 export default function App() {
-  const slides = [slide1, slide1, slide1];
+  const slides = [slide1, slide2, slide3];
 
   return (
     <>

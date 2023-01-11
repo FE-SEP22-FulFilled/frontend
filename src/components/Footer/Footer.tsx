@@ -17,13 +17,18 @@ export const Footer: React.FC = () => {
         <nav className="footer__nav">
           <ul className="footer__nav-list">
             <li className="footer__nav-item">
-              <a className="footer__nav-link" href="#apple">
+              <a
+                className="footer__nav-link"
+                href="https://github.com/FE-SEP22-FulFilled"
+                target="_blank"
+                rel="noreferrer"
+              >
                 github
               </a>
             </li>
 
             <li className="footer__nav-item">
-              <a className="footer__nav-link" href="#phones">
+              <a className="footer__nav-link" href="mailto:and.shymkiv@gmail.com">
                 contacts
               </a>
             </li>
