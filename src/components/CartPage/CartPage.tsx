@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import '../../styles/blocks/cart-page.scss';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import BackImg from '../../icons/cart_back_button.svg';
@@ -38,8 +37,10 @@ export const CartPage: React.FC = () => {
             grid__item-t--1--12
           "
         >
-          <div>
-            {cartPhonesList.map((phone: Phone) => (
+          <div className="cart__page--text--amount">
+            {cartPhonesList.length === 0 && 'No items yet'}
+
+            {cartPhonesList && cartPhonesList.map((phone: Phone) => (
               <CartItem phone={phone} key={phone.id} />
             ))}
           </div>

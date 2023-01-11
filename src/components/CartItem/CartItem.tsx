@@ -2,7 +2,6 @@
 /* eslint-disable import/no-dynamic-require */
 import { useContext, useEffect, useState } from 'react';
 
-import '../../styles/main.scss';
 import cross from '../../icons/cross.svg';
 import minus from '../../icons/minus.svg';
 import plus from '../../icons/plus.svg';

@@ -6,7 +6,6 @@ import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
 
-import './BurgerMenu.scss';
 import Logo from '../../img/Logo.svg';
 import favoritesIcon from '../../img/firstIcon.svg';
 import shopBagIcon from '../../img/shopping_bag.svg';

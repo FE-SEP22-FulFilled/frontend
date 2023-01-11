@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import classNames from 'classnames';
-import '../../styles/main.scss';
 import { Link } from 'react-router-dom';
 import heart from '../../icons/heart.svg';
 import heartRed from '../../icons/heart_red.svg';
