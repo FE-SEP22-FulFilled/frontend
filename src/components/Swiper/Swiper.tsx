@@ -9,8 +9,7 @@ import 'swiper/css/navigation';
 
 import '../../styles/utils/swiper.scss';
 import slide1 from '../../img/Banner.svg';
-
-// import required modules
+// import slide2 from '../../img/banner-phones.png';
 
 export default function App() {
   const slides = [slide1, slide1, slide1];
