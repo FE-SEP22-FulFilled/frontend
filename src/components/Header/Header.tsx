@@ -14,17 +14,17 @@ export const Header: React.FC = () => {
         <Nav />
 
         <div className="icon">
-          <div className="icon__action icon__action--favorites">
-            <NavLink to="favourites">
+          <NavLink to="favourites">
+            <div className="icon__action icon__action--favorites">
               <img src={favoritesIcon} alt="favorites" />
-            </NavLink>
-          </div>
+            </div>
+          </NavLink>
 
-          <div className="icon__action icon__action--shop-bag">
-            <NavLink to="cart">
+          <NavLink to="cart">
+            <div className="icon__action icon__action--shop-bag">
               <img src={shopBagIcon} alt="shopping bag" />
-            </NavLink>
-          </div>
+            </div>
+          </NavLink>
         </div>
 
         <BurgerMenu />

@@ -2,9 +2,10 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable max-len */
 
-import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
+import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
+
 import './BurgerMenu.scss';
 import Logo from '../../img/Logo.svg';
 import favoritesIcon from '../../img/firstIcon.svg';
@@ -87,33 +88,25 @@ export const BurgerMenu: React.FC = () => {
             </div>
 
             <div className="burger__header burger__header--bottom">
-              <div className="burger__header--icon">
-                <div className="burger__header--icon--action">
-                  <NavLink
-                    className={({ isActive }) => classNames('burger__header--icon--action', {
-                      'is-active': isActive,
-                    })}
-                    to="favourites"
-                    onClick={() => setIsActiveBurger(false)}
-                  >
-                    <img src={favoritesIcon} alt="favorites" />
-                  </NavLink>
-                </div>
-              </div>
+              <NavLink
+                className={({ isActive }) => classNames('burger__header--icon', {
+                  'is-active': isActive,
+                })}
+                to="favourites"
+                onClick={() => setIsActiveBurger(false)}
+              >
+                <img src={favoritesIcon} alt="favorites" />
+              </NavLink>
 
-              <div className="burger__header--icon">
-                <div className="burger__header--icon--action">
-                  <NavLink
-                    className={({ isActive }) => classNames('burger__header--icon--action', {
-                      'is-active': isActive,
-                    })}
-                    to="cart"
-                    onClick={() => setIsActiveBurger(false)}
-                  >
-                    <img src={shopBagIcon} alt="shopping_bag" />
-                  </NavLink>
-                </div>
-              </div>
+              <NavLink
+                className={({ isActive }) => classNames('burger__header--icon', {
+                  'is-active': isActive,
+                })}
+                to="cart"
+                onClick={() => setIsActiveBurger(false)}
+              >
+                <img src={shopBagIcon} alt="shopping_bag" />
+              </NavLink>
             </div>
           </nav>
         </div>
