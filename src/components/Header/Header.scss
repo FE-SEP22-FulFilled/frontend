@@ -90,6 +90,8 @@
     text-decoration: none;
     color: #75767f;
 
+    transition: all 0.5s;
+
     &:hover {
       color: #f1f2f9;
     }
@@ -176,6 +178,12 @@
     height: 48px;
 
     border-left: 1px solid #323542;
+
+    transition: all 0.5s;
+
+    &:hover {
+      background-color: $elements;
+    }
 
     @media (max-width: 639px) {
       display: none;
