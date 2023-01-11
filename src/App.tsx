@@ -40,7 +40,7 @@ export const App = () => {
           </Route>
 
           <Route path="product" element={<ProductPage />} />
-          <Route path="favoutites" element={<FavouritesPage />} />
+          <Route path="favourites" element={<FavouritesPage />} />
           <Route path="cart" element={<CartPage />} />
           <Route path="/" element={<HomePage />} />
           <Route path="home" element={<Navigate to="/" replace />} />

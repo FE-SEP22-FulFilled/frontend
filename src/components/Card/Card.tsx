@@ -1,8 +1,9 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import classNames from 'classnames';
 import '../../styles/main.scss';
 import { Link } from 'react-router-dom';
-import heart from '../../icons/Vector (Stroke).svg';
+import heart from '../../icons/heart.svg';
+import heartRed from '../../icons/heart_red.svg';
 import { Phone } from '../../types/Phone';
 import { getPhoneById } from '../../api/fetchData';
 import { CartContext } from '../CartContext';
@@ -23,9 +24,13 @@ export const Card: React.FC<Props> = ({ card }) => {
     setCartQuantity,
     cartPrice,
     setCartPrice,
+
+    favPhonesList,
+    setFavPhonesList,
   } = useContext(CartContext);
 
-  const [isAdded, setIsAdded] = useState(false);
+  const isAdded = Boolean(cartPhonesList.find(item => item.id === id));
+  const isFav = Boolean(favPhonesList.find(item => item.id === id));
 
   const logItem = (idItem: string) => {
     // eslint-disable-next-line no-console
@@ -33,11 +38,17 @@ export const Card: React.FC<Props> = ({ card }) => {
   };
 
   const handleAddToCart = () => {
-    setIsAdded(true);
-
     setCartPhonesList([...cartPhonesList, card]);
     setCartQuantity(cartQuantity + 1);
     setCartPrice(cartPrice + card.price);
+  };
+
+  const handleAddToFav = () => {
+    setFavPhonesList([...favPhonesList, card]);
+  };
+
+  const handleDeleteFromFav = (deleteId: string) => {
+    setFavPhonesList(favPhonesList.filter((item) => item.id !== deleteId));
   };
 
   return (
@@ -70,7 +81,7 @@ export const Card: React.FC<Props> = ({ card }) => {
         <div className="card__params--container">
           <p className="card__params--text">Capacity</p>
           <p className="card__params--num">
-            {`${capacity.slice(0, 2)} ${capacity.slice(2)}`}
+            {`${capacity.split('G')[0]} G${capacity.split('G')[1]}`}
           </p>
         </div>
         <div className="card__params--container">
@@ -95,9 +106,23 @@ export const Card: React.FC<Props> = ({ card }) => {
           {' '}
         </button>
 
-        <a href="/" className="card__buy--heart">
-          <img src={heart} alt="heart_icon" className="card__icon" />
-        </a>
+        {!isFav ? (
+          <button
+            type="button"
+            className="card__buy--heart"
+            onClick={handleAddToFav}
+          >
+            <img src={heart} alt="heart_icon" className="card__icon" />
+          </button>
+        ) : (
+          <button
+            type="button"
+            className="card__buy--heart card__buy--heart-red"
+            onClick={() => handleDeleteFromFav(card.id)}
+          >
+            <img src={heartRed} alt="heart_icon" className="card__icon" />
+          </button>
+        )}
       </div>
     </section>
   );
