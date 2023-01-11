@@ -12,7 +12,7 @@ interface Props {
 
 export const Card: React.FC<Props> = ({ card }) => {
   const {
-    id, name, fullPrice, price, screen, capacity, ram, image,
+    id, phoneId, name, fullPrice, price, screen, capacity, ram, image,
   } = card;
 
   const {
@@ -51,7 +51,10 @@ export const Card: React.FC<Props> = ({ card }) => {
         <img src={require(`../../${image}`)} alt={name} className="card__img" />
       </div>
 
-      <Link to={`/phones/${id}`} className="card__name">
+      <Link
+        to={`/phones/${phoneId}`}
+        className="card__name"
+      >
         {`${name} (iMT9G2FS/A)`}
       </Link>
 
