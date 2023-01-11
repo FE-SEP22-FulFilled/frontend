@@ -2,14 +2,14 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Header.scss';
-import favoritesIcon from '../../img/firstIcon.svg';
-import shopBagIcon from '../../img/shopping_bag.svg';
+import favoritesIconFull from '../../img/firstIcon.svg';
+import shopBagIconFull from '../../img/shopping_bag.svg';
 import { BurgerMenu } from '../BurgerMenu';
 import { Nav } from '../Nav/Nav';
 import { CartContext } from '../CartContext';
 
 export const Header: React.FC = () => {
-  const { cartQuantity } = useContext(CartContext);
+  const { cartQuantity, favPhonesList } = useContext(CartContext);
 
   return (
     <>
@@ -19,18 +19,21 @@ export const Header: React.FC = () => {
         <div className="icon">
           <NavLink to="favourites">
             <div className="icon__action icon__action--favorites">
-              {/* here should be favorites quantity */}
-              <div className="icon__quantity--favorites">0</div>
+              {favPhonesList.length > 0 && (
+                <div className="icon__quantity--favorites">{favPhonesList.length}</div>
+              )}
 
-              <img src={favoritesIcon} alt="favorites" />
+              <img src={favoritesIconFull} alt="favorites" />
             </div>
           </NavLink>
 
           <NavLink to="cart">
             <div className="icon__action icon__action--shop-bag">
-              <div className="icon__quantity">{cartQuantity}</div>
+              {cartQuantity > 0 && (
+                <div className="icon__quantity">{cartQuantity}</div>
+              )}
 
-              <img src={shopBagIcon} alt="shopping bag" />
+              <img src={shopBagIconFull} alt="shopping bag" />
             </div>
           </NavLink>
         </div>
