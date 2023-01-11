@@ -29,8 +29,8 @@ export const Card: React.FC<Props> = ({ card }) => {
     setFavPhonesList,
   } = useContext(CartContext);
 
-  const isAdded = Boolean(cartPhonesList.find(item => item.id === id));
-  const isFav = Boolean(favPhonesList.find(item => item.id === id));
+  const isAdded = Boolean(cartPhonesList.find((item) => item.id === id));
+  const isFav = Boolean(favPhonesList.find((item) => item.id === id));
 
   const logItem = (idItem: string) => {
     // eslint-disable-next-line no-console
