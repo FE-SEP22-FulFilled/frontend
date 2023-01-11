@@ -9,7 +9,7 @@ import { Nav } from '../Nav/Nav';
 import { CartContext } from '../CartContext';
 
 export const Header: React.FC = () => {
-  const { cartQuantity } = useContext(CartContext);
+  const { cartQuantity, favPhonesList } = useContext(CartContext);
 
   return (
     <>
@@ -19,8 +19,11 @@ export const Header: React.FC = () => {
         <div className="icon">
           <NavLink to="favourites">
             <div className="icon__action icon__action--favorites">
-              {/* here should be favorites quantity */}
-              <div className="icon__quantity--favorites">0</div>
+              {favPhonesList.length > 0 && (
+                <div className="icon__quantity--favorites">
+                  {favPhonesList.length}
+                </div>
+              )}
 
               <img src={favoritesIcon} alt="favorites" />
             </div>
@@ -28,7 +31,9 @@ export const Header: React.FC = () => {
 
           <NavLink to="cart">
             <div className="icon__action icon__action--shop-bag">
-              <div className="icon__quantity">{cartQuantity}</div>
+              {cartQuantity > 0 && (
+                <div className="icon__quantity">{cartQuantity}</div>
+              )}
 
               <img src={shopBagIcon} alt="shopping bag" />
             </div>
