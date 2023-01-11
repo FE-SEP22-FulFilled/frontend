@@ -20,9 +20,9 @@ export const App = () => {
     <div className="App">
       <Header />
 
-      <Link to="product">ProductPage</Link>
-
       <div className="container">
+        <Link to="product">ProductPage</Link>
+
         <Routes>
           <Route path="phones">
             <Route index element={<PhonesPage />} />
