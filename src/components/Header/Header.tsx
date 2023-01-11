@@ -2,8 +2,8 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Header.scss';
-import favoritesIconFull from '../../img/firstIcon.svg';
-import shopBagIconFull from '../../img/shopping_bag.svg';
+import favoritesIcon from '../../img/firstIcon.svg';
+import shopBagIcon from '../../img/shopping_bag.svg';
 import { BurgerMenu } from '../BurgerMenu';
 import { Nav } from '../Nav/Nav';
 import { CartContext } from '../CartContext';
@@ -25,7 +25,7 @@ export const Header: React.FC = () => {
                 </div>
               )}
 
-              <img src={favoritesIconFull} alt="favorites" />
+              <img src={favoritesIcon} alt="favorites" />
             </div>
           </NavLink>
 
@@ -35,7 +35,7 @@ export const Header: React.FC = () => {
                 <div className="icon__quantity">{cartQuantity}</div>
               )}
 
-              <img src={shopBagIconFull} alt="shopping bag" />
+              <img src={shopBagIcon} alt="shopping bag" />
             </div>
           </NavLink>
         </div>
