@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.scss';
 
-import { Navigate, Route, Routes } from 'react-router-dom';
+import {
+  Link, Navigate, Route, Routes,
+} from 'react-router-dom';
 import { NotFoundPage } from './components/NotFoundPage';
 import { AccessoriesPage } from './components/AccessoriesPage';
 import { CartPage } from './components/CartPage';
@@ -11,12 +13,14 @@ import { PhonesPage } from './components/PhonesPage';
 import { TabletsPage } from './components/TabletsPage';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
+import { ProductPage } from './components/ProductPage/ProductPage';
 
 export const App = () => {
   return (
     <div className="App">
       <div className="container">
         <Header />
+        <Link to="product">ProductPage</Link>
         <Routes>
           <Route path="phones">
             <Route index element={<PhonesPage />} />
@@ -33,6 +37,7 @@ export const App = () => {
             {/* <Route path="id/slug" element={<AccessoriesPage />} /> */}
           </Route>
 
+          <Route path="product" element={<ProductPage />} />
           <Route path="favoutites" element={<FavouritesPage />} />
           <Route path="cart" element={<CartPage />} />
           <Route path="/" element={<HomePage />} />
