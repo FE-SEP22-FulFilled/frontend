@@ -73,18 +73,6 @@
       height: 64px;
     }
 
-    
-    &--bottom-block {
-      // display: flex;
-      // flex-grow: 1;
-      // justify-content: center;
-      // align-items: center;
-
-      // &:nth-child(1) {
-      //   border-right: 1px solid $elements;
-      // }
-    }
-
     &--icon {
       display: flex;
       flex-grow: 1;
@@ -94,15 +82,6 @@
       &:nth-child(1) {
         border-right: 1px solid $elements;
       }
-
-      // &--action {
-      //   display: flex;
-      //   justify-content: center;
-      //   align-items: center;
-      //   width: 48px;
-      //   height: 48px;
-      //   border: none;
-      // }
     }
   }
 
@@ -174,4 +153,3 @@
   top: 97%;
   height: 3px;
 }
-
