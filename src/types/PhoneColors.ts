@@ -1,0 +1,15 @@
+export enum PhoneColors {
+  'spacegray' = '#65737E',
+  'midnight' = '#010101',
+  'midnightgreen' = '#486E58',
+  'rosegold' = '#A5525F',
+  'black' = '#000000',
+  'silver' = '#C0C0C0',
+  'gold' = '#E5C100',
+  'coral' = '#FF7F50',
+  'yellow' = '#FFFF00',
+  'white' = '#FFFFFF',
+  'red' = '#FF0000',
+  'green' = '#DCF3D7',
+  'purple' = '#B9AEE6',
+}
