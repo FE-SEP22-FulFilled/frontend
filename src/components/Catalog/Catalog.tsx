@@ -1,10 +1,10 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { redirect } from 'react-router-dom';
 
 import { Card } from '../Card';
 import { Pagination } from '../Pagination/Pagination';
 import { SelectForm } from '../SelectFrom/SelectForm';
-import { getPhones } from '../../api/fetchData';
+import { getPhones, getPhonesByQuery } from '../../api/fetchData';
 import { perPageOptions, sortByOptions } from '../../utils/utilsCatalog';
 import { Phone } from '../../types/Phone';
 import { Loader } from '../Loader/Loader';
@@ -15,9 +15,10 @@ interface Props {
 
 export const Catalog: React.FC<Props> = ({ productName }) => {
   const [cards, setCards] = useState<Phone[] | null>([]);
+  const [visibleItems, setVisibleItems] = useState<Phone[] | null>([]);
   const [loader, setLoader] = useState(true);
   const [perPage, setPerPage] = useState(perPageOptions[0]);
-  const [sortBy] = useState(sortByOptions[0]);
+  const [sortBy, setSortBy] = useState(sortByOptions[0]);
   const [currentPage, setCurrentPage] = useState(1);
   const [total, setTotal] = useState(0);
   const [isDataOnServer, setIsDataOnServer] = useState(true);
@@ -48,22 +49,33 @@ export const Catalog: React.FC<Props> = ({ productName }) => {
     }
   }, [cards]);
 
+  const loadItemsByQuery = async () => {
+    try {
+      const normalizedSortBy = sortBy[0].toLowerCase() + sortBy.slice(1);
+      const loadedItems = await getPhonesByQuery(
+        currentPage,
+        perPage,
+        normalizedSortBy,
+      );
+
+      if (loadedItems) {
+        setVisibleItems(loadedItems);
+      }
+    } catch (err) {
+      setVisibleItems(null);
+    } finally {
+      setLoader(false);
+    }
+  };
+
+  useEffect(() => {
+    loadItemsByQuery();
+  }, [sortBy, perPage, currentPage]);
+
   useEffect(() => {
     setCurrentPage(1);
     redirect(`/products?page=1&limit=${perPage}`);
   }, [currentPage > Math.ceil(total / Number(perPage))]);
-
-  const itemsOnPage = useCallback(
-    (currPage: number, itemsPerPage: string) => {
-      const itemStart = Number(itemsPerPage) * (currPage - 1);
-      const itemEnd = itemStart + Number(itemsPerPage) + 1;
-
-      return cards?.filter((item, i) => i > itemStart && i < itemEnd);
-    },
-    [cards],
-  );
-
-  const visibleItems = itemsOnPage(currentPage, perPage);
 
   return (
     <div className="catalog">
@@ -84,17 +96,15 @@ export const Catalog: React.FC<Props> = ({ productName }) => {
                 <SelectForm
                   text="Sort by"
                   perPage={sortBy}
-                  setPerPage={setPerPage}
-                  perPageOptions={sortByOptions}
-                  total={total}
-                  currentPage={currentPage}
+                  setOption={setSortBy}
+                  options={sortByOptions}
                 />
 
                 <SelectForm
                   text="Items on page"
                   perPage={perPage}
-                  setPerPage={setPerPage}
-                  perPageOptions={perPageOptions}
+                  setOption={setPerPage}
+                  options={perPageOptions}
                   total={total}
                   currentPage={currentPage}
                 />

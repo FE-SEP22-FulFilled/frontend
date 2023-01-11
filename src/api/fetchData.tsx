@@ -57,5 +57,7 @@ export const getFullInfoById = (id: string) => getOne<ProductInfo>(`/products/${
 
 export const getRecommended = (id: string) => getOne<Phone[]>(`/products/${id}/recomended`);
 
+export const getPhonesByQuery = (page: number, limit = '8', sortBy = 'all') => get<Phone[]>(`/products?page=${page}&limit=${limit}&sortBy=${sortBy}`);
+
 // export const getTablets = () => get<Tablet[]>('/tablets');
 // export const getAccesories = () => get<Accessory[]>('/accesories');

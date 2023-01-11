@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import heart from '../../icons/heart.svg';
 import heartRed from '../../icons/heart_red.svg';
 import { Phone } from '../../types/Phone';
-import { getPhoneById } from '../../api/fetchData';
 import { CartContext } from '../CartContext';
 
 interface Props {
@@ -32,11 +31,6 @@ export const Card: React.FC<Props> = ({ card }) => {
   const isAdded = Boolean(cartPhonesList.find((item) => item.id === id));
   const isFav = Boolean(favPhonesList.find((item) => item.id === id));
 
-  const logItem = (idItem: string) => {
-    // eslint-disable-next-line no-console
-    getPhoneById(idItem).then((res) => console.log(res));
-  };
-
   const handleAddToCart = () => {
     setCartPhonesList([...cartPhonesList, card]);
     setCartQuantity(cartQuantity + 1);
@@ -58,11 +52,7 @@ export const Card: React.FC<Props> = ({ card }) => {
         <img src={require(`../../${image}`)} alt={name} className="card__img" />
       </div>
 
-      <Link
-        to={`/phones/${id}`}
-        className="card__name"
-        onClick={() => logItem(id)}
-      >
+      <Link to={`/phones/${id}`} className="card__name">
         {`${name} (iMT9G2FS/A)`}
       </Link>
 

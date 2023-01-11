@@ -1,9 +1,7 @@
 import React from 'react';
 import './App.scss';
 
-import {
-  Link, Navigate, Route, Routes,
-} from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { NotFoundPage } from './components/NotFoundPage';
 import { AccessoriesPage } from './components/AccessoriesPage';
 import { CartPage } from './components/CartPage';
@@ -21,8 +19,6 @@ export const App = () => {
       <Header />
 
       <div className="container">
-        <Link to="product">ProductPage</Link>
-
         <Routes>
           <Route path="phones">
             <Route index element={<PhonesPage />} />
