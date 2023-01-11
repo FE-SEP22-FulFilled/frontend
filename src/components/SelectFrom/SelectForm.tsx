@@ -26,16 +26,19 @@ export const SelectForm: React.FC<Props> = ({
   const ref = useRef<HTMLDivElement>(null);
   const isChangePage = text === 'Items on page';
 
-  const checkIfClickedOutside = useCallback((e: MouseEvent) => {
-    if (
-      e.target instanceof HTMLElement
-      && openList
-      && ref.current
-      && !ref.current.contains(e.target)
-    ) {
-      setOpenList(false);
-    }
-  }, [openList]);
+  const checkIfClickedOutside = useCallback(
+    (e: MouseEvent) => {
+      if (
+        e.target instanceof HTMLElement
+        && openList
+        && ref.current
+        && !ref.current.contains(e.target)
+      ) {
+        setOpenList(false);
+      }
+    },
+    [openList],
+  );
 
   useEffect(() => {
     document.addEventListener('mousedown', checkIfClickedOutside);
@@ -84,9 +87,11 @@ export const SelectForm: React.FC<Props> = ({
           <div className="selection__list">
             {options.map((option) => (
               <Link
-                to={isChangePage
-                  ? `?page=${currentPage}&limit=${option}`
-                  : `?sortBy=${option[0].toLowerCase()}${option.slice(1)}`}
+                to={
+                  isChangePage
+                    ? `?page=${currentPage}&limit=${option}`
+                    : `?sortBy=${option[0].toLowerCase()}${option.slice(1)}`
+                }
                 key={option}
                 className="selection__item"
                 onClick={() => handleOptionClick(option)}

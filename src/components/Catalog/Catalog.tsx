@@ -4,10 +4,7 @@ import { redirect } from 'react-router-dom';
 import { Card } from '../Card';
 import { Pagination } from '../Pagination/Pagination';
 import { SelectForm } from '../SelectFrom/SelectForm';
-import {
-  getPhones,
-  getPhonesByQuery,
-} from '../../api/fetchData';
+import { getPhones, getPhonesByQuery } from '../../api/fetchData';
 import { perPageOptions, sortByOptions } from '../../utils/utilsCatalog';
 import { Phone } from '../../types/Phone';
 import { Loader } from '../Loader/Loader';
@@ -56,7 +53,9 @@ export const Catalog: React.FC<Props> = ({ productName }) => {
     try {
       const normalizedSortBy = sortBy[0].toLowerCase() + sortBy.slice(1);
       const loadedItems = await getPhonesByQuery(
-        currentPage, perPage, normalizedSortBy,
+        currentPage,
+        perPage,
+        normalizedSortBy,
       );
 
       if (loadedItems) {

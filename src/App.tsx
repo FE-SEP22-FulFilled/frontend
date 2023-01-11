@@ -1,9 +1,7 @@
 import React from 'react';
 import './App.scss';
 
-import {
-  Navigate, Route, Routes,
-} from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { NotFoundPage } from './components/NotFoundPage';
 import { AccessoriesPage } from './components/AccessoriesPage';
 import { CartPage } from './components/CartPage';

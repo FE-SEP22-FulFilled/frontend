@@ -41,10 +41,7 @@ export const Card: React.FC<Props> = ({ card }) => {
         <img src={require(`../../${image}`)} alt={name} className="card__img" />
       </div>
 
-      <Link
-        to={`/phones/${id}`}
-        className="card__name"
-      >
+      <Link to={`/phones/${id}`} className="card__name">
         {`${name} (iMT9G2FS/A)`}
       </Link>
 
