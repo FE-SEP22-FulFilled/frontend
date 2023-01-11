@@ -18,9 +18,11 @@ import { ProductPage } from './components/ProductPage/ProductPage';
 export const App = () => {
   return (
     <div className="App">
+      <Header />
+
       <div className="container">
-        <Header />
         <Link to="product">ProductPage</Link>
+
         <Routes>
           <Route path="phones">
             <Route index element={<PhonesPage />} />
@@ -44,9 +46,9 @@ export const App = () => {
           <Route path="home" element={<Navigate to="/" replace />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-
-        <Footer />
       </div>
+
+      <Footer />
     </div>
   );
 };

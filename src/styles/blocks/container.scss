@@ -1,0 +1,21 @@
+@import '../utils/mixins';
+
+.container {
+  flex-grow: 1;
+
+  margin: 25px auto 80px;
+  min-width: 320px;
+  max-width: 1200px;
+
+  min-height: 100vh;
+
+  // if uncomment the code below, the container content will be pressed to the right edge
+
+  // @include onTablet {
+  //   margin: 0 16px;
+  // }
+
+  // @include onMobile {
+  //   margin: 0 16px;
+  // }
+}

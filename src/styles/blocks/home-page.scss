@@ -14,7 +14,7 @@
 }
 
 .home__page {
-  margin: 0 32px;
+  // margin: 0 32px;
   font-family: Mont;
   font-style: normal;
 
@@ -88,6 +88,7 @@
     margin-bottom: 56px;
 
     &-title {
+      margin: 0;
       font-weight: 800;
       font-size: 22px;
       line-height: 140%;
@@ -96,7 +97,7 @@
 
       @include onTablet {
         max-width: 590px;
-        margin: 0 auto 56px;
+        margin-bottom: 56px;
 
         font-size: 32px;
         line-height: 41px;
@@ -106,17 +107,12 @@
 
       @include onDesktop {
         max-width: 845px;
-        margin: 0 auto 56px;
+        margin-bottom: 56px;
 
         font-size: 32px;
         line-height: 41px;
 
         letter-spacing: -0.01em;
-      }
-
-      @media (min-width: 1199px) {
-        max-width: 1112px;
-        margin: 0 auto 56px;
       }
     }
 
@@ -127,14 +123,14 @@
       @include onTablet {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
         gap: 16px;
       }
 
       @include onDesktop {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
         gap: 16px;
       }
     }

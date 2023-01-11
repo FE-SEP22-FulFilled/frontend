@@ -4,19 +4,19 @@ export type Description = {
 };
 
 export type Color =
-'spacegray'
-| 'midnight'
-| 'midnightgreen'
-| 'rosegold'
-| 'black'
-| 'silver'
-| 'gold'
-| 'coral'
-| 'yellow'
-| 'white'
-| 'red'
-| 'green'
-| 'purple';
+  | 'spacegray'
+  | 'midnight'
+  | 'midnightgreen'
+  | 'rosegold'
+  | 'black'
+  | 'silver'
+  | 'gold'
+  | 'coral'
+  | 'yellow'
+  | 'white'
+  | 'red'
+  | 'green'
+  | 'purple';
 
 export interface ProductInfo {
   id: string;
