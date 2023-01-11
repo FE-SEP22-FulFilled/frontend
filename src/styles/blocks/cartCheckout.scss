@@ -1,0 +1,67 @@
+@import '../utils/mixins';
+@import '../utils/variables';
+
+.cartCheckout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  scale: 0;
+
+  &--hidden {
+    scale: 1;
+  }
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  &__container {
+    margin: auto;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 30vh;
+    width: 30vw;
+
+    padding: 20px;
+
+    background-color: $gray-surface1;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    color: $white;
+
+    &--title {
+      font-size: 32px;
+
+      margin-top: 20px;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__button {
+    width: 30%;
+    padding: 10px;
+
+    justify-self: center;
+    align-self: flex-end;
+
+    background: $accent;
+
+    margin-bottom: 10px;
+
+    &--home {
+      justify-items: center;
+
+      text-decoration: none;
+      color: $white;
+    }
+  }
+}
