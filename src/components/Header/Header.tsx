@@ -20,7 +20,9 @@ export const Header: React.FC = () => {
           <NavLink to="favourites">
             <div className="icon__action icon__action--favorites">
               {favPhonesList.length > 0 && (
-                <div className="icon__quantity--favorites">{favPhonesList.length}</div>
+                <div className="icon__quantity--favorites">
+                  {favPhonesList.length}
+                </div>
               )}
 
               <img src={favoritesIconFull} alt="favorites" />
