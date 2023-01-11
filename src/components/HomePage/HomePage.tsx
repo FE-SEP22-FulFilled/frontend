@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../../styles/blocks/home-page.scss';
 import Swiper from '../Swiper/Swiper';
+
 import phonesImg from '../../img/home-page-category-phones.svg';
 import tabletsImg from '../../img/home-page-category-tablets.svg';
 import accessImg from '../../img/home-page-category-access.svg';

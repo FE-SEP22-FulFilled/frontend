@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
 import React from 'react';
-import './Footer.scss';
 import FullLogo from '../../img/FullLogo.svg';
 import BackButton from '../../img/backButton.svg';
 import { goToTop } from '../../utils/utilsCatalog';

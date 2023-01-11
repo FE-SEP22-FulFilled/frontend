@@ -16,6 +16,14 @@
 
   margin-bottom: 24px;
 
+  @include onTablet {
+    margin-bottom: 32px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 56px;
+  }
+
   @media (min-width: 1200px) {
     height: 63px;
   }

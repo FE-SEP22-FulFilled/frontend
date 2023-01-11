@@ -1,7 +1,6 @@
 /* eslint-disable max-len */
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import './Header.scss';
 import favoritesIcon from '../../img/firstIcon.svg';
 import shopBagIcon from '../../img/shopping_bag.svg';
 import { BurgerMenu } from '../BurgerMenu';

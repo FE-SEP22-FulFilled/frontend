@@ -3,13 +3,26 @@
 @import './utils/mixins';
 
 @import './blocks/container.scss';
-@import './blocks/card.scss';
 @import './blocks/grid.scss';
+
+@import './blocks/header.scss';
+@import './blocks/burger-menu.scss';
+@import './blocks/footer.scss';
+
+@import './blocks/favPage.scss';
+@import './blocks/product-page.scss';
+@import './blocks/home-page.scss';
+
+@import './blocks/card.scss';
+@import './blocks/cards-list.scss';
+
 @import './blocks/catalog.scss';
 @import './blocks/pagination.scss';
 @import './blocks/selection.scss';
-@import './blocks/cards-list.scss';
 @import './blocks/breadcrumbs.scss';
+
+@import './blocks/cart-page.scss';
 @import './blocks/cartItem.scss';
 @import './blocks/cartCheckout.scss';
-@import './blocks/favPage.scss';
+
+@import './blocks/loader.scss';

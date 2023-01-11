@@ -17,6 +17,13 @@
   margin: 0;
   padding: auto;
 
+  &--text--amount {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: $secondary;
+  }
+
   &__back-content {
     display: flex;
     align-items: center;

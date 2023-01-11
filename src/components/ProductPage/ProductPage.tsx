@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getFullInfoById } from '../../api/fetchData';
 import { ProductInfo } from '../../types/ProductInfo';
-import './ProductPage.scss';
 import favoritesIcon from '../../img/firstIcon.svg';
 import { NotFoundPage } from '../NotFoundPage';
 import { PhoneColors } from '../../types/PhoneColors';
