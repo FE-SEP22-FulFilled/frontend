@@ -11,6 +11,7 @@ export function getNumbers(from: number, to: number): number[] {
 export const perPageOptions = ['8', '24', '40', '64'];
 
 export const sortByOptions = [
+  'All',
   'Newest',
   'Oldest',
   'Low-priced',

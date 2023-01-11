@@ -4,7 +4,6 @@ import '../../styles/main.scss';
 import { Link } from 'react-router-dom';
 import heart from '../../icons/Vector (Stroke).svg';
 import { Phone } from '../../types/Phone';
-import { getPhoneById } from '../../api/fetchData';
 import { CartContext } from '../CartContext';
 
 interface Props {
@@ -27,11 +26,6 @@ export const Card: React.FC<Props> = ({ card }) => {
 
   const [isAdded, setIsAdded] = useState(false);
 
-  const logItem = (idItem: string) => {
-    // eslint-disable-next-line no-console
-    getPhoneById(idItem).then((res) => console.log(res));
-  };
-
   const handleAddToCart = () => {
     setIsAdded(true);
 
@@ -50,7 +44,6 @@ export const Card: React.FC<Props> = ({ card }) => {
       <Link
         to={`/phones/${id}`}
         className="card__name"
-        onClick={() => logItem(id)}
       >
         {`${name} (iMT9G2FS/A)`}
       </Link>

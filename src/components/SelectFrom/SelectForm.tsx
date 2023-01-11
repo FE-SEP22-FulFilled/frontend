@@ -1,29 +1,32 @@
 import classNames from 'classnames';
-import React, { useEffect, useRef, useState } from 'react';
+import React, {
+  useCallback, useEffect, useRef, useState,
+} from 'react';
 import { Link } from 'react-router-dom';
 
 interface Props {
   text: string;
   perPage: string;
-  setPerPage: (page: string) => void;
-  perPageOptions: string[];
-  total: number;
-  currentPage: number;
+  setOption: (option: string) => void;
+  options: string[];
+  total?: number;
+  currentPage?: number;
 }
 
 export const SelectForm: React.FC<Props> = ({
   text,
   perPage,
-  setPerPage,
-  perPageOptions,
+  setOption,
+  options,
   total,
   currentPage,
 }) => {
   const [openList, setOpenList] = useState(false);
   const [isAllOnShow, setIsAllOnShow] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const isChangePage = text === 'Items on page';
 
-  const checkIfClickedOutside = (e: MouseEvent) => {
+  const checkIfClickedOutside = useCallback((e: MouseEvent) => {
     if (
       e.target instanceof HTMLElement
       && openList
@@ -32,7 +35,7 @@ export const SelectForm: React.FC<Props> = ({
     ) {
       setOpenList(false);
     }
-  };
+  }, [openList]);
 
   useEffect(() => {
     document.addEventListener('mousedown', checkIfClickedOutside);
@@ -42,14 +45,21 @@ export const SelectForm: React.FC<Props> = ({
     };
   }, [openList]);
 
-  const handleOnShowClick = () => {
+  const handleShowAllClick = () => {
     setIsAllOnShow(true);
-    setPerPage(total.toString());
+    setOpenList(false);
+
+    if (total) {
+      setOption(total.toString());
+    }
   };
 
-  const handlePerPageClick = (choosedOption: string) => {
-    setIsAllOnShow(false);
-    setPerPage(choosedOption);
+  const handleOptionClick = (choosedOption: string) => {
+    if (isChangePage) {
+      setIsAllOnShow(false);
+    }
+
+    setOption(choosedOption);
     setOpenList(false);
   };
 
@@ -72,24 +82,28 @@ export const SelectForm: React.FC<Props> = ({
 
         {openList && (
           <div className="selection__list">
-            {perPageOptions.map((option) => (
+            {options.map((option) => (
               <Link
-                to={`?page=${currentPage}&limit=${option}`}
+                to={isChangePage
+                  ? `?page=${currentPage}&limit=${option}`
+                  : `?sortBy=${option[0].toLowerCase()}${option.slice(1)}`}
                 key={option}
                 className="selection__item"
-                onClick={() => handlePerPageClick(option)}
+                onClick={() => handleOptionClick(option)}
               >
                 {option}
               </Link>
             ))}
 
-            <Link
-              to={`?page=${1}&limit=${total}`}
-              className="selection__item"
-              onClick={handleOnShowClick}
-            >
-              Show All
-            </Link>
+            {isChangePage && (
+              <Link
+                to={`?page=${1}&limit=${total}`}
+                className="selection__item"
+                onClick={handleShowAllClick}
+              >
+                Show All
+              </Link>
+            )}
           </div>
         )}
       </div>
