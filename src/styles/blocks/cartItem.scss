@@ -110,21 +110,19 @@
 
       border-radius: 0;
 
+      background-color: $gray-surface2;
+      border: 0;
+
+      &:hover {
+        background-color: $gray-hover;
+      }
+
       &--minus {
         border: 1px $elements solid;
         background-color: $gray-surface1;
 
         &:hover {
           background-color: $elements;
-        }
-      }
-
-      &--plus {
-        background-color: $gray-surface2;
-        border: 0;
-
-        &:hover {
-          background-color: $gray-hover;
         }
       }
     }
