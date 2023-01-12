@@ -26,7 +26,7 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
   } = useContext(CartContext);
 
   const changePhoneQuantity = (changingPhone: Phone, newQuantity = 1) => {
-    const newCartPhonesList = cartPhonesList.map(item => {
+    const newCartPhonesList = cartPhonesList.map((item) => {
       if (item.id === changingPhone.id) {
         const newPhone = {
           ...changingPhone,
@@ -105,11 +105,9 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
         <div className="cartItem__counter">
           <button
             type="button"
-            className={classNames(
-              'cartItem__counter--button', {
-                'cartItem__counter--button--minus': isDisabled,
-              },
-            )}
+            className={classNames('cartItem__counter--button', {
+              'cartItem__counter--button--minus': isDisabled,
+            })}
             onClick={handleMinusItem}
             disabled={isDisabled}
           >
