@@ -5,7 +5,9 @@ import { Card } from '../Card';
 import { Pagination } from '../Pagination/Pagination';
 import { SelectForm } from '../SelectFrom/SelectForm';
 import { getPhones, getPhonesByQuery } from '../../api/fetchData';
-import { perPageOptions, sortByOptions } from '../../utils/utilsCatalog';
+import {
+  perPageOptions, sortByOptions,
+} from '../../utils/utilsCatalog';
 import { Phone } from '../../types/Phone';
 import { Loader } from '../Loader/Loader';
 
@@ -55,6 +57,7 @@ export const Catalog: React.FC<Props> = ({ productName }) => {
       setLoadCards(true);
 
       const normalizedSortBy = sortBy[0].toLowerCase() + sortBy.slice(1);
+
       const loadedItems = await getPhonesByQuery(
         currentPage,
         perPage,
@@ -99,9 +102,12 @@ export const Catalog: React.FC<Props> = ({ productName }) => {
               <div className="selection">
                 <SelectForm
                   text="Sort by"
-                  perPage={sortBy}
+                  perPage={perPage}
                   setOption={setSortBy}
                   options={sortByOptions}
+                  total={total}
+                  currentPage={currentPage}
+                  sortBy={sortBy}
                 />
 
                 <SelectForm
@@ -119,7 +125,7 @@ export const Catalog: React.FC<Props> = ({ productName }) => {
               ) : (
                 <div className="cards-list">
                   {visibleItems?.map((card) => (
-                    <Card key={card.id} card={card} />
+                    <Card key={card.phoneId} card={card} />
                   ))}
                 </div>
               )}
