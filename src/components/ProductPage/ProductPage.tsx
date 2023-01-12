@@ -5,13 +5,14 @@ import classNames from 'classnames';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { getFullInfoById, getPhones } from '../../api/fetchData';
 import { ProductInfo } from '../../types/ProductInfo';
-import favoritesIcon from '../../img/firstIcon.svg';
-import { NotFoundPage } from '../NotFoundPage';
+import favoritesIcon from '../../icons/heart.svg';
+import favoritesIconRed from '../../icons/heart_red.svg';
 import { PhoneColors } from '../../types/PhoneColors';
 import arrowBack from '../../icons/arrow_back.svg';
 import { Phone } from '../../types/Phone';
 import { CartContext } from '../CartContext';
 import { Recommended } from '../Recommended/Recommended';
+import { Loader } from '../Loader';
 
 export const ProductPage: React.FC = () => {
   const navigate = useNavigate();
@@ -24,12 +25,17 @@ export const ProductPage: React.FC = () => {
     setCartQuantity,
     cartPrice,
     setCartPrice,
+
+    favPhonesList,
+    setFavPhonesList,
   } = useContext(CartContext);
 
-  const [isAdded, setIsAdded] = useState(false);
+  const isAdded = Boolean(cartPhonesList.find((item) => item.phoneId === slug));
+  const isFav = Boolean(favPhonesList.find((item) => item.phoneId === slug));
   const [product, setProduct] = useState<ProductInfo | null>(null);
   const [card, setCard] = useState<Phone | null>(null);
   const [mainPhoto, setMainPhoto] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
 
   const loadCard = async () => {
     try {
@@ -57,7 +63,9 @@ export const ProductPage: React.FC = () => {
         setProduct(loadedProduct);
       }
     } catch (err) {
-      setProduct(null);
+      navigate('/notfound');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -92,12 +100,21 @@ export const ProductPage: React.FC = () => {
   };
 
   const handleAddToCart = () => {
-    setIsAdded(true);
     if (card) {
       setCartPhonesList([...cartPhonesList, card]);
       setCartQuantity(cartQuantity + 1);
       setCartPrice(cartPrice + card.price);
     }
+  };
+
+  const handleAddToFav = () => {
+    if (card) {
+      setFavPhonesList([...favPhonesList, card]);
+    }
+  };
+
+  const handleDeleteFromFav = () => {
+    setFavPhonesList(favPhonesList.filter((item) => item.phoneId !== slug));
   };
 
   useEffect(() => {
@@ -116,7 +133,9 @@ export const ProductPage: React.FC = () => {
 
   return (
     <>
-      {product ? (
+      {!product ? (
+        isLoading && <Loader />
+      ) : (
         <main className="product">
           <button
             type="button"
@@ -245,9 +264,23 @@ export const ProductPage: React.FC = () => {
                   {' '}
                 </button>
 
-                <button type="button" className="product__card__fav--button">
-                  <img src={favoritesIcon} alt="favorites" />
-                </button>
+                {!isFav ? (
+                  <button
+                    type="button"
+                    className="product__card__fav--button"
+                    onClick={handleAddToFav}
+                  >
+                    <img src={favoritesIcon} alt="favorites" />
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    className="product__card__fav--button--red"
+                    onClick={handleDeleteFromFav}
+                  >
+                    <img src={favoritesIconRed} alt="favorites" />
+                  </button>
+                )}
               </div>
 
               <div className="product__card__info">
@@ -354,8 +387,6 @@ export const ProductPage: React.FC = () => {
             <Recommended title="You may also like" />
           </div>
         </main>
-      ) : (
-        <NotFoundPage />
       )}
     </>
   );

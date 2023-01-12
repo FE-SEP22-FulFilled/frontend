@@ -47,10 +47,10 @@ export const Card: React.FC<Props> = ({ card }) => {
 
   return (
     <section className="card">
-      <div className="card__img-container">
+      <Link to={`/phones/${phoneId}`} className="card__img-container">
         {/* eslint-disable-next-line global-require, import/no-dynamic-require */}
         <img src={require(`../../${image}`)} alt={name} className="card__img" />
-      </div>
+      </Link>
 
       <Link to={`/phones/${phoneId}`} className="card__name">
         {`${name} (iMT9G2FS/A)`}
