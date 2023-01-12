@@ -40,9 +40,10 @@ export const CartPage: React.FC = () => {
           <div className="cart__page--text--amount">
             {cartPhonesList.length === 0 && 'No items yet'}
 
-            {cartPhonesList && cartPhonesList.map((phone: Phone) => (
-              <CartItem phone={phone} key={phone.id} />
-            ))}
+            {cartPhonesList
+              && cartPhonesList.map((phone: Phone) => (
+                <CartItem phone={phone} key={phone.id} />
+              ))}
           </div>
         </div>
 

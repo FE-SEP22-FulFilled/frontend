@@ -364,7 +364,6 @@
   display: flex;
   flex-direction: column;
 
-
   @include onTablet {
     display: grid;
     grid-template-columns: 7fr 5fr;

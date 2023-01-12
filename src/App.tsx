@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import './App.scss';
 
-import { Navigate, Route, Routes } from 'react-router-dom';
+import {
+  Navigate, Route, Routes, useLocation,
+} from 'react-router-dom';
 import { NotFoundPage } from './components/NotFoundPage';
 import { AccessoriesPage } from './components/AccessoriesPage';
 import { CartPage } from './components/CartPage';
@@ -14,6 +16,12 @@ import { Footer } from './components/Footer/Footer';
 import { ProductPage } from './components/ProductPage/ProductPage';
 
 export const App = () => {
+  const location = useLocation();
+
+  useLayoutEffect(() => {
+    document.documentElement.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <div className="App">
       <Header />

@@ -22,6 +22,7 @@ export const Catalog: React.FC<Props> = ({ productName }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [total, setTotal] = useState(0);
   const [isDataOnServer, setIsDataOnServer] = useState(true);
+  const [loadCards, setLoadCards] = useState(false);
 
   const loadItems = async () => {
     try {
@@ -51,6 +52,8 @@ export const Catalog: React.FC<Props> = ({ productName }) => {
 
   const loadItemsByQuery = async () => {
     try {
+      setLoadCards(true);
+
       const normalizedSortBy = sortBy[0].toLowerCase() + sortBy.slice(1);
       const loadedItems = await getPhonesByQuery(
         currentPage,
@@ -65,6 +68,7 @@ export const Catalog: React.FC<Props> = ({ productName }) => {
       setVisibleItems(null);
     } finally {
       setLoader(false);
+      setLoadCards(false);
     }
   };
 
@@ -110,11 +114,15 @@ export const Catalog: React.FC<Props> = ({ productName }) => {
                 />
               </div>
 
-              <div className="cards-list">
-                {visibleItems?.map((card) => (
-                  <Card key={card.id} card={card} />
-                ))}
-              </div>
+              {loadCards ? (
+                <Loader />
+              ) : (
+                <div className="cards-list">
+                  {visibleItems?.map((card) => (
+                    <Card key={card.id} card={card} />
+                  ))}
+                </div>
+              )}
 
               <div className="catalog__pagination">
                 <Pagination
