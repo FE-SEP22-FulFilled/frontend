@@ -7,10 +7,6 @@ import { Card } from '../Card';
 import '../../styles/blocks/Recommended.scss';
 import { getRecommended } from '../../api/fetchData';
 
-// import 'swiper/swiper.scss';
-// import 'swiper/components/pagination/pagination.scss';
-// import 'swiper/components/effect-coverflow/effect-coverflow.scss';
-
 type Props = {
   title: string;
 };
@@ -33,8 +29,8 @@ export const Recommended: React.FC<Props> = ({ title }) => {
   const swiperRef = useRef<any>(null);
 
   return (
-    <div className="recommended">
-      <div className="flex-container">
+    <>
+      <div className="flex">
         <h1 className="recommended__title">{title}</h1>
 
         <div className="buttons__wrapper">
@@ -55,15 +51,33 @@ export const Recommended: React.FC<Props> = ({ title }) => {
           />
         </div>
       </div>
-      <div className="recommended__items">
-        <Swiper modules={[Pagination]} ref={swiperRef} slidesPerView={4}>
-          {cards.map((card) => (
-            <SwiperSlide>
-              <Card card={card} key={card.id} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+      <div className="recommended">
+        <div className="recommended__items">
+          <Swiper
+            modules={[Pagination]}
+            ref={swiperRef}
+            spaceBetween={28}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+              },
+
+              744: {
+                slidesPerView: 3,
+              },
+              1200: {
+                slidesPerView: 4,
+              },
+            }}
+          >
+            {cards.map((card) => (
+              <SwiperSlide>
+                <Card card={card} key={card.id} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
