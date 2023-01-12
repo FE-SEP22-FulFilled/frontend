@@ -48,11 +48,11 @@
   &-enter {
     height: 0;
   }
- 
+
   &-enter-active {
     overflow: hidden;
     height: 64px;
-     transition: 0.3s ease-in;
+    transition: 0.3s ease-in;
     transition-property: height, overflow;
   }
 

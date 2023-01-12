@@ -83,9 +83,10 @@ export const SelectForm: React.FC<Props> = ({
           {isAllOnShow ? 'Show All' : perPage}
         </button>
 
-        <ul className={classNames('selection__list', {
-          'selection__list--active': openList,
-        })}
+        <ul
+          className={classNames('selection__list', {
+            'selection__list--active': openList,
+          })}
         >
           {options.map((option) => (
             <li>
