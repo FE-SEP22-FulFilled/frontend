@@ -42,15 +42,29 @@
     display: flex;
     justify-content: center;
   }
+}
 
-  // &__no-products {
-  //   width: 100%;
-  //   height: 250px;
-  //   margin: 0 auto;
+.transition {
+  &-enter {
+    height: 0;
+  }
 
-  //   background-image: url('../../img/banner-tablets-1.png');
-  //   background-repeat: no-repeat;
-  //   background-size: cover;
-  //   background-position: top;
-  // }
+  &-enter-active {
+    overflow: hidden;
+    height: 64px;
+    transition: 0.3s ease-in;
+    transition-property: height, overflow;
+  }
+
+  &-exit-active {
+    overflow: hidden;
+    height: 0;
+    transition: 0.3s ease-in;
+    transition-property: height, overflow;
+  }
+
+  &-exit {
+    overflow: hidden;
+    height: 0;
+  }
 }

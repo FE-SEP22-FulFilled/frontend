@@ -54,6 +54,8 @@
 
     cursor: pointer;
 
+    transition: background-image 0.3 ease-in-out;
+
     &--open {
       background-image: url('../../icons/downdrop_focus.svg');
     }
@@ -72,10 +74,23 @@
     padding: 0;
 
     box-sizing: border-box;
-    border: 1px solid $elements;
+    border: none;
     list-style: none;
 
-    transition: position 0.5s;
+    height: 0;
+    opacity: 0;
+
+    transition: border 0.3s;
+    transition: height, opacity 0.3s ease-in-out;
+
+    &--active {
+      border: 1px solid $elements;
+      height: max-content;
+      opacity: 100;
+
+      transition: border 0.3s;
+      transition: height, opacity 0.3s ease-in-out;
+    }
 
     @media (max-width: 639px) {
       width: 136px;
@@ -86,8 +101,10 @@
     position: relative;
     display: block;
 
+    height: 0;
+    opacity: 0;
+
     width: 162px;
-    height: 32px;
     padding-left: 12px;
 
     border-style: none;
@@ -102,9 +119,20 @@
     font-size: 14px;
     line-height: 32px;
 
+    transition: height, opacity 0.3s ease-in-out;
+
+    transition: color, background-color 0.5s;
+
+    &--active {
+      height: max-content;
+      opacity: 100;
+
+      transition: height, opacity 0.3s ease-in-out;
+    }
+
     &:hover {
       color: $white;
-      background: $gray-surface2;
+      background-color: $gray-surface2;
     }
 
     cursor: pointer;
