@@ -28,17 +28,16 @@ export const Footer: React.FC = () => {
             </li>
 
             <li className="footer__nav-item">
-              <a className="footer__nav-link" href="mailto:mate.academy@gmail.com">
+              <a
+                className="footer__nav-link"
+                href="mailto:mate.academy@gmail.com"
+              >
                 contacts
               </a>
             </li>
 
             <li className="footer__nav-item">
-              <Link
-                to="/"
-                onClick={goToTop}
-                className="footer__nav-link"
-              >
+              <Link to="/" onClick={goToTop} className="footer__nav-link">
                 rights
               </Link>
             </li>

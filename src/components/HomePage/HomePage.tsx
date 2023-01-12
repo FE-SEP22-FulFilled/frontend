@@ -17,12 +17,7 @@ export const HomePage: React.FC = () => {
       </div>
 
       <div className="home__page__brandnew">
-        {/* <h1>Brand new models</h1> */}
-
-        {/* Brand new models goes here */}
-        <Recommended
-          title="Brand new models"
-        />
+        <Recommended title="Brand new models" />
       </div>
 
       <div className="home__page__category">
@@ -107,9 +102,7 @@ export const HomePage: React.FC = () => {
       </div>
 
       <div className="home__page__hotprices">
-        <h1>Hot prices</h1>
-
-        {/* Hot prices goes here */}
+        <Recommended title="Hot prices" />
       </div>
     </div>
   );

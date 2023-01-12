@@ -11,6 +11,7 @@ import { PhoneColors } from '../../types/PhoneColors';
 import arrowBack from '../../icons/arrow_back.svg';
 import { Phone } from '../../types/Phone';
 import { CartContext } from '../CartContext';
+import { Recommended } from '../Recommended/Recommended';
 
 export const ProductPage: React.FC = () => {
   const navigate = useNavigate();
@@ -147,9 +148,12 @@ export const ProductPage: React.FC = () => {
                   const imageId = image.split('/').reverse()[0];
 
                   return (
-                    <div className={classNames(image === mainPhoto
-                      ? 'product__photos__container--image--is-active'
-                      : 'product__photos__container--image')}
+                    <div
+                      className={classNames(
+                        image === mainPhoto
+                          ? 'product__photos__container--image--is-active'
+                          : 'product__photos__container--image',
+                      )}
                     >
                       <img
                         key={imageId}
@@ -160,7 +164,6 @@ export const ProductPage: React.FC = () => {
                         onClick={() => setMainPhoto(image)}
                       />
                     </div>
-
                   );
                 })}
               </div>
@@ -345,6 +348,10 @@ export const ProductPage: React.FC = () => {
                 </div>
               </div>
             </article>
+          </div>
+
+          <div className="product__recommended-container">
+            <Recommended title="You may also like" />
           </div>
         </main>
       ) : (

@@ -30,13 +30,13 @@ export default function App() {
         }}
         navigation
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
+        className="swiper__main"
       >
         {slides.map((slide) => (
           <SwiperSlide key={Math.random()}>
             <Link to="phones">
               <img
-                className="swiper__image"
+                className="swiper__image swiper__main--img"
                 src={slide}
                 alt={`slide ${slides.indexOf(slide)}`}
               />
