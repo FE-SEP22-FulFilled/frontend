@@ -1,5 +1,6 @@
 /* eslint-disable global-require */
 /* eslint-disable import/no-dynamic-require */
+import classNames from 'classnames';
 import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -14,7 +15,6 @@ type Props = {
 };
 
 export const CartItem: React.FC<Props> = ({ phone }) => {
-  const [counter, setCounter] = useState(1);
   const [isDisabled, setIsDisabled] = useState(false);
   const {
     cartPhonesList,
@@ -25,6 +25,30 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
     setCartPrice,
   } = useContext(CartContext);
 
+  const changePhoneQuantity = (changingPhone: Phone, newQuantity = 1) => {
+    const newCartPhonesList = cartPhonesList.map(item => {
+      if (item.id === changingPhone.id) {
+        const newPhone = {
+          ...changingPhone,
+          quantity: newQuantity,
+        };
+
+        return newPhone;
+      }
+
+      const oldPhone = {
+        ...item,
+        quantity: item.quantity || 1,
+      };
+
+      return oldPhone;
+    });
+
+    setCartPhonesList(newCartPhonesList);
+  };
+
+  const [counter, setCounter] = useState(phone.quantity || 1);
+
   useEffect(() => {
     if (counter === 1) {
       setIsDisabled(true);
@@ -33,6 +57,8 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
     if (counter > 1) {
       setIsDisabled(false);
     }
+
+    changePhoneQuantity(phone, counter);
   }, [counter]);
 
   const handleCartItemDelete = (deleteId: string) => {
@@ -79,9 +105,11 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
         <div className="cartItem__counter">
           <button
             type="button"
-            className="
-              cartItem__counter--button
-              cartItem__counter--button--minus"
+            className={classNames(
+              'cartItem__counter--button', {
+                'cartItem__counter--button--minus': isDisabled,
+              },
+            )}
             onClick={handleMinusItem}
             disabled={isDisabled}
           >
