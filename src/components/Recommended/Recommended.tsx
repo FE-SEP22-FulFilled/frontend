@@ -12,7 +12,7 @@ import { getRecommended } from '../../api/fetchData';
 // import 'swiper/components/effect-coverflow/effect-coverflow.scss';
 
 type Props = {
-  title: string,
+  title: string;
 };
 
 export const Recommended: React.FC<Props> = ({ title }) => {
@@ -35,9 +35,7 @@ export const Recommended: React.FC<Props> = ({ title }) => {
   return (
     <div className="recommended">
       <div className="flex-container">
-        <h1 className="recommended__title">
-          {title}
-        </h1>
+        <h1 className="recommended__title">{title}</h1>
 
         <div className="buttons__wrapper">
           <button
@@ -58,11 +56,7 @@ export const Recommended: React.FC<Props> = ({ title }) => {
         </div>
       </div>
       <div className="recommended__items">
-        <Swiper
-          modules={[Pagination]}
-          ref={swiperRef}
-          slidesPerView={4}
-        >
+        <Swiper modules={[Pagination]} ref={swiperRef} slidesPerView={4}>
           {cards.map((card) => (
             <SwiperSlide>
               <Card card={card} key={card.id} />

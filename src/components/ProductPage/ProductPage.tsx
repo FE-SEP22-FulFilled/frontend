@@ -148,9 +148,12 @@ export const ProductPage: React.FC = () => {
                   const imageId = image.split('/').reverse()[0];
 
                   return (
-                    <div className={classNames(image === mainPhoto
-                      ? 'product__photos__container--image--is-active'
-                      : 'product__photos__container--image')}
+                    <div
+                      className={classNames(
+                        image === mainPhoto
+                          ? 'product__photos__container--image--is-active'
+                          : 'product__photos__container--image',
+                      )}
                     >
                       <img
                         key={imageId}
@@ -161,7 +164,6 @@ export const ProductPage: React.FC = () => {
                         onClick={() => setMainPhoto(image)}
                       />
                     </div>
-
                   );
                 })}
               </div>

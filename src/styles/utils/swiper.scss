@@ -14,11 +14,11 @@
 
     &:hover {
       transform: scale(1.05);
-  
+
       @include onDesktop {
         transform: scale(1.05);
       }
-  
+
       @include onTablet {
         transform: scale(1.05);
       }

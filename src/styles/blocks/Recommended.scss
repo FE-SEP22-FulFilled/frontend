@@ -24,29 +24,29 @@
     @include button-size;
     border: none;
     cursor: pointer;
-    
+
     &--prev {
       background-image: url('../../icons/disabled-prev.svg');
       background-color: $dark-background;
       margin-right: 16px;
-  
+
       &:hover {
         background-image: url('../../icons/hover-prev.svg');
       }
-  
+
       &:focus {
         background-image: url('../../icons/default-prev.svg');
       }
     }
-    
+
     &--next {
       background-image: url('../../icons/disabled-next.svg');
       background-color: $dark-background;
-  
+
       &:hover {
         background-image: url('../../icons/hover-next.svg');
       }
-  
+
       &:focus {
         background-image: url('../../icons/default-next.svg');
       }
@@ -54,9 +54,9 @@
   }
 
   &__items {
-  //   display: grid;
-  //   grid-template-columns: repeat(4, 1fr);
-  //   gap: 16px;
+    //   display: grid;
+    //   grid-template-columns: repeat(4, 1fr);
+    //   gap: 16px;
     height: 550px;
   }
 }
