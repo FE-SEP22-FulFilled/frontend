@@ -11,6 +11,7 @@ import { PhoneColors } from '../../types/PhoneColors';
 import arrowBack from '../../icons/arrow_back.svg';
 import { Phone } from '../../types/Phone';
 import { CartContext } from '../CartContext';
+import { Recommended } from '../Recommended/Recommended';
 
 export const ProductPage: React.FC = () => {
   const navigate = useNavigate();
@@ -345,6 +346,10 @@ export const ProductPage: React.FC = () => {
                 </div>
               </div>
             </article>
+          </div>
+
+          <div className="product__recommended-container">
+            <Recommended title="You may also like" />
           </div>
         </main>
       ) : (
