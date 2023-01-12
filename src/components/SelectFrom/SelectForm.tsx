@@ -82,9 +82,7 @@ export const SelectForm: React.FC<Props> = ({
             setOpenList(!openList);
           }}
         >
-          {isChangePage
-            ? (<>{isAllOnShow ? 'Show All' : perPage }</>)
-            : sortBy}
+          {isChangePage ? <>{isAllOnShow ? 'Show All' : perPage}</> : sortBy}
         </button>
 
         <ul
@@ -98,7 +96,9 @@ export const SelectForm: React.FC<Props> = ({
                 to={
                   isChangePage
                     ? `?page=${currentPage}&limit=${option}`
-                    : `?page=${currentPage}&limit=${perPage}&sortBy=${option[0].toLowerCase()}${option.slice(1)}`
+                    : `?page=${currentPage}&limit=${perPage}&sortBy=${option[0].toLowerCase()}${option.slice(
+                      1,
+                    )}`
                 }
                 key={option}
                 className={classNames('selection__item', {

@@ -5,9 +5,7 @@ import { Card } from '../Card';
 import { Pagination } from '../Pagination/Pagination';
 import { SelectForm } from '../SelectFrom/SelectForm';
 import { getPhones, getPhonesByQuery } from '../../api/fetchData';
-import {
-  perPageOptions, sortByOptions,
-} from '../../utils/utilsCatalog';
+import { perPageOptions, sortByOptions } from '../../utils/utilsCatalog';
 import { Phone } from '../../types/Phone';
 import { Loader } from '../Loader/Loader';
 
