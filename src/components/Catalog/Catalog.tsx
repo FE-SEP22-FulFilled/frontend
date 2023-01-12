@@ -114,15 +114,15 @@ export const Catalog: React.FC<Props> = ({ productName }) => {
                 />
               </div>
 
-              {loadCards
-                ? <Loader />
-                : (
-                  <div className="cards-list">
-                    {visibleItems?.map((card) => (
-                      <Card key={card.id} card={card} />
-                    ))}
-                  </div>
-                )}
+              {loadCards ? (
+                <Loader />
+              ) : (
+                <div className="cards-list">
+                  {visibleItems?.map((card) => (
+                    <Card key={card.id} card={card} />
+                  ))}
+                </div>
+              )}
 
               <div className="catalog__pagination">
                 <Pagination

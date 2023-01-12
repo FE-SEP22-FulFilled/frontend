@@ -27,7 +27,10 @@ export const Footer: React.FC = () => {
             </li>
 
             <li className="footer__nav-item">
-              <a className="footer__nav-link" href="mailto:and.shymkiv@gmail.com">
+              <a
+                className="footer__nav-link"
+                href="mailto:and.shymkiv@gmail.com"
+              >
                 contacts
               </a>
             </li>
