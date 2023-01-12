@@ -1,0 +1,54 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+
+.notfoundpage {
+  &__header {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 140%;
+    margin-top: 16px;
+
+    @include onTablet {
+      font-size: 32px;
+      line-height: 41px;
+    }
+  }
+
+  &__back-button {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    background-color: $dark-background;
+    color: $white;
+    border: none;
+  }
+
+  &__home-button {
+    display: flex;
+    width: 160px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    margin-top: 16px;
+    padding: 16px 0;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    background-color: $dark-background;
+    color: $white;
+    border: 1px solid $white;
+    border-radius: 4px;
+
+    text-decoration: none;
+    transition: all 0.5s;
+
+    &:hover {
+      background-color: $white;
+      color: $dark-background;
+    }
+  }
+}

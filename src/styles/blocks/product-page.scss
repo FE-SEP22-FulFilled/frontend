@@ -236,6 +236,23 @@
       &:hover {
         background-color: $gray-hover;
       }
+
+      &--red {
+        height: 40px;
+        width: 40px;
+        background-color: $gray-surface1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 19px;
+
+        text-decoration: none;
+        background-color: $gray-surface2;
+        margin-left: 8px;
+
+        transition: all 0.5s;
+        border: 1px $elements solid;
+      }
     }
 
     &__price {
