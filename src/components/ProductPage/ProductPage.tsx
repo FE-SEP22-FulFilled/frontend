@@ -63,7 +63,7 @@ export const ProductPage: React.FC = () => {
         setProduct(loadedProduct);
       }
     } catch (err) {
-      setProduct(null);
+      navigate('/notfound');
     } finally {
       setIsLoading(false);
     }
