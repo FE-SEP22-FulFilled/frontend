@@ -83,9 +83,12 @@ export const SelectForm: React.FC<Props> = ({
           {isAllOnShow ? 'Show All' : perPage}
         </button>
 
-        {openList && (
-          <div className="selection__list">
-            {options.map((option) => (
+        <ul className={classNames('selection__list', {
+          'selection__list--active': openList,
+        })}
+        >
+          {options.map((option) => (
+            <li>
               <Link
                 to={
                   isChangePage
@@ -93,24 +96,30 @@ export const SelectForm: React.FC<Props> = ({
                     : `?sortBy=${option[0].toLowerCase()}${option.slice(1)}`
                 }
                 key={option}
-                className="selection__item"
+                className={classNames('selection__item', {
+                  'selection__item--active': openList,
+                })}
                 onClick={() => handleOptionClick(option)}
               >
                 {option}
               </Link>
-            ))}
+            </li>
+          ))}
 
-            {isChangePage && (
+          {isChangePage && (
+            <li>
               <Link
                 to={`?page=${1}&limit=${total}`}
-                className="selection__item"
+                className={classNames('selection__item', {
+                  'selection__item--active': openList,
+                })}
                 onClick={handleShowAllClick}
               >
                 Show All
               </Link>
-            )}
-          </div>
-        )}
+            </li>
+          )}
+        </ul>
       </div>
     </div>
   );
