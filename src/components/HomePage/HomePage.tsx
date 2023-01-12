@@ -5,6 +5,7 @@ import Swiper from '../Swiper/Swiper';
 import phonesImg from '../../img/home-page-category-phones.svg';
 import tabletsImg from '../../img/home-page-category-tablets.svg';
 import accessImg from '../../img/home-page-category-access.svg';
+import { Recommended } from '../Recommended/Recommended';
 
 export const HomePage: React.FC = () => {
   return (
@@ -16,9 +17,12 @@ export const HomePage: React.FC = () => {
       </div>
 
       <div className="home__page__brandnew">
-        <h1>Brand new models</h1>
+        {/* <h1>Brand new models</h1> */}
 
         {/* Brand new models goes here */}
+        <Recommended
+          title="Brand new models"
+        />
       </div>
 
       <div className="home__page__category">
