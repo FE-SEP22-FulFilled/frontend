@@ -11,8 +11,6 @@
 }
 
 .recommended {
-  max-width: 1200px;
-  margin: 0 auto;
 
   &__title {
     color: $white;
@@ -54,15 +52,34 @@
   }
 
   &__items {
-    //   display: grid;
-    //   grid-template-columns: repeat(4, 1fr);
-    //   gap: 16px;
-    height: 550px;
+    height: 530px;
+
+    @media (min-width: 744px) {
+      width: 744;
+    }
+
+    @media (min-width: 640px) {
+      width: 640;
+  }
+    
+    @media (min-width: 1200px) {
+      width: 1200;
+    }
   }
 }
 
-.flex-container {
+.flex {
   display: flex;
   justify-content: space-between;
-  padding: 0 15px 24px;
+  padding-bottom: 10px;
 }
+
+.box {
+  display: block;
+}
+
+// @media (max-width: 750px) {
+//   .swiper {
+//     height: 500px;
+//   }
+// }
