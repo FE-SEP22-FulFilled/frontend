@@ -1,6 +1,7 @@
 /* eslint-disable global-require */
 /* eslint-disable import/no-dynamic-require */
 import { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import cross from '../../icons/cross.svg';
 import minus from '../../icons/minus.svg';
@@ -69,9 +70,9 @@ export const CartItem: React.FC<Props> = ({ phone }) => {
           className="cartItem__img"
         />
 
-        <a href="/" className="cartItem__title--text">
+        <Link to={`/phones/${phone.phoneId}`} className="cartItem__title--text">
           {`${phone.name}`}
-        </a>
+        </Link>
       </div>
 
       <div className="cartItem__numbers">

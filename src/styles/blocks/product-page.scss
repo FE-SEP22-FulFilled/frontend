@@ -60,9 +60,11 @@
       }
     }
 
-    &__main--image {
-      width: 274px;
+    &__container--main {
+      width: 100%;
       height: 274px;
+      display: flex;
+      justify-content: center;
 
       @include onTablet {
         width: 287px;
@@ -77,9 +79,35 @@
       }
     }
 
-    &__image {
+    &__main--image {
+      height: 100%;
+      width: auto;
+    }
+
+    &__container--image {
       width: 51px;
       height: 48px;
+      display: flex;
+      justify-content: center;
+
+      &--is-active {
+        width: 51px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        border: 1px solid $white;
+        box-sizing: border-box;
+
+        @include onTablet {
+          width: 34px;
+          height: 34px;
+        }
+  
+        @include onDesktop {
+          width: 78px;
+          height: 78px;
+        }
+      }
 
       @include onTablet {
         width: 34px;
@@ -90,6 +118,11 @@
         width: 78px;
         height: 78px;
       }
+    }
+
+    &__image {
+      height: 100%;
+      width: auto;
     }
   }
 

@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { useContext, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { Link, useParams, useNavigate } from 'react-router-dom';
@@ -26,6 +28,7 @@ export const ProductPage: React.FC = () => {
   const [isAdded, setIsAdded] = useState(false);
   const [product, setProduct] = useState<ProductInfo | null>(null);
   const [card, setCard] = useState<Phone | null>(null);
+  const [mainPhoto, setMainPhoto] = useState('');
 
   const loadCard = async () => {
     try {
@@ -81,6 +84,12 @@ export const ProductPage: React.FC = () => {
     return null;
   };
 
+  const convertToPng = (link: string) => {
+    const newLink = link.replace('.jpg', '.png');
+
+    return newLink;
+  };
+
   const handleAddToCart = () => {
     setIsAdded(true);
     if (card) {
@@ -97,6 +106,12 @@ export const ProductPage: React.FC = () => {
   useEffect(() => {
     loadCard();
   }, [product]);
+
+  useEffect(() => {
+    if (product) {
+      setMainPhoto(`${product.images[0]}`);
+    }
+  }, [product?.images[0]]);
 
   return (
     <>
@@ -116,28 +131,36 @@ export const ProductPage: React.FC = () => {
           </button>
 
           <h1 className="product__title">{`${product.name} (iMT9G2FS/A)`}</h1>
-
           <div className="product--container">
             <article className="product__photos">
-              <img
-                // eslint-disable-next-line global-require, import/no-dynamic-require
-                src={require(`../../${product.images[0]}`)}
-                alt="phone__image"
-                className="product__photos__main--image"
-              />
+              <div className="product__photos__container--main">
+                <img
+                  // eslint-disable-next-line global-require, import/no-dynamic-require
+                  src={require(`../../${convertToPng(mainPhoto)}`)}
+                  alt="phone__image"
+                  className="product__photos__main--image"
+                />
+              </div>
 
               <div className="product__photos__images">
                 {product.images.map((image) => {
                   const imageId = image.split('/').reverse()[0];
 
                   return (
-                    <img
-                      key={imageId}
-                      // eslint-disable-next-line global-require, import/no-dynamic-require
-                      src={require(`../../${image}`)}
-                      alt="phone__image"
-                      className="product__photos__image"
-                    />
+                    <div className={classNames(image === mainPhoto
+                      ? 'product__photos__container--image--is-active'
+                      : 'product__photos__container--image')}
+                    >
+                      <img
+                        key={imageId}
+                        // eslint-disable-next-line global-require, import/no-dynamic-require
+                        src={require(`../../${convertToPng(image)}`)}
+                        alt="phone__image"
+                        className="product__photos__image"
+                        onClick={() => setMainPhoto(image)}
+                      />
+                    </div>
+
                   );
                 })}
               </div>
