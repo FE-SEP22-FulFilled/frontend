@@ -1,6 +1,7 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper';
+import { Link } from 'react-router-dom';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -8,7 +9,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import '../../styles/utils/swiper.scss';
-import slide1 from '../../img/Banner1.svg';
+import slide1 from '../../img/Banner(1).png';
 import slide2 from '../../img/Banner2.jpg';
 import slide3 from '../../img/Banner3.jpg';
 
@@ -33,11 +34,13 @@ export default function App() {
       >
         {slides.map((slide) => (
           <SwiperSlide key={Math.random()}>
-            <img
-              className="swiper__image"
-              src={slide}
-              alt={`slide ${slides.indexOf(slide)}`}
-            />
+            <Link to="phones">
+              <img
+                className="swiper__image"
+                src={slide}
+                alt={`slide ${slides.indexOf(slide)}`}
+              />
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

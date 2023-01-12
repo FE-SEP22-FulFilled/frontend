@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import FullLogo from '../../img/FullLogo.svg';
 import BackButton from '../../img/backButton.svg';
 import { goToTop } from '../../utils/utilsCatalog';
@@ -27,18 +28,19 @@ export const Footer: React.FC = () => {
             </li>
 
             <li className="footer__nav-item">
-              <a
-                className="footer__nav-link"
-                href="mailto:and.shymkiv@gmail.com"
-              >
+              <a className="footer__nav-link" href="mailto:mate.academy@gmail.com">
                 contacts
               </a>
             </li>
 
             <li className="footer__nav-item">
-              <a className="footer__nav-link" href="#tablets">
+              <Link
+                to="/"
+                onClick={goToTop}
+                className="footer__nav-link"
+              >
                 rights
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
