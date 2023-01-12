@@ -9,8 +9,9 @@ interface Props {
   perPage: string;
   setOption: (option: string) => void;
   options: string[];
-  total?: number;
-  currentPage?: number;
+  total: number;
+  currentPage: number;
+  sortBy?: string;
 }
 
 export const SelectForm: React.FC<Props> = ({
@@ -20,6 +21,7 @@ export const SelectForm: React.FC<Props> = ({
   options,
   total,
   currentPage,
+  sortBy,
 }) => {
   const [openList, setOpenList] = useState(false);
   const [isAllOnShow, setIsAllOnShow] = useState(false);
@@ -80,7 +82,7 @@ export const SelectForm: React.FC<Props> = ({
             setOpenList(!openList);
           }}
         >
-          {isAllOnShow ? 'Show All' : perPage}
+          {isChangePage ? <>{isAllOnShow ? 'Show All' : perPage}</> : sortBy}
         </button>
 
         <ul
@@ -94,7 +96,9 @@ export const SelectForm: React.FC<Props> = ({
                 to={
                   isChangePage
                     ? `?page=${currentPage}&limit=${option}`
-                    : `?sortBy=${option[0].toLowerCase()}${option.slice(1)}`
+                    : `?page=${currentPage}&limit=${perPage}&sortBy=${option[0].toLowerCase()}${option.slice(
+                      1,
+                    )}`
                 }
                 key={option}
                 className={classNames('selection__item', {
