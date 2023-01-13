@@ -36,6 +36,7 @@
 
   &--with-menu {
     overflow: hidden;
+    overscroll-behavior: none;
   }
 
   &__nav {
@@ -78,6 +79,8 @@
       flex-grow: 1;
       justify-content: center;
       align-items: center;
+
+      position: relative;
 
       &:nth-child(1) {
         border-right: 1px solid $elements;
@@ -140,6 +143,21 @@
 
     &:hover {
       color: #f1f2f9;
+    }
+  }
+
+  &__icon {
+    &--quantity {
+      @include quantityAndFavorites;
+
+      top: 18px;
+      right: 43%;
+    }
+
+    &--favorites {
+      @include quantityAndFavorites;
+      top: 18px;
+      right: 43%;
     }
   }
 }
