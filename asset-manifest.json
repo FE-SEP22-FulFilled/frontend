@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/frontend/static/css/main.fd57d989.css",
+    "main.css": "/frontend/static/css/main.ecf73913.css",
     "main.js": "/frontend/static/js/main.63d10746.js",
     "static/media/home-page-category-tablets.svg": "/frontend/static/media/home-page-category-tablets.4c8a45199b1fb3c7542d8103400bbb4b.svg",
     "static/media/category-tablets.png": "/frontend/static/media/category-tablets.51782e18205a1ca01ce8.png",
@@ -61,11 +61,11 @@
     "static/media/arrow_back.svg": "/frontend/static/media/arrow_back.bfd02bc8aff3642508e751763b33b88f.svg",
     "static/media/minus.svg": "/frontend/static/media/minus.0365a13e7f5baa53bce8c439c4e812c3.svg",
     "static/media/iconPart2.svg": "/frontend/static/media/iconPart2.dcef04ec33f2a264f53f.svg",
-    "main.fd57d989.css.map": "/frontend/static/css/main.fd57d989.css.map",
+    "main.ecf73913.css.map": "/frontend/static/css/main.ecf73913.css.map",
     "main.63d10746.js.map": "/frontend/static/js/main.63d10746.js.map"
   },
   "entrypoints": [
-    "static/css/main.fd57d989.css",
+    "static/css/main.ecf73913.css",
     "static/js/main.63d10746.js"
   ]
 }
