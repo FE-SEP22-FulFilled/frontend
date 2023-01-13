@@ -37,7 +37,7 @@
     }
 
     &--next {
-      background-image: url('../../icons/disabled-next.svg');
+      background-image: url('../../icons/default-next.svg');
       background-color: $dark-background;
 
       &:hover {
@@ -76,9 +76,3 @@
 .box {
   display: block;
 }
-
-// @media (max-width: 750px) {
-//   .swiper {
-//     height: 500px;
-//   }
-// }
