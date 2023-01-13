@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable max-len */
 
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
 
@@ -13,9 +13,11 @@ import logoArm from '../../img/logoImage.svg';
 import Close from '../../img/Close.svg';
 import burgerIcon from '../../img/burgerIcon.svg';
 import { NavigationLink } from '../NavLink/NavigationLink';
+import { CartContext } from '../CartContext';
 
 export const BurgerMenu: React.FC = () => {
   const [isActiveBurger, setIsActiveBurger] = useState(false);
+  const { cartQuantity, favPhonesList } = useContext(CartContext);
 
   useEffect(() => {
     if (isActiveBurger) {
@@ -94,6 +96,11 @@ export const BurgerMenu: React.FC = () => {
                 to="favourites"
                 onClick={() => setIsActiveBurger(false)}
               >
+                {favPhonesList.length > 0 && (
+                  <div className="burger__icon--favorites">
+                    {favPhonesList.length}
+                  </div>
+                )}
                 <img src={favoritesIcon} alt="favorites" />
               </NavLink>
 
@@ -104,6 +111,9 @@ export const BurgerMenu: React.FC = () => {
                 to="cart"
                 onClick={() => setIsActiveBurger(false)}
               >
+                {cartQuantity > 0 && (
+                  <div className="burger__icon--quantity">{cartQuantity}</div>
+                )}
                 <img src={shopBagIcon} alt="shopping_bag" />
               </NavLink>
             </div>
