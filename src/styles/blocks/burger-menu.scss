@@ -146,14 +146,14 @@
     }
   }
 
-  &__icon{
+  &__icon {
     &--quantity {
       @include quantityAndFavorites;
-      
+
       top: 18px;
       right: 43%;
     }
-    
+
     &--favorites {
       @include quantityAndFavorites;
       top: 18px;
