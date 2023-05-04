@@ -5,7 +5,8 @@ import { ProductInfo } from '../types/ProductInfo';
 
 // eslint-disable-next-line max-len
 const BASE_URL
-  = 'https:////soft-halva-33cecb.netlify.app/.netlify/functions/server';
+  // eslint-disable-next-line max-len
+  = 'https://main--heartfelt-dolphin-ba1cae.netlify.app/.netlify/functions/server';
 
 function wait(delay: number) {
   return new Promise((resolve) => {
